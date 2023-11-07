@@ -14,7 +14,7 @@ import jakarta.persistence.Id;
 @NoArgsConstructor
 public class Usuarios {
     @Id
-    private String id;
+    private int id;
     private String nome;
     private String email;
     private String senha;
