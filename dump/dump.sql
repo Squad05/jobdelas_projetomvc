@@ -53,7 +53,7 @@ CREATE TABLE postagens (
     userID INTEGER REFERENCES usuarios(id),
     categoria VARCHAR(255),
     conteudo TEXT NOT NULL,
-    data TIMESTAMP
+    dataPostagem TIMESTAMP
 );
         
 CREATE TABLE comentarios (
@@ -61,7 +61,7 @@ CREATE TABLE comentarios (
     postID INTEGER REFERENCES postagens(id),
     userID INTEGER REFERENCES usuarios(id),
     conteudo TEXT NOT NULL,
-    data TIMESTAMP
+    dataComentario TIMESTAMP
 );
         
         
@@ -69,7 +69,7 @@ CREATE TABLE notificacoes (
     id SERIAL PRIMARY KEY,
     userID INTEGER REFERENCES usuarios(id),
     mensagem VARCHAR(255) NOT NULL,
-    data TIMESTAMP,
+    dataNotificacao TIMESTAMP,
     lida BOOLEAN,
 );
        
