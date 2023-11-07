@@ -19,19 +19,19 @@
       <div class="cabecalho-fomulario">
         <h1>Cadastre-se</h1>
         <p>Faça conexões por todo o mundo</p>
-        <form class="row g-3" className="formulario" method="POST" th:object="${usuario}" enctype="multipart/form-data"></form>>
-          <div class="col-md-6">
-            <label for="name" class="form-label">Primeiro Nome</label>
-            <input type="name" class="form-control" id="nome" />
-          </div>
-          <div class="col-md-6">
-            <label for="lastname" class="form-label">Sobrenome</label>
-            <input type="lastname" class="form-control" id="sobrenome"/>
-          </div>
+        <form class="row g-3" className="formulario" method="POST" th:object="${usuario}" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Primeiro Nome</label>
+          <input type="name" class="form-control" id="nome">
+      </div>
+      <div class="col-md-6">
+          <label for="lastname" class="form-label">Sobrenome</label>
+          <input type="lastname" class="form-control" id="sobrenome">
+      </div>
+        
           <div class="col-12">
             <label for="exampleInputEmail1" class="form-label"
-              >E-mail</label
-            >
+              >E-mail</label>
             <input type="email" class="form-control" id="email"/>
           </div>
           <div class="col-12">
@@ -48,7 +48,7 @@
       </div>
       <a class="link-cadastre-se" href="">Tem conta? Login aqui</a>
     </div>
-
+  </form>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
