@@ -1,147 +1,210 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+ 
 }
 
 body {
-    background-color: rgb(255, 241, 255);
+    background-color: #B378FF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom left;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    height: 100vh; 
+    overflow: hidden;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    position: fixed;
+
+.container-formulario {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 400px;
+   height: 550px;
+   border-radius: 35px;
+   background-color: #fff;
+   border: 1px solid #B378FF;
+   margin: 2rem;
+   padding: 30px;
+
+
+}   
+
+.cabecalho-fomulario {
+    text-align: center;
+}
+
+.cabecalho-fomulario p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.main-formulario {
+    width: 80%;
+}
+
+.form-label, .link-referencia, a { 
+    text-decoration: none;
+    color: #706273;
+}
+
+a:hover {
+    color: #B378FF;
+}
+
+
+.img-formulario {
+    display: none;
+}
+
+
+.main-formulario input {
+    border: 1px solid #B378FF; 
+    border-radius: 15px; 
+    height: 45px;
+}
+
+.main-formulario input:focus {
+    border: 1px solid #B378FF; 
+    box-shadow: none;
+    background-color: #faf2ff ;
+}
+
+#botao-formulario {
+    width: 200px;
+    color: #B378FF;
+    border: 1px solid #B378FF ;
+    
+   
+}
+
+#botao-formulario:hover {
     background-color: #B378FF;
     color: white;
-    padding: 0.5rem;
-    top: 0;
-    width: 100%;
-    padding: 30px;
 }
-
-.menu ul {
-    list-style: none;
+.col-12 {
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+
+}
+.link-esqueceuSenha {
+    bottom: 0;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
 
-.search-user input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-}
-
-.search-user img, .user-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px;
-}
-.user-info {
+.container-botoes {
     display: flex;
-
-}
-main {
-    display: flex;
-    justify-content:center;
-    background-color: red;
+    flex-direction: column;
     align-items: center;
 }
 
-.container-principal {
-
-    background-color: blue;
-
-
-
+.container-formulario p {
+    text-align: center; 
+    color: #B378FF;
 }
+@media screen and (min-height: 1080px) {
+    .container-formulario {
+        width: 500px;
+        height: 650px;
 
-.logo {
-    width: 160px;
-}
-
-
-
-.post-container {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    border: 1px solid #B378FF;
-    background: #FFF;
-    resize: vertical;
-    justify-content:space-between ;
-}
-
-.post-container h3 {
-    color:  #B378FF;
-    font-size: x-large;
-}
-textarea {
-   height: 150px;
-}
-
-.post-container button, .adicionarTarefa button {
-    margin-top: 10px;
-    width: 100px;
-    background-color: #B378FF;
-    color: white;
-    border: none;
-    padding: 6px 20px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.feed {
-    margin-top: 1rem;
-    padding-bottom: 3rem;
-    border-radius: 5px;
-    overflow-y: auto;
-}
-
-
-h4 {
-    color: #9c51ff;
-}
-
-@media screen and (max-width: 900px) {
-    .search-user {
-        display: none;
+    }
+    .img-formulario {
+        display: block;
+        width: 170px;
     }
 }
 
-@media screen and (max-width: 740px) {
-    .lateral {
-        display: none;
+
+@media screen and (max-width: 760px) {
+    body {
+        display: flex;
+        justify-content: center;
     }
-    header {
+    .container-formulario {
+        width: 80%;
+        height: 92%;
+    }
+    .img-formulario {
+        display: block;
+        width: 195px;
+    }
+}
+
+@media screen  and (max-width: 720px) {
+   * {
+        overflow:visible ; 
+    }
+    .section-about {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .container-principal {
-        margin: 30px 0 0 0;
-    }
-    .post-container h3 {
-        text-align: center;
+
+    .section-about div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
 }
-@media screen and (max-width: 492px) {
-    .post-container {
-        padding: 40px;
-    }
 
-
-    .post-container textarea {
-        margin-top: 20px;
+@media screen and (max-height: 700px) {
+    .img-formulario {
+        display: none;
     }
 }
+
+@media screen and (max-height: 490px) {
+    .img-formulario {
+        display: none;
+    }
+    .logincmGmail {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 555px), screen and (max-width: 300px) {
+    .container-formulario {
+        width: 95%;
+        height: 90%;
+        margin: 10px;
+    }
+
+}
+@media screen and (max-width: 200px) {
+    body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+    }
+    .container-formulario {
+            height: 55%;
+            margin: 10px;
+    }
+    .container-formulario p {
+            display: none;
+    }
+    .img-formulario,
+    .logincmGmail {
+            display: none;
+        }
+    form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+    }
+    .link-cadastre-se {
+            position: absolute;
+            bottom: 0;
+    }
+    }
+
+
