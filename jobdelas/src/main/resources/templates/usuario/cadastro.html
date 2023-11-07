@@ -19,34 +19,34 @@
       <div class="cabecalho-fomulario">
         <h1>Cadastre-se</h1>
         <p>Faça conexões por todo o mundo</p>
-        <form class="row g-3" className="formulario">
+        <form class="row g-3" className="formulario" method="POST" th:object="${usuario}" enctype="multipart/form-data"></form>>
           <div class="col-md-6">
             <label for="name" class="form-label">Primeiro Nome</label>
-            <input type="name" class="form-control" id="inputEmail4" />
+            <input type="name" class="form-control" id="nome" />
           </div>
           <div class="col-md-6">
             <label for="lastname" class="form-label">Sobrenome</label>
-            <input type="lastname" class="form-control" />
+            <input type="lastname" class="form-control" id="sobrenome"/>
           </div>
           <div class="col-12">
             <label for="exampleInputEmail1" class="form-label"
-              >Telefone ou E-mail</label
+              >E-mail</label
             >
-            <input type="email" class="form-control" />
+            <input type="email" class="form-control" id="email"/>
           </div>
           <div class="col-12">
             <label for="password" class="form-label">Senha</label>
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" id="senha"/>
           </div>
           <div class="col-12">
-            <button id="botao-formulario" class="btn" role="button">
+            <button id="botao-formulario" class="btn" role="button" type="submit">
               Cadastrar
             </button>
           </div>
           <div class="col-12"><p>OU</p></div>
         </form>
       </div>
-      <a class="link-cadastre-se" href="login.html">Tem conta? Login aqui</a>
+      <a class="link-cadastre-se" href="">Tem conta? Login aqui</a>
     </div>
 
     <script
