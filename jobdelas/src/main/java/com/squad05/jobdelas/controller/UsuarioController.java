@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.squad05.jobdelas.model.UsuarioModel;
+import com.squad05.jobdelas.model.Usuario;
 import com.squad05.jobdelas.repository.UsuarioRepository;
 
 @Controller
@@ -21,12 +21,12 @@ public class UsuarioController {
     public ModelAndView cadastrar() {
         ModelAndView modelAndView = new ModelAndView("/usuario/cadastro.html");
 
-        modelAndView.addObject("usuario", new UsuarioModel());
+        modelAndView.addObject("usuario", new Usuario());
         return modelAndView;
     }
 
     @PostMapping("cadastrar")
-    public ModelAndView cadastrar(UsuarioModel usuario) {
+    public ModelAndView cadastrar(Usuario usuario) {
         ModelAndView modelAndView = new ModelAndView("redirect:/login");
 
         usuarioRepository.save(usuario);
