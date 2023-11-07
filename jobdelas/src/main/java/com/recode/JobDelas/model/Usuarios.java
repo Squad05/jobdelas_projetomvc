@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.Id;
 
 @Entity
 @AllArgsConstructor
@@ -13,8 +12,7 @@ import jakarta.persistence.Id;
 @Getter
 @NoArgsConstructor
 public class Usuarios {
-    @Id
-    private int id;
+    private Long id;
     private String nome;
     private String email;
     private String senha;
