@@ -15,4 +15,8 @@ public class Usuario {
     private String resumo;
     private String telefone;
     private String linkDoPorfolio;
+
+    public Usuario() {
+
+    }
 }
