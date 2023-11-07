@@ -2,14 +2,14 @@ package com.recode.JobDelas.model;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @AllArgsConstructor
 @EqualsAndHashCode
-@Getter
+@Data
 @NoArgsConstructor
 public class Usuarios {
     private Long id;
