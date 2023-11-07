@@ -7,31 +7,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.squad05.jobdelas.model.Usuario;
-// import com.squad05.jobdelas.repository.UsuarioRepository;
+import com.squad05.jobdelas.model.Usuarios;
+import com.squad05.jobdelas.repository.UsuarioRepository;
 
 @Controller
 @RequestMapping("/")
 public class UsuarioController {
 
-    // @Autowired
-    // private UsuarioRepository usuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping("cadastrar")
     public ModelAndView cadastrar() {
         ModelAndView modelAndView = new ModelAndView("/usuario/cadastro.html");
 
-        // modelAndView.addObject("usuario", new Usuario());
+        modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;
     }
 
-    // @PostMapping("cadastrar")
-    // public ModelAndView cadastrar(Usuario usuario) {
-    // ModelAndView modelAndView = new ModelAndView("redirect:/login");
+    @PostMapping("cadastrar")
+    public ModelAndView cadastrar(Usuarios usuario) {
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
 
-    // usuarioRepository.save(usuario);
+        usuarioRepository.save(usuario);
 
-    // return modelAndView;
+        return modelAndView;
 
-    // }
+    }
 }

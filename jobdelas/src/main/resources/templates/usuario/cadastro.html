@@ -19,24 +19,24 @@
       <div class="cabecalho-fomulario">
         <h1>Cadastre-se</h1>
         <p>Faça conexões por todo o mundo</p>
-        <form class="row g-3" className="formulario" method="POST" th:object="${usuario}" enctype="multipart/form-data">
+        <form method="POST" class="row g-3" className="formulario"  th:object="${usuario}" enctype="multipart/form-data">
         <div class="col-md-6">
           <label for="name" class="form-label">Primeiro Nome</label>
-          <input type="name" class="form-control" id="nome">
+          <input type="text" class="form-control" id="nome" th:field="*{nome}">
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
           <label for="lastname" class="form-label">Sobrenome</label>
           <input type="lastname" class="form-control" id="sobrenome">
-      </div>
+      </div> -->
         
           <div class="col-12">
             <label for="exampleInputEmail1" class="form-label"
               >E-mail</label>
-            <input type="email" class="form-control" id="email"/>
+            <input type="text" class="form-control" id="email"  th:field="*{email}"/>
           </div>
           <div class="col-12">
             <label for="password" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senha"/>
+            <input type="text" class="form-control" id="senha"  th:field="*{senha}"/>
           </div>
           <div class="col-12">
             <button id="botao-formulario" class="btn" role="button" type="submit">
