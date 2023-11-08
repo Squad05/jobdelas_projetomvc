@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atualizar Usuário</title>
+  </head>
+  <body>
+    <h1>Atualizar Usuário</h1>
+    <form
+      method="PUT"
+      className="formulario"
+      th:object="${usuario}"
+      enctype="multipart/form-data"
+    >
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" required />
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required />
+
+      <label for="resumo">Resumo:</label>
+      <textarea id="resumo"></textarea>
+
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" required />
+
+      <label for="portfolio">Link para o Portfólio:</label>
+      <input type="text" id="portfolio" />
+
+      <button type="submit">Atualizar</button>
+    </form>
+  </body>
+</html>
