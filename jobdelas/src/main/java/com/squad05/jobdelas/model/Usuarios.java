@@ -18,10 +18,10 @@ public class Usuarios {
     private String nome;
     private String email;
     private String senha;
-    // private String foto;
-    // private String resumo;
-    // private String telefone;
-    // private String linkDoPorfolio;
+    private String foto;
+    private String resumo;
+    private String telefone;
+    private String linkDoPorfolio;
 
     public Usuarios() {
 
