@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+
 @Controller
 @RequestMapping("/")
 public class UsuarioController {
@@ -31,10 +33,24 @@ public class UsuarioController {
             @RequestParam("sobrenome") String sobrenome) {
         ModelAndView modelAndView = new ModelAndView("redirect:/");
 
+        var usuarioEncontrado = this.usuarioRepository.findByEmail(usuario.getEmail());
+
+        if (usuarioEncontrado != null) {
+            modelAndView.setViewName("/usuario/cadastro.html");
+            modelAndView.addObject("usuario", usuario);
+            modelAndView.addObject("erro", "Usuario já existente");
+            return modelAndView;
+        }
+
         String nomeCompleto = primeiroNome + " " + sobrenome;
         usuario.setNome(nomeCompleto);
-        usuarioRepository.save(usuario);
+        // O `withDefault` indica que está usandoa a biblitoeca do BCrypt,
+        // `hashToString´ gera o valor do hash , 12 é o custo da função, quanto maior,
+        // mais seguro. E o `toCharArray´ converte a senha em array de caracteres
+        var senhaCriptografa = BCrypt.withDefaults().hashToString(12, usuario.getSenha().toCharArray());
+        usuario.setSenha(senhaCriptografa);
 
+        usuarioRepository.save(usuario);
         return modelAndView;
 
     }
