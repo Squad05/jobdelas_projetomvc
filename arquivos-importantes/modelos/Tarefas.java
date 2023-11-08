@@ -11,7 +11,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Entity
 public class Tarefas {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +21,6 @@ public class Tarefas {
     private Boolean concluida;
 
     public Tarefas() {
-        
+
     }
 }
