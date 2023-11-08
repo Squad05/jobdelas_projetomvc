@@ -85,7 +85,7 @@ CREATE TABLE tarefas (
 CREATE TABLE mensagens (
     id SERIAL PRIMARY KEY,
     remetenteID INTEGER REFERENCES usuarios(id),
-    destinarioID INTEGER REFERENCES usuarios(id),
+    destinatarioID INTEGER REFERENCES usuarios(id),
     mensagem TEXT,
     dataDeEnvio TIMESTAMP,
     lida BOOLEAN
