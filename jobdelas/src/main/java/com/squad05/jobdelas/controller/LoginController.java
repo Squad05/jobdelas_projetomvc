@@ -20,13 +20,18 @@ public class LoginController {
         return "login/login.html";
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public String logar(Model model, Usuarios usuario, String lembrar) {
-        Usuarios usuarioLogado = this.repo.Login(usuario.getEmail(), usuario.getSenha());
-        if (usuarioLogado != null) {
-            return "redirect:/";
+        try {
+            Usuarios usuarioLogado = this.repo.Login(usuario.getEmail(), usuario.getSenha());
+            if (usuarioLogado != null) {
+                return "redirect:/";
+            }
+            model.addAttribute("erro", "Usuário ou senha inválidos");
+        } catch (Exception e) {
+            model.addAttribute("erro", "Ocorreu um erro durante o login");
         }
-        model.addAttribute("erro", "Usuario ou senha invalidos");
         return "login/index";
     }
 }
+
