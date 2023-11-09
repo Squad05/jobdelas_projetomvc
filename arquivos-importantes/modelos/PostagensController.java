@@ -31,7 +31,6 @@ public class PostagensController {
             @RequestParam("data") String data) {
         ModelAndView modelAndView = new ModelAndView("redirect:/");
 
-        String postagemCompleta = conteudo + data;
         postagens.setConteudo(postagemCompleta);
         postagensRepository.save(postagens);
 

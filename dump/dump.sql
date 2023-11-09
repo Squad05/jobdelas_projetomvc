@@ -70,7 +70,7 @@ CREATE TABLE notificacoes (
     userID INTEGER REFERENCES usuarios(id),
     mensagem VARCHAR(255) NOT NULL,
     dataNotificacao TIMESTAMP,
-    lida BOOLEAN,
+    lida BOOLEAN
 );
        
 CREATE TABLE tarefas (
