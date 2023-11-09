@@ -16,8 +16,8 @@ public class LoginController {
     private UsuarioRepository repo;
 
     @GetMapping("/login")
-    public String index() {
-        return "login/index";
+    public String login() {
+        return "login/login.html";
     }
 
     @PostMapping
