@@ -40,7 +40,7 @@ public class UsuarioController {
         if (usuarioEncontrado != null) {
             modelAndView.setViewName("/usuario/cadastro.html");
             modelAndView.addObject("usuario", usuario);
-            modelAndView.addObject("erro", "E-Mail já existente");
+            modelAndView.addObject("erro", "Email já existente");
             return modelAndView;
         }
 

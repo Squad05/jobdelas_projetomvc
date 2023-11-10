@@ -40,6 +40,7 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <span th:if="${erro}" th:text="${erro}" style="color: red; font-style: italic;"></span>
                     <button id="botao-formulario" class="btn" role="button" type="submit">
                         Entrar
                     </button>

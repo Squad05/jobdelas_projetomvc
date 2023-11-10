@@ -37,7 +37,7 @@ public class LoginController {
 
         if (usuarioEncontrado == null) {
             modelAndView.setViewName("/login/login.html");
-            modelAndView.addObject("erro", "Usuário não encontrado");
+            modelAndView.addObject("erro", "Email ou senha incorretos");
             return modelAndView;
         }
 
@@ -50,7 +50,7 @@ public class LoginController {
             modelAndView.addObject("usuarioLogado", usuarioEncontrado);
         } else {
             modelAndView.setViewName("/login/login.html");
-            modelAndView.addObject("erro", "Senha incorreta");
+            modelAndView.addObject("erro", "Email ou senha incorretos");
         }
 
         return modelAndView;
