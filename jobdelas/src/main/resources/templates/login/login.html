@@ -24,17 +24,17 @@
         </div>
 
         <div class="main-formulario">
-            <form method="GET" className="formulario" enctype="multipart/form-data">
+            <form method="POST" className="formulario" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input style="border-radius: 15px; border: 1px solid #B378FF; height: 45px;" type="email"
-                        class="form-control" id="email" aria-describedby="emailHelp" required>
+                        class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
 
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
                     <input style="border: 1px solid #B378FF; border-radius: 15px; height: 45px;" type="password"
-                        class="form-control" id="senha" required>
+                        class="form-control" id="senha" name="senha" required>
                     <div style="display: flex; justify-content: flex-end;">
                         <a class="link-referencia" href="#">Esqueceu a senha?</a>
                     </div>
