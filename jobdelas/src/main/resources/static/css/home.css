@@ -5,9 +5,15 @@
  
 }
 
+:root{
+    --rosa-primario: #B378FF;
+    --branco: #fff;
+    --cinza-claro: #706273;
+}
+
 body {
     background-image: url(../img/Backimg.svg);
-    background-color: #B378FF;
+    background-color: var(--rosa-primario);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -28,8 +34,8 @@ body {
    width: 400px;
    height: 550px;
    border-radius: 35px;
-   background-color: #fff;
-   border: 1px solid #B378FF;
+   background-color: var(--branco);
+   border: 1px solid var(--rosa-primario);
    margin: 2rem;
    padding: 30px;
 
@@ -51,11 +57,11 @@ body {
 
 .form-label, .link-referencia, a { 
     text-decoration: none;
-    color: #706273;
+    color: var(--cinza-claro);
 }
 
 a:hover {
-    color: #B378FF;
+    color: var(--rosa-primario);
 }
 
 
@@ -65,28 +71,28 @@ a:hover {
 
 
 .main-formulario input {
-    border: 1px solid #B378FF; 
+    border: 1px solid var(--rosa-primario); 
     border-radius: 15px; 
     height: 45px;
 }
 
 .main-formulario input:focus {
-    border: 1px solid #B378FF; 
+    border: 1px solid var(--rosa-primario); 
     box-shadow: none;
-    background-color: #faf2ff ;
+    background-color: var(--branco) ;
 }
 
 #botao-formulario {
     width: 200px;
-    color: #B378FF;
-    border: 1px solid #B378FF ;
+    color: var(--rosa-primario);
+    border: 1px solid var(--rosa-primario);
     
    
 }
 
 #botao-formulario:hover {
-    background-color: #B378FF;
-    color: white;
+    background-color: var(--rosa-primario);
+    color: var(--branco);
 }
 .col-12 {
     display: flex;
@@ -107,7 +113,7 @@ a:hover {
 
 .container-formulario p {
     text-align: center; 
-    color: #B378FF;
+    color: var(--rosa-primario);
 }
 @media screen and (min-height: 1080px) {
     .container-formulario {
