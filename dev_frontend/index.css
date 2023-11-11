@@ -1,7 +1,10 @@
+* {
+    outline: none !important;
 
+}
 
 .container_postagem {
-    background-color: red;
+    background-color:#faf0ff;
 }
 
 .container {
@@ -36,9 +39,15 @@
     color: #B378FF;
   }
 
+  button {
+    background-color: #B378FF !important;
+
+}
+
+
+
   .btn-primary {
     margin-top: 10px;
-    background-color: #B378FF;
     color: #ffffff;
     font-weight: 600;
     font-size: 1.4rem;
@@ -46,4 +55,57 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
+    
   }
+
+
+  .modal-content {
+    border-radius: 10px 10px 0px 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    display: flex;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #B378FF;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+  }
+    .modal-title {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+.botao_criarpostagem {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color:white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.form-group label {
+    color: #B378FF;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    border: 2px solid #B378FF;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+
+
