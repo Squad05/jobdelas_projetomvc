@@ -30,6 +30,13 @@ public class UsuarioController {
         return modelAndView;
     }
 
+    @GetMapping("perfil")
+    public ModelAndView perfil() {
+        ModelAndView modelAndView = new ModelAndView("/usuario/perfil.html");
+
+        return modelAndView;
+    }
+
     @PostMapping("cadastrar")
     public ModelAndView cadastrar(Usuarios usuario, @RequestParam("nome") String primeiroNome,
             @RequestParam("sobrenome") String sobrenome) {
