@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.squad05.jobdelas.model.Usuarios;
-import java.util.List;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuarios, Long> {
