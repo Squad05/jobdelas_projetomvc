@@ -25,7 +25,6 @@ public class Usuarios {
     private String foto;
     private String resumo;
     private String telefone;
-
     private String linkDoPorfolio;
 
     public Usuarios() {

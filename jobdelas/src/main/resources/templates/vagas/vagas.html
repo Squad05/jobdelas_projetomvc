@@ -1,104 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CardVagas</title>
-  </head>
 
-  <body>
-    <section class="input-group">
-      <span class="input-group-text">Cargo</span>
-      <input
-        type="text"
-        aria-label="Cargo"
-        class="form-control"
-        id="inputCargo"
-      />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/index.css">
+  
+  
+  <title>Vagas</title>
+</head>
 
-      <span class="input-group-text">Localização</span>
-      <input
-        type="text"
-        aria-label="Localização"
-        class="form-control"
-        id="inputLocalizacao"
-      />
+<body>
+  <section class="input-pesquisa">
+    <span class="input-group-text">Cargo</span>
+    <input type="text" aria-label="Cargo" placeholder="Cargo" class="form-control" id="inputCargo" />
 
-      <button class="btn btn-primary">Buscar Vagas</button>
-    </section>
+    <span class="input-group-text">Localização</span>
+    <input type="text" aria-label="Localização" placeholder="Localização" class="form-control" id="inputLocalizacao" />
+    <button class="buscar-vagas">Buscar Vagas</button>
+  </section>
 
-    <section>
-      <div class="vagas">
-        <h2>Função</h2>
-        <p>Nome da empresa</p>
-        <p>Salário</p>
-        <p>Sobre</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div>
-          <p>Localização:</p>
-          <button>Aplicar</button>
-        </div>
-        <span>Status da vaga</span>
+  <section class="container-vagas">
+
+    <div class="vagas">
+      <h2 class="funcao">Função</h2>
+      <p class="empresa">Nome da empresa</p>
+      <p class="salario">Salário</p>
+      <p class="sobre">Sobre</p>
+      <p class="sobre-vaga">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
+        qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
+        porro. Dolor eveniet ducimus quidem doloremque maxime sint
+        voluptatibus omnis itaque!
+      </p>
+      <div class="container-info-localizacao">
+        <p class="localizacao">Localização: <span>Algum lugar</span></p>
+        <button type="submit" class="aplicar">Aplicar</button>
       </div>
+      <span class="status">Status da vaga</span>
+    </div>
 
-      <div class="vagas">
-        <h2>Função</h2>
-        <p>Nome da empresa</p>
-        <p>Salário</p>
-        <p>Sobre</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div>
-          <p>Localização:</p>
-          <button>Aplicar</button>
-        </div>
-        <span>Status da vaga</span>
+    <div class="vagas">
+      <h2 class="funcao">Função</h2>
+      <p class="empresa">Nome da empresa</p>
+      <p class="salario">Salário</p>
+      <p class="sobre">Sobre</p>
+      <p class="sobre-vaga">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
+        qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
+        porro. Dolor eveniet ducimus quidem doloremque maxime sint
+        voluptatibus omnis itaque!
+      </p>
+      <div class="container-info-localizacao">
+        <p class="localizacao">Localização: <span>Algum lugar</span></p>
+        <button type="submit" class="aplicar">Aplicar</button>
       </div>
+      <span class="status">Status da vaga</span>
+    </div>
 
-      <div class="vagas">
-        <h2>Função</h2>
-        <p>Nome da empresa</p>
-        <p>Salário</p>
-        <p>Sobre</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div>
-          <p>Localização:</p>
-          <button>Aplicar</button>
-        </div>
-        <span>Status da vaga</span>
+    <div class="vagas">
+      <h2 class="funcao">Função</h2>
+      <p class="empresa">Nome da empresa:</p>
+      <p class="salario">Salário</p>
+      <p class="sobre">Sobre</p>
+      <p class="sobre-vaga">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
+        qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
+        porro. Dolor eveniet ducimus quidem doloremque maxime sint
+        voluptatibus omnis itaque!
+      </p>
+      <div class="container-info-localizacao">
+        <p class="localizacao">Localização: <span>Algum lugar</span></p>
+        <button type="submit" class="aplicar">Aplicar</button>
       </div>
+      <span class="status">Status da vaga</span>
+    </div>
 
-      <div class="vagas">
-        <h2>Função</h2>
-        <p>Nome da empresa</p>
-        <p>Salário</p>
-        <p>Sobre</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div>
-          <p>Localização:</p>
-          <button>Aplicar</button>
-        </div>
-        <span>Status da vaga</span>
+    <div class="vagas">
+      <h2 class="funcao">Função</h2>
+      <p class="empresa">Nome da empresa</p>
+      <p class="salario">Salário</p>
+      <p class="sobre">Sobre</p>
+      <p class="sobre-vaga">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
+        qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
+        porro. Dolor eveniet ducimus quidem doloremque maxime sint
+        voluptatibus omnis itaque!
+      </p>
+      <div class="container-info-localizacao">
+        <p class="localizacao">Localização: <span>Algum lugar</span></p>
+        <button type="submit" class="aplicar">Aplicar</button>
       </div>
-    </section>
-  </body>
+      <span class="status">Status da vaga</span>
+    </div>
+  </section>
+
+</body>
+
 </html>
