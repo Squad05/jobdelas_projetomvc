@@ -3,12 +3,12 @@
     margin: 0 ;
     padding: 0; 
 }
-main {
-    background-color: rgb(255, 226, 253);
+body {
+    background-color: #B378FF;
 }
 
 button:focus {
-    border-color: rgb(0, 102, 255)7ff; 
+    border-color: #006ff7; 
     -webkit-box-shadow: none; 
     box-shadow: none !important; 
 }
@@ -21,7 +21,6 @@ button:focus {
 .container_principal {
     margin: 40px;
     display: flex;
-    background-color: redw;
     align-items: baseline;
     gap: 50px;
     justify-content: space-between;
@@ -32,20 +31,19 @@ button:focus {
 .container_postagem {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alterar para flex-start para alinhar os itens à esquerda */
-    width: 75%; /* Utilizar o restante do espaço disponível */
+    gap: 30px;
+    width: 75%; 
 }
 
   .card {
-    background-color: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    gap: 15px;
   }
-/* 
-  .card-body {
-  } */
+
 
   .user-photo {
     height: 80px;
@@ -70,7 +68,7 @@ button:focus {
     font-weight: 600;
     font-size: 1.2rem;
     padding: 8px 40px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -78,6 +76,8 @@ button:focus {
   .btn-primary:hover {
     background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
     border: 1px solid #B378FF;
+    outline: 1px solid #B378FF;
+
 }
 
   .modal-content {
@@ -131,5 +131,84 @@ button:focus {
   .lateral_home {
     width: 20%; /* Definir uma largura fixa para a lateral_home */
     background-color: white;
-    padding: 20px; /* Adicionar algum espaçamento interno */
+       padding: 20px;
+/* Adicionar algum espaçamento interno */
+}
+
+/* Adicione ao seu CSS existente */
+
+/* Estilo geral para a área de postagens */
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre as postagens */
+}
+
+/* Estilo para cada postagem individual */
+.post {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilo para a informação do usuário na postagem */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    margin: 0;
+    color: #B378FF;
+    font-size: 1.2rem;
+}
+
+/* Estilo para a data da postagem */
+.post-date {
+    color: #777; /* Cor mais suave para a data */
+    margin-bottom: 10px;
+}
+
+/* Estilo para o conteúdo da postagem */
+.post-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333; /* Cor do texto mais escuro */
+}
+
+/* Estilo para os botões de ação na postagem */
+.post-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+/* Estilo para os botões específicos */
+.like-button, .share-button, .comment-button {
+    background-color: #B378FF;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Adicione transições suaves nos botões para um efeito mais bonito */
+.like-button, .share-button, .comment-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efeito de hover nos botões */
+.like-button:hover, .share-button:hover, .comment-button:hover {
+    background-color: #9254DE; /* Cor mais escura no hover */
 }
