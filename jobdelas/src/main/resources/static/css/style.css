@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Tarefas */
+.form-group {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-titulo {
+    text-align: center;
+}
+
+.container-input-tarefas {
+    margin-bottom: 20px;
+}
+
+.tituloTarefa,
+.descricao {
+    border: 2px solid #B378FF;
+    border-radius: 5px;
+    padding: 10px;
+    width: 92%;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+
+.botao_addTarefa {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #B378FF;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.botao_addTarefa:hover {
+    background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
+    outline: 1px solid #B378FF;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 90%;
+}
+
+/* Fim Tarefas */
+
+/* Começo vagas */
+.input-pesquisa {
+    background-color: #B378FF;
+    height: 250px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.buscar-vagas {
+    background-color: #B378FF;
+    color: #fff;
+    border: none;
+}
+
+.container-vagas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.vagas {
+    width: 550px;
+    padding: 20px;
+    flex-basis: 290px;
+    border: 1px solid #B378FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.funcao {
+    margin-top: 0;
+}
+
+
+.container-info-localizacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sobre {
+    padding: 7px;
+    background-color: #B378FF;
+    width: 60px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.aplicar {
+    height: 27px;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    background-color: #B378FF;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.status {
+    color: #706273;
+}
