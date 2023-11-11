@@ -14,7 +14,6 @@ import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/")
@@ -30,10 +29,10 @@ public class UsuarioController {
         modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;
     }
-    @Valid
+
     @PostMapping("cadastrar")
     public ModelAndView cadastrar(Usuarios usuario, @RequestParam("nome") String primeiroNome,
-            @RequestParam("sobrenome") String sobrenome ) {
+            @RequestParam("sobrenome") String sobrenome) {
         ModelAndView modelAndView = new ModelAndView("redirect:/");
 
         var usuarioEncontrado = this.usuarioRepository.findByEmail(usuario.getEmail());
