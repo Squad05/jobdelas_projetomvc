@@ -56,108 +56,17 @@
           <input type="text" placeholder="Pesquisar" />
           <i class="fa fa-search"></i>
         </div>
-        <button class="botao-perfil" data-toggle="modal" data-target="#myModal">
+        <button
+          class="botao-perfil"
+          data-toggle="modal"
+          data-target="#editarModal"
+        >
           <img
             src="/img/iconfoto.png"
             class="img_perfil"
             alt="Imagem no Botão"
           />
         </button>
-
-        <!-- Modal -->
-        <div class="modal" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <!-- Cabeçalho do Modal -->
-              <div class="modal-header">
-                <h4 class="modal-title">Perfil</h4>
-                <button type="button" class="close" data-dismiss="modal">
-                  &times;
-                </button>
-              </div>
-
-              <!-- Corpo do Modal -->
-              <div class="modal-body">
-                <form
-                  method="PUT"
-                  class="formulario"
-                  th:object="${usuario}"
-                  enctype="multipart/form-data"
-                >
-                  <div class="form-group">
-                    <label for="imageUpload">Anexar Foto de Perfil:</label>
-                    <input
-                      type="file"
-                      class="form-control-file"
-                      id="imageUpload"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nome"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="email"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="senha"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="resumo">Resumo:</label>
-                    <textarea class="form-control" id="resumo"></textarea>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="telefone"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="portfolio">Link para o Portfólio:</label>
-                    <input type="text" class="form-control" id="portfolio" />
-                  </div>
-                </form>
-              </div>
-
-              <!-- Rodapé do Modal -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-dismiss="modal"
-                >
-                  Fechar
-                </button>
-                <button type="submit" class="btn btn-primary">Atualizar</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
     <main>
@@ -194,7 +103,7 @@
               id="btnAdicionarTarefa"
               class="botao_criarpostagem"
               data-toggle="modal"
-              data-target="#myModal"
+              data-target="#tarefaModal"
             >
               Adicionar Tarefa
             </button>
@@ -213,63 +122,6 @@
               >
                 Postar
               </button>
-            </div>
-          </div>
-
-          <div class="modal" id="writePostModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Compartilhar Momento Especial</h5>
-                  <button type="button" class="close" data-dismiss="modal">
-                    &times;
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <textarea
-                      class="form-control"
-                      id="postTextarea"
-                      rows="4"
-                      placeholder="Descreva seu momento especial..."
-                    ></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="imageUpload">Anexar Imagem/Arquivo:</label>
-                    <input
-                      type="file"
-                      class="form-control-file"
-                      id="imageUpload"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="tagsInput">Adicionar Tags/Assuntos:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="tagsInput"
-                      placeholder="Separadas por vírgulas"
-                    />
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="botao_criarpostagem cancelar"
-                    data-dismiss="modal"
-                  >
-                    Cancelar
-                  </button>
-                  <button
-                    type="button"
-                    class="botao_criarpostagem compartilhar"
-                    onclick="submitPost()"
-                  >
-                    Compartilhar
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -363,9 +215,10 @@
       </section>
 
       <!-- Modals -->
+
       <div
         class="modal fade"
-        id="myModal"
+        id="tarefaModal"
         tabindex="-1"
         role="dialog"
         aria-labelledby="myModalLabel"
@@ -413,6 +266,143 @@
                   </button>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="writePostModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Compartilhar Momento Especial</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="postTextarea"
+                  rows="4"
+                  placeholder="Descreva seu momento especial..."
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="imageUpload">Anexar Imagem/Arquivo:</label>
+                <input type="file" class="form-control-file" id="imageUpload" />
+              </div>
+
+              <div class="form-group">
+                <label for="tagsInput">Adicionar Tags/Assuntos:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tagsInput"
+                  placeholder="Separadas por vírgulas"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="botao_criarpostagem cancelar"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                class="botao_criarpostagem compartilhar"
+                onclick="submitPost()"
+              >
+                Compartilhar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="editarModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Cabeçalho do Modal -->
+            <div class="modal-header">
+              <h4 class="modal-title">Perfil</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <!-- Corpo do Modal -->
+            <div class="modal-body">
+              <form
+                method="PUT"
+                class="formulario"
+                th:object="${usuario}"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <label for="imageUpload">Anexar Foto de Perfil:</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="imageUpload"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome:</label>
+                  <input type="text" class="form-control" id="nome" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" class="form-control" id="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senha">Senha:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="senha"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="resumo">Resumo:</label>
+                  <textarea class="form-control" id="resumo"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="telefone">Telefone:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telefone"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="portfolio">Link para o Portfólio:</label>
+                  <input type="text" class="form-control" id="portfolio" />
+                </div>
+              </form>
+            </div>
+
+            <!-- Rodapé do Modal -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="submit" class="btn btn-primary">Atualizar</button>
             </div>
           </div>
         </div>
