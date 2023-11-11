@@ -1,18 +1,40 @@
 * {
     outline: none !important;
-
+    margin: 0 ;
+    padding: 0; 
 }
+main {
+    background-color: rgb(255, 226, 253);
+}
+
+button:focus {
+    border-color: rgb(0, 102, 255)7ff; 
+    -webkit-box-shadow: none; 
+    box-shadow: none !important; 
+}
+.form-control:focus{ 
+    border-color: rgb(0, 102, 255)7ff; 
+    -webkit-box-shadow: none; 
+    box-shadow: none; 
+  }
+
+.container_principal {
+    margin: 40px;
+    display: flex;
+    background-color: redw;
+    align-items: baseline;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+
 
 .container_postagem {
-    background-color:#faf0ff;
-}
-
-.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+    flex-direction: column;
+    align-items: flex-start; /* Alterar para flex-start para alinhar os itens à esquerda */
+    width: 75%; /* Utilizar o restante do espaço disponível */
+}
 
   .card {
     background-color: #ffffff;
@@ -20,23 +42,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: center;
-    padding: 20px 40px;
   }
-
+/* 
   .card-body {
-    padding: 20px;
-  }
+  } */
 
   .user-photo {
-    width: 100px;
-    height: 100px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
   }
 
-  h3 {
+  .card-body h3 {
     color: #B378FF;
+    font-size: 1.4rem;
   }
 
   button {
@@ -47,18 +66,19 @@
 
 
   .btn-primary {
-    margin-top: 10px;
     color: #ffffff;
     font-weight: 600;
-    font-size: 1.4rem;
-    padding: 10px 50px;
+    font-size: 1.2rem;
+    padding: 8px 40px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
-
-    
   }
 
+  .btn-primary:hover {
+    background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
+    border: 1px solid #B378FF;
+}
 
   .modal-content {
     border-radius: 10px 10px 0px 10px;
@@ -96,7 +116,6 @@
 .form-group label {
     color: #B378FF;
     font-weight: bold;
-    margin-bottom: 5px;
   }
 
   .form-control {
@@ -105,7 +124,12 @@
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 5px;
   }
 
 
+
+  .lateral_home {
+    width: 20%; /* Definir uma largura fixa para a lateral_home */
+    background-color: white;
+    padding: 20px; /* Adicionar algum espaçamento interno */
+}
