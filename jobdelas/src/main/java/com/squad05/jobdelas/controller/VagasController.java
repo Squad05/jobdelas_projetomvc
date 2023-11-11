@@ -11,7 +11,7 @@ public class VagasController {
 
     @GetMapping("vagas")
     public ModelAndView vagas() {
-        ModelAndView modelAndView = new ModelAndView("/usuario/vagas.html");
+        ModelAndView modelAndView = new ModelAndView("/vagas/vagas.html");
 
         return modelAndView;
     }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Ambiente de Aprendizagem</title>
+    <!-- Adicione seus links para CSS e outras dependências aqui -->
+    <link rel="stylesheet" href="estilos.css" />
+    <!-- Adicione os links para Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Coluna 1: Ambiente de Aprendizagem e Cards de Curso -->
+      <div class="coluna">
+        <h2>Seu Ambiente de Aprendizagem</h2>
+
+        <!-- Título do Curso -->
+        <h3>Título do Curso</h3>
+
+        <!-- Card do Curso -->
+        <div class="card-curso">
+          <p>Descrição do Curso</p>
+        </div>
+
+        <!-- Lista de Aulas -->
+        <ul class="lista-aulas">
+          <!-- Aula 1 -->
+          <li class="aula">
+            <div class="titulo">Título da Aula 1</div>
+            <button
+              class="btn-assistir"
+              data-toggle="modal"
+              data-target="#aulaModal1"
+            >
+              Assistir Aula
+            </button>
+          </li>
+
+          <!-- Aula 2 -->
+          <li class="aula">
+            <div class="titulo">Título da Aula 2</div>
+            <button
+              class="btn-assistir"
+              data-toggle="modal"
+              data-target="#aulaModal2"
+            >
+              Assistir Aula
+            </button>
+          </li>
+
+          <!-- Adicione mais aulas conforme necessário -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modais para Aulas -->
+    <!-- Aula 1 -->
+    <div
+      class="modal fade"
+      id="aulaModal1"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="aulaModalLabel1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aulaModalLabel1">Título da Aula 1</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <video controls>
+              <source src="caminho/do/seu/video1.mp4" type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <p>Descrição detalhada da Aula 1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="aulaModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="aulaModalLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aulaModalLabel2">Título da Aula 2</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <video controls>
+              <source src="caminho/do/seu/video2.mp4" type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <p>Descrição detalhada da Aula 2.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
