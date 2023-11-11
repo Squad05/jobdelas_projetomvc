@@ -59,47 +59,41 @@
     <main>
       <section class="container_principal">
         <section class="lateral_home">
-          <nav>
-            <h3>Explorar</h3>
-            <ul>
-              <li>Notificações</li>
-              <li>Mensagens</li>
-              <li>Cursos</li>
-              <li>Vagas</li>
-            </ul>
-          </nav>
           <section class="compromissos">
-            <h3>Compromissos</h3>
-            <table class="agenda">
-              <tr>
-                <th>Domingo</th>
-                <th>Livre</th>
-              </tr>
-              <tr>
-                <th>Segunda</th>
-                <th>Boticario</th>
-              </tr>
-              <tr>
-                <th>Terça</th>
-                <th>Livre</th>
-              </tr>
-              <tr>
-                <th>Quarta</th>
-                <th>Livre</th>
-              </tr>
-              <tr>
-                <th>Quinta</th>
-                <th>Livre</th>
-              </tr>
-              <tr>
-                <th>Sexta</th>
-                <th>Boticario</th>
-              </tr>
-              <tr>
-                <th>Sábado</th>
-                <th>Livre</th>
-              </tr>
-            </table>
+            <h3>Lista de Tarefas</h3>
+
+            <!-- Tarefas -->
+            <div class="tarefa">
+              <div class="titulo-tarefa">Reunião com Equipe</div>
+              <div class="descricao-tarefa">
+                Preparar agenda para a reunião.
+              </div>
+              <div class="botoes-tarefa">
+                <button class="concluir-tarefa">
+                  <i class="fa fa-check"></i> Concluir
+                </button>
+                <button class="atualizar-tarefa">
+                  <i class="fa fa-edit"></i> Atualizar
+                </button>
+              </div>
+            </div>
+
+            <div class="tarefa">
+              <div class="titulo-tarefa">Projeto X</div>
+              <div class="descricao-tarefa">
+                Revisar código e fazer melhorias.
+              </div>
+            </div>
+
+            <!-- Botão para adicionar tarefa -->
+            <button
+              id="btnAdicionarTarefa"
+              class="botao_criarpostagem"
+              data-toggle="modal"
+              data-target="#myModal"
+            >
+              Adicionar Tarefa
+            </button>
           </section>
         </section>
 
@@ -263,9 +257,64 @@
           </div>
         </section>
       </section>
+
+      <!-- Modals -->
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content modaltarefa">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Lista de Tarefa</h4>
+              <button
+                type="button"
+                class="close btn-close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Qual sua tarefa?"
+                />
+                <textarea
+                  class="form-control"
+                  placeholder="Descrição da Tarefa"
+                  rows="3"
+                  style="max-height: 72px; overflow-y: auto"
+                ></textarea>
+                <small class="text-muted">Máximo de 3 linhas.</small>
+                <button type="button" class="btn btn-primary botao_addTarefa">
+                  Adicionar
+                </button>
+              </div>
+
+              <ul class="list-group" id="modalTaskList">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Tarefa 1
+                  <button type="button" class="btn btn-success">
+                    <i class="fa fa-check"></i> Concluir
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <script src="caminho-do-seu-arquivo-js/script.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
