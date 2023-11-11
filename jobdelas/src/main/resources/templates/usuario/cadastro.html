@@ -32,15 +32,11 @@
           <div class="col-12">
             <label for="exampleInputEmail1" class="form-label">E-mail</label>
             <input type="email" class="form-control" id="email" th:field="*{email}" required/>
+            <span th:if="${erro}" th:text="${erro}" style="color: red; font-style: italic;"></span>
           </div>
           <div class="col-12">
             <label for="password" class="form-label">Senha</label>
             <input type="password" class="form-control" id="senha" th:field="*{senha}" required/>
-          </div>
-
-          <!-- Bloco para exibir a mensagem de erro -->
-          <div th:if="${erro}" class="alert alert-danger col-12">
-            <p th:text="${erro}"></p>
           </div>
 
           <div class="col-12">
@@ -51,7 +47,7 @@
           <div class="col-12"><p>OU</p></div>
         </form>
       </div>
-      <a class="link-cadastre-se" href="">Tem conta? Login aqui</a>
+      <a class="link-cadastre-se" href="login">Tem conta? Login aqui</a>
     </div>
 
     <script

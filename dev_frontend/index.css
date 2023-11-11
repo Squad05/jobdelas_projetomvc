@@ -1,0 +1,49 @@
+
+
+.container_postagem {
+    background-color: red;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    padding: 20px 40px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    color: #B378FF;
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    background-color: #B378FF;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }

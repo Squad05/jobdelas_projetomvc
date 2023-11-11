@@ -24,22 +24,23 @@
         </div>
 
         <div class="main-formulario">
-            <form method="POST" className="formulario" th:object="${usuario}" enctype="multipart/form-data">
+            <form method="POST" className="formulario" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input style="border-radius: 15px; border: 1px solid #B378FF; height: 45px;" type="email"
-                        class="form-control" id="email" aria-describedby="emailHelp" required>
+                        class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
 
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
                     <input style="border: 1px solid #B378FF; border-radius: 15px; height: 45px;" type="password"
-                        class="form-control" id="senha" required>
+                        class="form-control" id="senha" name="senha" required>
                     <div style="display: flex; justify-content: flex-end;">
                         <a class="link-referencia" href="#">Esqueceu a senha?</a>
                     </div>
                 </div>
                 <div class="col-12">
+                    <span th:if="${erro}" th:text="${erro}" style="color: red; font-style: italic;"></span>
                     <button id="botao-formulario" class="btn" role="button" type="submit">
                         Entrar
                     </button>
@@ -47,12 +48,12 @@
                         <p style="text-align: center; color: #B378FF;">OU</p>
                     </div>
                     <div style="display: flex; justify-content: center;">
-                        <a style="width: 50%; background-color: #fff; color: #B378FF;" href="#" class="btn active"
-                            role="button"><img style="height: 19px;" src="../assets/image/icons8-google 4.svg"
-                                alt="">Login com Gmail</a>
+                        <button id="botao-formulario" class="btn" role="button" type="submit">
+                            Login com Gmail
+                        </button>
                     </div>
                     <div style="text-align: center; margin-top: 50px;">
-                        <a class="link-referencia" href="cadastro.html">Não tem conta? Cadastre-se</a>
+                        <a class="link-referencia" href="cadastrar">Não tem conta? Cadastre-se</a>
                     </div>
             </form>
         </div>

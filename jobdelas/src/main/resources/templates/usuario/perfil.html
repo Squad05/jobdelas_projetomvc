@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-DBXW1ggB4Q1E5fymTqFgIc5w9TkoqZZTL4O/ztINQgl3rh5aHDsVhaqPjNblIuZDHW+EsKnNNrOsK5cc/eHLW/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Perfil do Usuário</title>
+  </head>
+  <body>
+    <!-- Capa -->
+    <div class="jumbotron text-center">
+      <h1>Nome do Usuário</h1>
+      <p>Descrição do Usuário</p>
+      <!-- Adicione a imagem do usuário aqui -->
+      <img
+        src="caminho/para/imagem-do-usuario.jpg"
+        alt="Imagem do Usuário"
+        class="img-fluid rounded-circle"
+      />
+    </div>
+
+    <!-- Icons de Rede Social -->
+    <div class="text-center">
+      <!-- Adicione os ícones das redes sociais aqui -->
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+    <!-- Sessão Sobre -->
+    <div class="container mt-4">
+      <h2>Sobre</h2>
+      <p>Adicione uma bio personalizada aqui.</p>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#sobreModal"
+      >
+        Editar/Acrescentar
+      </button>
+    </div>
+
+    <!-- Sessão Educação -->
+    <div class="container mt-4">
+      <h2>Educação</h2>
+      <ul>
+        <li>
+          <strong>Instituição:</strong> Nome da instituição
+          <br />
+          <strong>Curso:</strong> Nome do curso
+          <br />
+          <strong>Ano de Conclusão:</strong> YYYY
+        </li>
+        <!-- Adicione mawis itens da lista conforme necessário -->
+      </ul>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#educacaoModal"
+      >
+        Editar/Acrescentar
+      </button>
+    </div>
+    <!-- Modais -->
+    <!-- Sobre Modal -->
+    <div
+      class="modal fade"
+      id="sobreModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="sobreModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sobreModalLabel">Editar Sobre</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Adicione um formulário para editar a seção Sobre aqui -->
+            <form>
+              <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea class="form-control" id="bio" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Salvar Mudanças
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educação Modal -->
+    <div
+      class="modal fade"
+      id="educacaoModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="educacaoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="educacaoModalLabel">Editar Educação</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Adicione um formulário para editar a seção Educação aqui -->
+            <form>
+              <div class="form-group">
+                <label for="instituicao">Instituição:</label>
+                <input type="text" class="form-control" id="instituicao" />
+              </div>
+              <div class="form-group">
+                <label for="curso">Curso:</label>
+                <input type="text" class="form-control" id="curso" />
+              </div>
+              <div class="form-group">
+                <label for="ano">Ano de Conclusão:</label>
+                <input type="text" class="form-control" id="ano" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Salvar Mudanças
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
