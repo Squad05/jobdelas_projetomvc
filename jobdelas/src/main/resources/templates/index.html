@@ -46,72 +46,115 @@
           </li>
         </ul>
       </nav>
-      <img src="/img/logoRoxa.png" class="logo_jobdelas" alt="logo do jobdelas" />
+      <img
+        src="/img/logoRoxa.png"
+        class="logo_jobdelas"
+        alt="logo do jobdelas"
+      />
       <div class="search_bar">
         <div class="search_container">
           <input type="text" placeholder="Pesquisar" />
           <i class="fa fa-search"></i>
         </div>
-        <button class="botao-perfil" data-toggle="modal" data-target="#myModal" style="border: none; background-color: #fff; width: 55px; cursor: pointer;">
-          <img src="/img/iconfoto.png" class="img-perfil" style="width: 50px; border: none; height: 50px;" alt="Imagem no Botão">
+        <button class="botao-perfil" data-toggle="modal" data-target="#myModal">
+          <img
+            src="/img/iconfoto.png"
+            class="img_perfil"
+            alt="Imagem no Botão"
+          />
         </button>
-      
+
         <!-- Modal -->
         <div class="modal" id="myModal">
           <div class="modal-dialog">
             <div class="modal-content">
-      
               <!-- Cabeçalho do Modal -->
               <div class="modal-header">
                 <h4 class="modal-title">Perfil</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
               </div>
-      
+
               <!-- Corpo do Modal -->
               <div class="modal-body">
-                <form method="PUT" class="formulario" th:object="${usuario}" enctype="multipart/form-data">
+                <form
+                  method="PUT"
+                  class="formulario"
+                  th:object="${usuario}"
+                  enctype="multipart/form-data"
+                >
                   <div class="form-group">
                     <label for="imageUpload">Anexar Foto de Perfil:</label>
-                    <input type="file" class="form-control-file" id="imageUpload" />
+                    <input
+                      type="file"
+                      class="form-control-file"
+                      id="imageUpload"
+                    />
                   </div>
                   <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome" required />
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nome"
+                      required
+                    />
                   </div>
-      
+
                   <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="text" class="form-control" id="email" required />
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
                   </div>
-      
+
                   <div class="form-group">
                     <label for="senha">Senha:</label>
-                    <input type="password" class="form-control" id="senha" required />
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="senha"
+                      required
+                    />
                   </div>
-      
+
                   <div class="form-group">
                     <label for="resumo">Resumo:</label>
                     <textarea class="form-control" id="resumo"></textarea>
                   </div>
-      
+
                   <div class="form-group">
                     <label for="telefone">Telefone:</label>
-                    <input type="text" class="form-control" id="telefone" required />
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="telefone"
+                      required
+                    />
                   </div>
-      
+
                   <div class="form-group">
                     <label for="portfolio">Link para o Portfólio:</label>
                     <input type="text" class="form-control" id="portfolio" />
                   </div>
                 </form>
               </div>
-      
+
               <!-- Rodapé do Modal -->
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-dismiss="modal"
+                >
+                  Fechar
+                </button>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
               </div>
-      
             </div>
           </div>
         </div>

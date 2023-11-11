@@ -73,7 +73,26 @@
 
 }
 
-.foto_user {
+
+
+.botao-perfil {
+    border: none;
+    background-color: #fff !important;
+    cursor: pointer;
+}
+
+.botao-perfil:hover {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #fff !important;
+}
+
+.img_perfil {
+    background-color: #fff;
+
+    border: none; 
     border-radius: 50%;
 }
 
