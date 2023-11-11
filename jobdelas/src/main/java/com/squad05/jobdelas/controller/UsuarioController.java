@@ -46,7 +46,7 @@ public class UsuarioController {
 
         String nomeCompleto = primeiroNome + " " + sobrenome;
         usuario.setNome(nomeCompleto);
-        // O `withDefault` indica que está usandoa a biblitoeca do BCrypt,
+        // O `withDefault` indica que está usandoa a biblitoeca do BCrypt
         // `hashToString´ gera o valor do hash , 12 é o custo da função, quanto maior,
         // mais seguro. E o `toCharArray´ converte a senha em array de caracteres
         var senhaCriptografa = BCrypt.withDefaults().hashToString(12, usuario.getSenha().toCharArray());
