@@ -11,7 +11,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
 @Data
 @AllArgsConstructor
 @Entity
@@ -20,17 +19,13 @@ public class Usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
     private String nome;
-    @Email
     private String email;
-    @NotBlank   
     private String senha;
     private String foto;
     private String resumo;
-    @NotBlank
     private String telefone;
-    
+
     private String linkDoPorfolio;
 
     public Usuarios() {
