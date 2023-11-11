@@ -17,33 +17,43 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="header.css" />
 
     <title>JobDelas</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="/">
-          <p><i class="fa-solid fa-house"></i> Início</p>
-        </a>
-        <a href="/vagas">
-          <p><i class="fa fa-briefcase"></i> Vagas</p>
-        </a>
-        <a href="/mensagens">
-          <p><i class="fa fa-envelope"></i> Mensagens</p>
-        </a>
-        <a href="/cursos">
-          <p><i class="fa fa-graduation-cap"></i> Cursos</p>
-        </a>
+        <ul>
+          <li>
+            <a href="/">
+              <div><i class="fa-solid fa-house"></i> Início</div>
+            </a>
+          </li>
+          <li>
+            <a href="/vagas">
+              <div><i class="fa fa-briefcase"></i> Vagas</div>
+            </a>
+          </li>
+          <li>
+            <a href="/mensagens">
+              <div><i class="fa fa-envelope"></i> Chat</div>
+            </a>
+          </li>
+          <li>
+            <a href="/cursos">
+              <div><i class="fa fa-graduation-cap"></i> Cursos</div>
+            </a>
+          </li>
+        </ul>
       </nav>
-      <img src="/img/logo.png" alt="logo do jobdelas" />
+      <img src="logoRoxa.png" class="logo_jobdelas" alt="logo do jobdelas" />
       <div class="search_bar">
-        <input type="text" placeholder="Pesquisar" />
-        <p>
+        <div class="search_container">
+          <input type="text" placeholder="Pesquisar" />
           <i class="fa fa-search"></i>
-        </p>
-        <!-- Substitua o caminho pelo seu ícone de perfil -->
-        <img src="caminho/do/seu/iconfoto.png" alt="foto do usuário" />
+        </div>
+        <img src="iconfoto.png" alt="foto do usuário" class="foto_user" />
       </div>
     </header>
     <main>
@@ -61,7 +71,6 @@
           <section class="compromissos">
             <h3>Compromissos</h3>
             <table class="agenda">
-              <!-- Correção na tabela de compromissos -->
               <tr>
                 <th>Domingo</th>
                 <th>Livre</th>
@@ -169,7 +178,7 @@
           <div class="feed">
             <div class="post">
               <div class="user-info">
-                <img src="../assets/image/fotoUsuario.png" alt="User" />
+                <img src="iconfoto.png" alt="User" />
                 <h4>Nome Usuario</h4>
               </div>
               <p class="post-date">Publicado em 25 de Agosto de 2023</p>
@@ -196,7 +205,7 @@
             </div>
             <div class="post">
               <div class="user-info">
-                <img src="../assets/image/fotoUsuario.png" alt="User" />
+                <img src="iconfoto.png" alt="User" />
                 <h4>Nome Usuario</h4>
               </div>
               <p class="post-date">Publicado em 25 de Agosto de 2023</p>
@@ -270,6 +279,10 @@
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
       crossorigin="anonymous"
     ></script>
   </body>

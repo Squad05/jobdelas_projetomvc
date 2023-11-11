@@ -2,7 +2,10 @@
     outline: none !important;
     margin: 0 ;
     padding: 0; 
+    font-family: arial;
 }
+
+
 body {
     background-color: #B378FF;
 }
@@ -58,10 +61,9 @@ button:focus {
 
   button {
     background-color: #B378FF !important;
+    cursor:pointer;
 
 }
-
-
 
   .btn-primary {
     color: #ffffff;
