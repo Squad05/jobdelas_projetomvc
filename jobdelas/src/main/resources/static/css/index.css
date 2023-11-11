@@ -1,3 +1,61 @@
-.container_postagem {
-    background-color: red;
+body {
+  
+    margin: 0;
+    padding: 0;
+}
+
+.form-group {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+.tituloTarefa, .descricao{
+    border: 2px solid #B378FF;
+    border-radius: 5px;
+    padding: 10px;
+    width: 92%;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+
+
+.botao_addTarefa {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color:#fff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #B378FF;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.botao_addTarefa:hover {
+    background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
+    outline: 1px solid #B378FF;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 90%;
 }
