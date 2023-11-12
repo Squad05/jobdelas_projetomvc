@@ -109,8 +109,18 @@
     }
 }
 
-@media only screen and (max-width: 578px) {
-    .img_perfil {
-        display: none;
+
+
+@media screen and (max-width: 600px) {
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      color: white;
+      padding: 10px;
     }
-}
+  
+  }

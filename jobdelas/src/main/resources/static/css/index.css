@@ -53,3 +53,21 @@ button:focus,
         display: none;
     }
 }
+
+
+/* Conteudo centralizado quando tela for menor. */
+@media only screen and (max-width: 650px) {
+    .container_principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lateral_home {
+        display: none; 
+    }
+
+    .container_postagem {
+        width: 100%; 
+    }
+}
