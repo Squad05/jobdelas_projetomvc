@@ -346,7 +346,7 @@ button:hover {
 }
 
 .lateral_home {
-  width: 20%; /* Definir uma largura fixa para a lateral_home */
+  width: 20%; 
   background-color: white;
   border-radius: 15px;
   padding: 10px;
