@@ -30,8 +30,10 @@ body {
 
 .input-group-text {
   color: #B378FF;
-
+  background-color: transparent;
+  border: none;
 }
+
 
 
 .form-control {
@@ -115,9 +117,9 @@ body {
 }
 
 .sobre {
-    padding: 7px;
+    padding: 5px;
     background-color: #B378FF;
-    width: 60px;
+    width: 63px;
     border-radius: 10px;
     color: #fff;
     text-transform: uppercase;
@@ -132,6 +134,10 @@ body {
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.aplicar:hover {
+    background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%);
 }
 
 .status {
