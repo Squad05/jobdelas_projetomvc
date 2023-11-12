@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css" />
+
 
     <title>Vagas</title>
   </head>
 
   <body>
+    <header th:replace="~{fragments/_header :: header}"></header>
+
     <section class="input-pesquisa">
       <span class="input-group-text">Cargo</span>
       <input
