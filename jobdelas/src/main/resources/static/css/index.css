@@ -343,6 +343,8 @@ button:hover {
 .close:hover {
   color: #fff;
 
+}
+
 .lateral_home {
   width: 20%; /* Definir uma largura fixa para a lateral_home */
   background-color: white;
@@ -355,6 +357,5 @@ button:hover {
   .lateral_home {
     display: none;
   }
-  
-
 }
+

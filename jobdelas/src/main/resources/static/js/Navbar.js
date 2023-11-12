@@ -32,5 +32,6 @@ export const Navbar = () => {
         <img src="/img/iconfoto.png" class="img_perfil" alt="Imagem no Botão" />
       </button>
     </div>
+    
   `;
 };
