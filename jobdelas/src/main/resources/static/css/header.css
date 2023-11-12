@@ -22,7 +22,6 @@
     justify-content: space-around;
     align-content: baseline !important;
     align-items: baseline !important;
-    background-color: #fff;
 }
 
 .nav ul {
@@ -37,14 +36,14 @@
 }
 
 
-.nav a, nav i {
+.nav ul li a, ul li nav i {
     color:#B378FF;
     text-decoration: none;
 
 }
 
-.nav ul li {
-    width: 70px;
+.caixa-item-navbar {
+    width: 70px !important;
     padding-top: 5px;
     border: 1px solid white !important;
     background-color: #fff;
