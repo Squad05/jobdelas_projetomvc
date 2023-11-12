@@ -105,4 +105,11 @@ public class UsuarioController {
 
         return modelAndView;
     }
+
+    @GetMapping("perfil")
+    public ModelAndView perfil() {
+        ModelAndView modelAndView = new ModelAndView("/usuario/perfil.html");
+
+        return modelAndView;
+    }
 }

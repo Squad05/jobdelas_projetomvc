@@ -20,66 +20,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/profile_header.css" />
+    <link rel="stylesheet" href="/css/profile_body_sobre.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Perfil</title>
   </head>
   <body>
-    <!-- Capa -->
-    <div class="jumbotron text-center">
-      <h1>Nome do Usuário</h1>
-      <p>Descrição do Usuário</p>
-      <!-- Adicione a imagem do usuário aqui -->
-      <img
-        src="caminho/para/imagem-do-usuario.jpg"
-        alt="Imagem do Usuário"
-        class="img-fluid rounded-circle"
-      />
-    </div>
+    <header class="header"></header>
+    <main>
+      <section class="profile_header"></section>
+      <section class="profile_body">
+        <div class="profile_sobre"></div>
+      </section>
+    </main>
 
-    <!-- Icons de Rede Social -->
-    <div class="text-center">
-      <!-- Adicione os ícones das redes sociais aqui -->
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-    </div>
-    <!-- Sessão Sobre -->
-    <div class="container mt-4">
-      <h2>Sobre</h2>
-      <p>Adicione uma bio personalizada aqui.</p>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#sobreModal"
-      >
-        Editar/Acrescentar
-      </button>
-    </div>
-
-    <!-- Sessão Educação -->
-    <div class="container mt-4">
-      <h2>Educação</h2>
-      <ul>
-        <li>
-          <strong>Instituição:</strong> Nome da instituição
-          <br />
-          <strong>Curso:</strong> Nome do curso
-          <br />
-          <strong>Ano de Conclusão:</strong> YYYY
-        </li>
-        <!-- Adicione mawis itens da lista conforme necessário -->
-      </ul>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#educacaoModal"
-      >
-        Editar/Acrescentar
-      </button>
-    </div>
-    <!-- Modais -->
-    <!-- Sobre Modal -->
+    <!-- Modals -->
     <div
       class="modal fade"
       id="sobreModal"
@@ -91,7 +48,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="sobreModalLabel">Editar Sobre</h5>
+            <h5 class="modal-title" id="sobreModalLabel">Adicionar Bio</h5>
             <button
               type="button"
               class="close"
@@ -102,7 +59,6 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- Adicione um formulário para editar a seção Sobre aqui -->
             <form>
               <div class="form-group">
                 <label for="bio">Bio:</label>
@@ -126,7 +82,6 @@
       </div>
     </div>
 
-    <!-- Educação Modal -->
     <div
       class="modal fade"
       id="educacaoModal"
@@ -138,7 +93,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="educacaoModalLabel">Editar Educação</h5>
+            <h5 class="modal-title" id="educacaoModalLabel">
+              Adicionar Educação
+            </h5>
             <button
               type="button"
               class="close"
@@ -149,7 +106,6 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- Adicione um formulário para editar a seção Educação aqui -->
             <form>
               <div class="form-group">
                 <label for="instituicao">Instituição:</label>
@@ -180,5 +136,17 @@
         </div>
       </div>
     </div>
+
+    <script src="/js/perfil.js" type="module"></script>
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

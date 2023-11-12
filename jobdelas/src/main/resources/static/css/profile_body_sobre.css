@@ -1,0 +1,35 @@
+
+.profile_body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:20px;
+    padding: 30px 40px ;
+    background-color: #fff;
+}
+
+.profile_sobre {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao_profile {
+    width: 130px;
+    padding: 11px 16px;
+    border: none;
+    color:#B378FF;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+
+.container_titulo_profile{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo_profile {
+    overflow-y: hidden;
+}
