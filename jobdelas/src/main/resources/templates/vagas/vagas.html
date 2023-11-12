@@ -3,112 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css"
+      integrity="sha384-rI2DBIG3Fv2jRwe7z9tc3R8pWFM9gGQVoTo5hcc4M2jtEkhl1ykI78zY3hY5FGEW"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="stylesheet" href="/css/vagas.css" />
 
     <title>Vagas</title>
   </head>
 
   <body>
-    <header th:replace="~{fragments/_header :: header}"></header>
+    <header class="header"></header>
 
-    <section class="input-pesquisa">
-      <span class="input-group-text">Cargo</span>
-      <input
-        type="text"
-        aria-label="Cargo"
-        placeholder="Cargo"
-        class="form-control"
-        id="inputCargo"
-      />
+    <main>
+      <section class="input-pesquisa">
+        <span class="input-group-text">Cargo</span>
+        <input
+          type="text"
+          aria-label="Cargo"
+          placeholder="Cargo"
+          class="form-control"
+          id="inputCargo"
+        />
 
-      <span class="input-group-text">Localização</span>
-      <input
-        type="text"
-        aria-label="Localização"
-        placeholder="Localização"
-        class="form-control"
-        id="inputLocalizacao"
-      />
-      <button class="buscar-vagas">
-        <i class="fa fa-search"></i>
-      </button>
-    </section>
+        <span class="input-group-text">Localização</span>
+        <input
+          type="text"
+          aria-label="Localização"
+          placeholder="Localização"
+          class="form-control"
+          id="inputLocalizacao"
+        />
+        <button class="buscar-vagas">
+          <i class="fa fa-search"></i>
+        </button>
+      </section>
 
-    <section class="container-vagas">
-      <div class="vagas">
-        <h2 class="funcao">Função</h2>
-        <p class="empresa">Nome da empresa</p>
-        <p class="salario">Salário</p>
-        <p class="sobre">Sobre</p>
-        <p class="sobre-vaga">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div class="container-info-localizacao">
-          <p class="localizacao">Localização: <span>Algum lugar</span></p>
-          <button type="submit" class="aplicar">Aplicar</button>
+      <section class="container-vagas">
+        <div class="vagas">
+          <h2 class="funcao">Função</h2>
+          <p class="empresa">Nome da empresa</p>
+          <p class="salario">Salário</p>
+          <p class="sobre">Sobre</p>
+          <p class="sobre-vaga">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            natus qui nesciunt voluptatem mollitia quia minima ducimus fugiat
+            inventore porro. Dolor eveniet ducimus quidem doloremque maxime sint
+            voluptatibus omnis itaque!
+          </p>
+          <div class="container-info-localizacao">
+            <p class="localizacao">Localização: <span>Algum lugar</span></p>
+            <button type="submit" class="aplicar">Aplicar</button>
+          </div>
+          <span class="status">Status da vaga</span>
         </div>
-        <span class="status">Status da vaga</span>
-      </div>
 
-      <div class="vagas">
-        <h2 class="funcao">Função</h2>
-        <p class="empresa">Nome da empresa</p>
-        <p class="salario">Salário</p>
-        <p class="sobre">Sobre</p>
-        <p class="sobre-vaga">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div class="container-info-localizacao">
-          <p class="localizacao">Localização: <span>Algum lugar</span></p>
-          <button type="submit" class="aplicar">Aplicar</button>
+        <div class="vagas">
+          <h2 class="funcao">Função</h2>
+          <p class="empresa">Nome da empresa</p>
+          <p class="salario">Salário</p>
+          <p class="sobre">Sobre</p>
+          <p class="sobre-vaga">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            natus qui nesciunt voluptatem mollitia quia minima ducimus fugiat
+            inventore porro. Dolor eveniet ducimus quidem doloremque maxime sint
+            voluptatibus omnis itaque!
+          </p>
+          <div class="container-info-localizacao">
+            <p class="localizacao">Localização: <span>Algum lugar</span></p>
+            <button type="submit" class="aplicar">Aplicar</button>
+          </div>
+          <span class="status">Status da vaga</span>
         </div>
-        <span class="status">Status da vaga</span>
-      </div>
 
-      <div class="vagas">
-        <h2 class="funcao">Função</h2>
-        <p class="empresa">Nome da empresa:</p>
-        <p class="salario">Salário</p>
-        <p class="sobre">Sobre</p>
-        <p class="sobre-vaga">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div class="container-info-localizacao">
-          <p class="localizacao">Localização: <span>Algum lugar</span></p>
-          <button type="submit" class="aplicar">Aplicar</button>
+        <div class="vagas">
+          <h2 class="funcao">Função</h2>
+          <p class="empresa">Nome da empresa:</p>
+          <p class="salario">Salário</p>
+          <p class="sobre">Sobre</p>
+          <p class="sobre-vaga">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            natus qui nesciunt voluptatem mollitia quia minima ducimus fugiat
+            inventore porro. Dolor eveniet ducimus quidem doloremque maxime sint
+            voluptatibus omnis itaque!
+          </p>
+          <div class="container-info-localizacao">
+            <p class="localizacao">Localização: <span>Algum lugar</span></p>
+            <button type="submit" class="aplicar">Aplicar</button>
+          </div>
+          <span class="status">Status da vaga</span>
         </div>
-        <span class="status">Status da vaga</span>
-      </div>
 
-      <div class="vagas">
-        <h2 class="funcao">Função</h2>
-        <p class="empresa">Nome da empresa</p>
-        <p class="salario">Salário</p>
-        <p class="sobre">Sobre</p>
-        <p class="sobre-vaga">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur natus
-          qui nesciunt voluptatem mollitia quia minima ducimus fugiat inventore
-          porro. Dolor eveniet ducimus quidem doloremque maxime sint
-          voluptatibus omnis itaque!
-        </p>
-        <div class="container-info-localizacao">
-          <p class="localizacao">Localização: <span>Algum lugar</span></p>
-          <button type="submit" class="aplicar">Aplicar</button>
+        <div class="vagas">
+          <h2 class="funcao">Função</h2>
+          <p class="empresa">Nome da empresa</p>
+          <p class="salario">Salário</p>
+          <p class="sobre">Sobre</p>
+          <p class="sobre-vaga">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            natus qui nesciunt voluptatem mollitia quia minima ducimus fugiat
+            inventore porro. Dolor eveniet ducimus quidem doloremque maxime sint
+            voluptatibus omnis itaque!
+          </p>
+          <div class="container-info-localizacao">
+            <p class="localizacao">Localização: <span>Algum lugar</span></p>
+            <button type="submit" class="aplicar">Aplicar</button>
+          </div>
+          <span class="status">Status da vaga</span>
         </div>
-        <span class="status">Status da vaga</span>
-      </div>
-    </section>
+      </section>
+    </main>
 
+    <script src="/js/index.js" type="module"></script>
     <script
       src="https://kit.fontawesome.com/cda1aa7b4f.js"
       crossorigin="anonymous"

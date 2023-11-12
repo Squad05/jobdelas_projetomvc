@@ -1,0 +1,139 @@
+
+* {
+    outline: none !important;
+    margin: 0 ;
+    padding: 0; 
+}
+
+
+body {
+    background-color: #B378FF;
+}
+
+.input-pesquisa {
+    margin:60px 40px;
+
+}
+
+.input-pesquisa,
+.modaltarefa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  border:1px solid #B378FF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-text {
+  color: #B378FF;
+
+}
+
+
+.form-control {
+  border: 1px solid #B378FF;
+  border-radius: 5px;
+  padding: 20px;
+  width: 45%; 
+  box-sizing: border-box;
+  border:1px solid #B378FF !important;
+
+}
+
+.form-control:hover, .form-control:focus {
+    outline: none;
+    border:1px solid #B378FF !important;
+    box-shadow: none;
+
+}
+
+.buscar-vagas,
+.botao_criarpostagem {
+  background-color: transparent !important;
+  color: transparent !important;
+  height: max-content;  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer !important;
+}
+
+.buscar-vagas i {
+    font-size: 30px;
+    color: #B378FF !important
+    ;
+}
+
+.buscar-vagas i:hover  {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+.form-control {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.buscar-vagas {
+    background-color: #B378FF;
+    color: #fff;
+    border: none;
+}
+
+.container-vagas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin:60px 40px;
+
+
+}
+
+.vagas {
+    width: 550px;
+    padding: 20px;
+    flex-basis: 290px;
+    border: 1px solid #B378FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.funcao {
+    margin-top: 0;
+}
+
+
+.container-info-localizacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sobre {
+    padding: 7px;
+    background-color: #B378FF;
+    width: 60px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.aplicar {
+    height: 27px;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    background-color: #B378FF;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.status {
+    color: #706273;
+}
