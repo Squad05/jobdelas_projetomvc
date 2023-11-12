@@ -41,6 +41,7 @@
     color:#B378FF;
     text-decoration: none;
     padding: 0 !important;
+    font-weight: 600;
 
 }
 .icone_nav {
@@ -65,11 +66,11 @@
 .pesquisar_header {
     border-radius: 10px  !important;
     border: 2px solid #B378FF !important;
-    padding: 12px 20px !important;
+    padding: 12px 20px ;
 }
 
 .search_bar i {
-    font-size: 26px !important;
+    font-size: 26px ;
     color: #B378FF;
 
 }
@@ -84,7 +85,6 @@
     cursor: pointer;
     border: none;
     border-radius: 50%;
-
     background-color: #fff !important;
 }
 
@@ -100,7 +100,17 @@
 }
 
 @media only screen and (max-width: 896px) {
-    .header img {
+    .logo_jobdelas {
         display: none;
     }
+    .search_bar i {
+        font-size:19px  !important ;
+    
+    }
+
+    .pesquisar_header {
+        padding: 5px  !important;
+    }
+    
+
 }
