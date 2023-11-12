@@ -171,7 +171,6 @@ button:hover {
 }
 
   .modal-content {
-    border-radius: 10px 10px 0px 10px;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -179,7 +178,6 @@ button:hover {
   .modal-header {
     display: flex;
     border: none;
-    border-radius: 10px 10px 0px 0px;
     background-color: #B378FF;
     height: 80px;
     justify-content: center;
@@ -301,6 +299,7 @@ button:hover {
 
 .modaltarefa {
   gap:20px;
+  border-radius: 0;
 }
 
 .modaltarefa .modal-body .form-group {
@@ -313,7 +312,6 @@ button:hover {
 .modaltarefa .modal-body .form-group button {
   background: #B378FF;
   border: 1px solid #B378FF !important;
-  border-radius: 10px;
   width: min-content;
   align-self: flex-end;
 }

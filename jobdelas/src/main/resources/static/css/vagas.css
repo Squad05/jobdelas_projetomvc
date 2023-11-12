@@ -107,6 +107,7 @@ body {
 
 .funcao {
     margin-top: 0;
+    overflow-y: hidden;
 }
 
 
