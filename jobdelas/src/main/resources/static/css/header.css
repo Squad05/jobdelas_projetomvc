@@ -1,9 +1,10 @@
 
 
 .header {
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px !important;
+    padding: 20px 40px;
     background-color: #ffffff;
     align-items: center;
 }
@@ -41,6 +42,7 @@
     color:#B378FF;
     text-decoration: none;
     padding: 0 !important;
+    font-weight: 600;
 
 }
 .icone_nav {
@@ -65,11 +67,11 @@
 .pesquisar_header {
     border-radius: 10px  !important;
     border: 2px solid #B378FF !important;
-    padding: 12px 20px !important;
+    padding: 12px 20px ;
 }
 
 .search_bar i {
-    font-size: 26px !important;
+    font-size: 26px ;
     color: #B378FF;
 
 }
@@ -84,23 +86,60 @@
     cursor: pointer;
     border: none;
     border-radius: 50%;
-
     background-color: #fff !important;
 }
 
 .logo_jobdelas {
-    height: 50px !important;
+    height: 45px;
 }
 
 .img_perfil {
     background-color: #fff;
     border: none !important; 
     border-radius: 50%;
-    height: 50px !important;
+    height: 50px;
 }
 
-@media only screen and (max-width: 896px) {
-    .header img {
+
+@media only screen and (max-width: 1050px) {
+    .logo_jobdelas {
+        height: 30px;
+    }
+    
+    }
+
+
+@media only screen and (max-width: 840px) {
+    .logo_jobdelas {
         display: none;
     }
+    .search_bar i {
+        font-size:19px  !important ;
+    
+    }
+
+    .pesquisar_header {
+        padding: 5px  !important;
+    }
+    
+    .img_perfil {
+        height: 40px;
+    }
+
 }
+
+@media only screen and (max-width: 650px) {
+.header {
+    padding: 20px 15px ;
+
+}
+
+}
+
+@media only screen and (max-width: 578px) {
+    .img_perfil {
+        display: none;
+
+    }
+    
+    }

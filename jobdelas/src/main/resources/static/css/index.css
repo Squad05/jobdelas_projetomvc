@@ -342,4 +342,19 @@ button:hover {
 
 .close:hover {
   color: #fff;
+
+.lateral_home {
+  width: 20%; /* Definir uma largura fixa para a lateral_home */
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+
+@media only screen and (max-width: 896px) {
+  .lateral_home {
+    display: none;
+  }
+  
+
 }
