@@ -1,9 +1,10 @@
 
 
 .header {
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px !important;
+    padding: 20px 40px;
     background-color: #ffffff;
     align-items: center;
 }
@@ -89,17 +90,26 @@
 }
 
 .logo_jobdelas {
-    height: 50px !important;
+    height: 45px;
 }
 
 .img_perfil {
     background-color: #fff;
     border: none !important; 
     border-radius: 50%;
-    height: 50px !important;
+    height: 50px;
 }
 
-@media only screen and (max-width: 896px) {
+
+@media only screen and (max-width: 1050px) {
+    .logo_jobdelas {
+        height: 30px;
+    }
+    
+    }
+
+
+@media only screen and (max-width: 840px) {
     .logo_jobdelas {
         display: none;
     }
@@ -112,5 +122,24 @@
         padding: 5px  !important;
     }
     
+    .img_perfil {
+        height: 40px;
+    }
 
 }
+
+@media only screen and (max-width: 650px) {
+.header {
+    padding: 20px 15px ;
+
+}
+
+}
+
+@media only screen and (max-width: 578px) {
+    .img_perfil {
+        display: none;
+
+    }
+    
+    }
