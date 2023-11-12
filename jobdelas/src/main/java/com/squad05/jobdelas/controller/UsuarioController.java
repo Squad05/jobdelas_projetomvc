@@ -33,12 +33,12 @@ public class UsuarioController {
     @PostMapping("cadastrar")
     public ModelAndView cadastrar(Usuarios usuario, @RequestParam("nome") String primeiroNome,
             @RequestParam("sobrenome") String sobrenome) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        ModelAndView modelAndView = new ModelAndView("redirect:/login");
 
         var usuarioEncontrado = this.usuarioRepository.findByEmail(usuario.getEmail());
 
         if (usuarioEncontrado != null) {
-            modelAndView.setViewName("/usuario/cadastro.html");
+            modelAndView.setViewName("/login/cadastro.html");
             modelAndView.addObject("usuario", usuario);
             modelAndView.addObject("erro", "Email já existente");
             return modelAndView;

@@ -185,6 +185,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    overflow: hidden;
   }
     .modal-title {
         width: 100%;
