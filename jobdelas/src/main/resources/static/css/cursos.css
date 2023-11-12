@@ -1,60 +1,21 @@
-body {
-    background-color: #B378FF;
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
-    color: #fff; /* Texto principal em branco para contrastar */
-}
-
 
 .container-principal {
     display: flex;
-    margin:60px 40px;
     text-align: center;
     flex-direction: column;
 }
-
 
 
 .container-cursos {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .container-aprendizado {
-    padding: 20px 0px;
     border-radius: 20px;
     background-color: white;
 }
-
-.container-aprendizado i {
-    font-size: 80px;
-}
-.container-aprendizado h1 {
-    text-transform: uppercase;
-    color: #B378FF;
-}
-.icone-aprendizado {
-    font-size: 2rem;
-    margin-right: 10px;
-    color: #B378FF;
-  }
-
-
-@keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.02);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 
 
 
@@ -89,10 +50,15 @@ body {
     }
   }
   
-  .card-curso h3 {
-    animation: typing 1.5s steps(20) forwards; 
-  }
+
   
+
+
+
+.card-curso h3 {
+  animation: typing 1.5s steps(20) forwards; 
+}
+
 
   
 
@@ -122,36 +88,7 @@ body {
     margin-top: 20px;
 }
 
-.elemento {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(255, 255, 255);
-    height: 80px;
-    width: 90px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s infinite; 
-    margin: 10px 0;
-    transform-origin: center;
-    display: inline-block; 
-    border: 1.9px solid #B378FF;
 
-}
-
-.elemento i {
-    font-size:30px;
-    color:  #B378FF;
-}
-
-.elemento p {
-    margin-top: 10px;
-    color:  #B378FF;
-    font-weight: 600;
-}
 
 
 @media only screen and (max-width: 896px) {

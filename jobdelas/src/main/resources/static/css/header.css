@@ -1,22 +1,19 @@
 .header {
     max-width: 100%;
     display: flex;
+    padding: 25px 30px;
     justify-content: space-between;
-    padding: 20px 40px;
     background-color: #ffffff;
     align-items: center;
 }
 
 .header .nav ul {
-    margin-bottom: 0 !important;
-    display: flex !important;
-    justify-content: space-around !important;
-    align-content: baseline !important;
-    align-items: baseline !important;
-    gap: 5px !important;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 5px;
 }
-
-
 
 .header .nav div {
     align-items: center;
@@ -24,90 +21,69 @@
     flex-direction: column;
 }
 
-
-
-
-
-.caixa-item-navbar {
-    width: 70px !important;
+.header .caixa-item-navbar {
+    width: 70px;
     padding-top: 5px;
-    border: 1px solid white !important;
+    border: 1px solid white;
     background-color: #fff;
 
 }
 
-.icone_nav,
+.header .icone_nav,
 .caixa-item-navbar a {
     color: #B378FF;
     text-decoration: none;
-    padding: 0 !important;
+    padding: 0;
     font-weight: 600;
-
+    font-size: 20px;
 }
 
-.icone_nav {
-    font-size: 20px !important;
-
-}
-
-.nav ul li:hover {
+.header .nav ul li:hover {
     border-radius: 10px;
-    border: 1px solid #B378FF !important;
+    border: 1px solid #B378FF;
     box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-
-.search_bar {
-    display: flex !important;
-    align-content: center !important;
-    align-items: center !important;
-    gap: 5px !important;
+.header .search_bar {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
 }
 
-.pesquisar_header {
-    border-radius: 10px !important;
-    border: 2px solid #B378FF !important;
-    padding: 12px 20px;
+.header .pesquisar_header {
+    border-radius: 10px;
+    border: 2px solid #B378FF;
 }
 
-.search_bar i {
+.header .search_bar i {
     font-size: 26px;
     color: #B378FF;
-
 }
 
-.botao-perfil {
-    border: none !important;
-    background-color: #fff !important;
-    cursor: pointer;
-}
-
-.botao-perfil:hover {
-    cursor: pointer;
+.header .botao-perfil {
     border: none;
+    cursor: pointer;
     border-radius: 50%;
-    background-color: #fff !important;
 }
 
-.logo_jobdelas {
+.header .logo_jobdelas {
     height: 45px;
 }
 
-.img_perfil {
+.header .img_perfil {
     background-color: #fff;
-    border: none !important;
+    border: none;
     border-radius: 50%;
     height: 50px;
 }
-
 
 @media only screen and (max-width: 1050px) {
     .logo_jobdelas {
         height: 30px;
     }
-
 }
-
 
 @media only screen and (max-width: 840px) {
     .logo_jobdelas {
@@ -115,32 +91,26 @@
     }
 
     .search_bar i {
-        font-size: 19px !important;
-
+        font-size: 19px;
     }
 
     .pesquisar_header {
-        padding: 5px !important;
+        padding: 5px;
     }
 
     .img_perfil {
         height: 40px;
     }
-
 }
 
 @media only screen and (max-width: 650px) {
     .header {
         padding: 20px 15px;
-
     }
-
 }
 
 @media only screen and (max-width: 578px) {
     .img_perfil {
         display: none;
-
     }
-
 }

@@ -1,7 +1,7 @@
 export const Post = () => {
   return `<div class="post">
     <div class="user-info">
-      <img src="/img/iconfoto.png" alt="User" />
+      <img src="/img/iconfoto.png" alt="User" class="foto_criarpostagem" />
       <h4>Nome Usuario</h4>
     </div>
     <p class="post-date">Publicado em 25 de Agosto de 2023</p>

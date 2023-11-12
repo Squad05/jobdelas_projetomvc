@@ -1,14 +1,11 @@
-/* Estilizando elementos focados */
 button:focus,
 .form-control:focus {
-    border-color: #7bb7ff;
     -webkit-box-shadow: none;
     box-shadow: none !important;
 }
 
 /* Estilos para containers principais */
 .container_principal {
-    margin: 40px;
     display: flex;
     align-items: start;
     gap: 50px;
