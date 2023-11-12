@@ -24,7 +24,7 @@ section {
 }
 
 .container-aprendizado {
-    padding-top: 20px;
+    padding: 20px 0px;
     border-radius: 20px;
     background-color: white;
 }
@@ -60,10 +60,15 @@ section {
 .card-curso {
     background-color: #ffffff;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 20px;
+    padding: 25px 10px !important;
     width: 250px;
+    height: 200px;
 }
 
 .card-curso h3 {
