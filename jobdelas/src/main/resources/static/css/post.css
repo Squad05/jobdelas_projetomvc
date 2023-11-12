@@ -1,0 +1,60 @@
+.post {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    margin: 0;
+    color: #B378FF;
+    font-size: 1.2rem;
+}
+
+.post-date {
+    color: #777; 
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333; 
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.like-button, .read-comments-button, .comment-button {
+    background-color: #B378FF;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-button, .read-comments-button, .comment-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.like-button:hover, .read-comments-button:hover, .comment-button:hover {
+    background-color: #9254DE; /* Cor mais escura no hover */
+}

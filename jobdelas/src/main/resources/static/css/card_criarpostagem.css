@@ -1,0 +1,52 @@
+.cardCriarPostagem {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    gap: 15px;
+  }
+
+
+  .user-photo {
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .card-body h3 {
+    color: #B378FF;
+    font-size: 1.4rem;
+  }
+
+  button {
+    background-color: #B378FF !important;
+    cursor:pointer;
+    border: 1px solid white !important;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
+  border: 1px solid #B378FF !important;
+  outline: 1px solid #B378FF;
+  text-shadow: 1px 1px 2px #9254DE;
+
+}
+
+  .btn-primary {
+    background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
+    border: 1px solid #B378FF !important;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+ 
+  .btn-primary:hover {
+    background: #B378FF !important;
+    border: 1px solid #B378FF;
+    outline: 1px solid #B378FF;
+
+}

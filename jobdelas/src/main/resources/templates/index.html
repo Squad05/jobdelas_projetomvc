@@ -15,157 +15,27 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/header.css" />
+
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/lista_tarefas.css" />
+    <link rel="stylesheet" href="/css/card_criarpostagem.css" />
+    <link rel="stylesheet" href="/css/post.css" />
     <link rel="stylesheet" href="/css/index.css" />
 
-    <title>JobDelas</title>
+    <title>Job Delas</title>
   </head>
   <body>
     <header class="header"></header>
     <main>
       <section class="container_principal">
-        <section class="lateral_home">
-          <section class="compromissos">
-            <h3>Lista de Tarefas</h3>
+        <div class="lateral_home"></div>
 
-            <!-- Tarefas -->
-            <div class="tarefa">
-              <div class="titulo-tarefa">Reunião com Equipe</div>
-              <div class="descricao-tarefa">
-                Preparar agenda para a reunião.
-              </div>
-              <div class="botoes-tarefa">
-                <button class="concluir-tarefa">
-                  <i class="fa fa-check"></i> Concluir
-                </button>
-                <button class="atualizar-tarefa">
-                  <i class="fa fa-edit"></i> Atualizar
-                </button>
-              </div>
-            </div>
+        <div class="container_postagem">
+          <div class="cardCriarPostagem"></div>
 
-            <div class="tarefa">
-              <div class="titulo-tarefa">Projeto X</div>
-              <div class="descricao-tarefa">
-                Revisar código e fazer melhorias.
-              </div>
-            </div>
-
-            <!-- Botão para adicionar tarefa -->
-            <button
-              id="btnAdicionarTarefa"
-              class="botao_criarpostagem"
-              data-toggle="modal"
-              data-target="#tarefaModal"
-            >
-              Adicionar Tarefa
-            </button>
-          </section>
-        </section>
-
-        <section class="container_postagem">
-          <div class="card">
-            <div class="card-body">
-              <img src="/img/iconfoto.png" alt="User" class="user-photo" />
-              <h3>O que você está pensando?</h3>
-              <button
-                class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#writePostModal"
-              >
-                Postar
-              </button>
-            </div>
-          </div>
-
-          <div class="feed">
-            <div class="post">
-              <div class="user-info">
-                <img src="/img/iconfoto.png" alt="User" />
-                <h4>Nome Usuario</h4>
-              </div>
-              <p class="post-date">Publicado em 25 de Agosto de 2023</p>
-              <p class="post-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Possimus saepe ea pariatur, ad quidem vitae obcaecati rem
-                quisquam quis iste sint minus. Explicabo libero alias, aperiam
-                eaque aspernatur doloribus minima! Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Fugiat iure aliquid culpa enim
-                voluptates porro, ipsam sint magni cum id libero soluta
-                expedita, odit molestias cupiditate consequatur sunt laboriosam?
-                Sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Iusto exercitationem tenetur sit ullam fugit quam aspernatur aut
-                ipsam impedit id pariatur, numquam fuga minus. Facere ex
-                doloremque maiores ipsam facilis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Nullam auctor euismod turpis eget
-                volutpat.
-              </p>
-              <div class="post-actions">
-                <button class="like-button">Curtir</button>
-                <button class="share-button">Compartilhar</button>
-                <button class="comment-button">Comentar</button>
-              </div>
-            </div>
-            <div class="post">
-              <div class="user-info">
-                <img src="/img/iconfoto.png" alt="User" />
-                <h4>Nome Usuario</h4>
-              </div>
-              <p class="post-date">Publicado em 25 de Agosto de 2023</p>
-              <p class="post-content">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Pariatur magni minima harum doloremque, blanditiis natus
-                corporis reprehenderit officiis, aut quo nihil. Officiis fugiat
-                quisquam architecto impedit. Delectus perferendis eos nemo!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                explicabo quis debitis, iure quia commodi tempore accusantium
-                quos saepe, officia beatae adipisci dicta! Sed porro natus,
-                praesentium ab labore exercitationem. Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. Vitae optio ut debitis assumenda
-                dolore repellendus, beatae quaerat dignissimos voluptatem
-                quisquam, ipsam numquam, totam nam? Sequi voluptas alias est
-                veritatis impedit! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Architecto inventore alias dolores facilis
-                dolorem voluptatibus voluptates eos, fuga recusandae ratione
-                magnam esse rem voluptatem accusamus distinctio repellendus amet
-                commodi ipsam! Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Explicabo unde nihil nemo corrupti praesentium
-                aut, quo maiores numquam sequi soluta dolorem expedita ipsam
-                dolor inventore odit ratione excepturi exercitationem omnis!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                deserunt repellendus omnis. Et deleniti sapiente vitae
-                distinctio tempora ipsa aut labore officiis nesciunt dolores,
-                quis sed vel, quae accusamus assumenda? Lorem ipsum, dolor sit
-                amet consectetur adipisicing elit. Quam dolores tenetur rerum.
-                Esse unde doloribus, facilis quibusdam natus placeat harum dolor
-                excepturi, aperiam aliquid nam architecto temporibus debitis
-                nobis veritatis. Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Nemo quo repellat neque laboriosam reiciendis
-                recusandae delectus. Repellendus voluptate quam animi nisi magni
-                molestias iusto eaque ab minus, libero consequatur hic.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Possimus
-                saepe ea pariatur, ad quidem vitae obcaecati rem quisquam quis
-                iste sint minus. Explicabo libero alias, aperiam eaque
-                aspernatur doloribus minima! Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Fugiat iure aliquid culpa enim
-                voluptates porro, ipsam sint magni cum id libero soluta
-                expedita, odit molestias cupiditate consequatur sunt laboriosam?
-                Sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Iusto exercitationem tenetur sit ullam fugit quam aspernatur aut
-                ipsam impedit id pariatur, numquam fuga minus. Facere ex
-                doloremque maiores ipsam facilis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Nullam auctor euismod turpis eget
-                volutpat.
-              </p>
-              <div class="post-actions">
-                <button class="like-button">Curtir</button>
-                <button class="share-button">Compartilhar</button>
-                <button class="comment-button">Comentar</button>
-              </div>
-            </div>
-          </div>
-        </section>
+          <div class="feed"></div>
+        </div>
       </section>
 
       <!-- Modals -->
@@ -280,11 +150,89 @@
 
       <div class="modal" id="editarModal">
         <div class="modal-dialog">
-          <div class="teste modal-content"></div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Perfil</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <!-- Corpo do Modal -->
+            <div class="modal-body">
+              <form
+                method="PUT"
+                class="formulario"
+                th:object="${usuario}"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <label for="imageUpload">Anexar Foto de Perfil:</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="imageUpload"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome:</label>
+                  <input type="text" class="form-control" id="nome" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" class="form-control" id="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senha">Senha:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="senha"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="resumo">Resumo:</label>
+                  <textarea class="form-control" id="resumo"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="telefone">Telefone:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telefone"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="portfolio">Link para o Portfólio:</label>
+                  <input type="text" class="form-control" id="portfolio" />
+                </div>
+              </form>
+            </div>
+
+            <!-- Rodapé do Modal -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="submit" class="btn btn-primary">Atualizar</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-    <script src="/js/index.js" type="module"></script>
+    <script src="/js/home.js" type="module"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
