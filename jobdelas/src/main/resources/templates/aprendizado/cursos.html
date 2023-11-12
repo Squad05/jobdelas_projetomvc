@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Ambiente de Aprendizagem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Ambiente de Aprendizagem</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/cursos.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/cursos.css" />
-</head>
-
-<body>
-  <header class="header"></header>
-  <main>
-    <section class="container-principal">
-      <div class="container-aprendizado">
-        <i class="fas fa-graduation-cap icone-aprendizado"></i>
-        <h1>Seu Ambiente de Aprendizagem</h1>
-        <ul class="elementos-adicionais">
-          <li class="elemento">
-            <i class="fas fa-lightbulb"></i>
-            <p>Tecnologia</p>
-          </li>
-          <li class="elemento">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <p>Liberdade</p>
-          </li>
-          <li class="elemento">
-            <i class="fas fa-brain"></i>
-            <p>Confiança</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="container-cursos">
-        <div class="card-curso">
-          <h3><i class="fas fa-graduation-cap"></i> Título do Curso 1</h3>
-          <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
-          <p><i class="far fa-clock"></i> Duração: X horas</p>
-          <button><i class="fas fa-play"></i> Learn</button>
+  <body>
+    <header class="header"></header>
+    <main>
+      <section class="container-principal">
+        <div class="container-aprendizado">
+          <i class="fas fa-graduation-cap icone-aprendizado"></i>
+          <h1>Seu Ambiente de Aprendizagem</h1>
+          <ul class="elementos-adicionais">
+            <li class="elemento">
+              <i class="fas fa-lightbulb"></i>
+              <p>Tecnologia</p>
+            </li>
+            <li class="elemento">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <p>Liberdade</p>
+            </li>
+            <li class="elemento">
+              <i class="fas fa-brain"></i>
+              <p>Confiança</p>
+            </li>
+          </ul>
         </div>
 
-        <div class="card-curso">
-          <h3><i class="fas fa-graduation-cap"></i> Título do Curso 2</h3>
-          <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
-          <p><i class="far fa-clock"></i> Duração: X horas</p>
-          <button><i class="fas fa-play"></i> Learn</button>
+        <div class="container-cursos">
+          <div class="card-curso">
+            <h3><i class="fas fa-graduation-cap"></i> Título do Curso 1</h3>
+            <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
+            <p><i class="far fa-clock"></i> Duração: X horas</p>
+            <button>
+              <i class="fas fa-play"></i> <a href="/curso">Learn </a>
+            </button>
+          </div>
+
+          <div class="card-curso">
+            <h3><i class="fas fa-graduation-cap"></i> Título do Curso 2</h3>
+            <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
+            <p><i class="far fa-clock"></i> Duração: X horas</p>
+            <button>
+              <i class="fas fa-play"></i> <a href="/curso">Learn </a>
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <script src="/js/index.js" type="module"></script>
-  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
-</body>
-
+    <script src="/js/index.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
