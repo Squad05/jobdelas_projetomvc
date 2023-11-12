@@ -24,7 +24,7 @@ public class UsuarioController {
 
     @GetMapping("cadastrar")
     public ModelAndView cadastrar() {
-        ModelAndView modelAndView = new ModelAndView("/usuario/cadastro.html");
+        ModelAndView modelAndView = new ModelAndView("/login/cadastro.html");
 
         modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;

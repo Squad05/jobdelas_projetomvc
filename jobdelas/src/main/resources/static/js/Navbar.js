@@ -18,7 +18,7 @@ export const Navbar = () => {
           </a>
         </li>
         <li class="caixa-item-navbar">
-          <a href="/cursos">
+          <a href="cursos">
             <div><i class="fa fa-graduation-cap icone_nav"></i> Cursos</div>
           </a>
         </li>

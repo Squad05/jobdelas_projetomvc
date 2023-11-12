@@ -7,36 +7,56 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Ambiente de Aprendizagem</title>
+    <!-- Adicione o link para a biblioteca FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/cursos.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="coluna">
-        <h2>Seu Ambiente de Aprendizagem</h2>
-
-        <div class="card-curso">
-          <h3>Título do Curso 1</h3>
-          <p>Matéria: Nome da Matéria</p>
-          <p>Duração: X horas</p>
-          <button>Learn</button>
-        </div>
-      </div>
-
-      <div class="coluna">
-        <h2>Lista de Cursos</h2>
-        <ul>
-          <li>
-            <strong>Curso:</strong> Nome do Curso 1
-            <br />
-            <strong>Porcentagem:</strong> 80%
+    <section>
+      <div class="container-aprendizado">
+        <i class="fas fa-graduation-cap icone-aprendizado"></i>
+        <h1>Seu Ambiente de Aprendizagem</h1>
+        <ul class="elementos-adicionais">
+          <li class="elemento">
+            <i class="fas fa-lightbulb"></i>
+            <p>Tecnologia</p>
+          </li>
+          <li class="elemento">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <p>Liberdade</p>
+          </li>
+          <li class="elemento">
+            <i class="fas fa-brain"></i>
+            <p>Confiança</p>
           </li>
         </ul>
-
-        <img
-          src="caminho/para/sua/imagem.jpg"
-          alt="Imagem Representativa"
-          class="img-fluid"
-        />
       </div>
-    </div>
+
+      <div class="container-cursos">
+        <div class="card-curso">
+          <h3><i class="fas fa-graduation-cap"></i> Título do Curso 1</h3>
+          <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
+          <p><i class="far fa-clock"></i> Duração: X horas</p>
+          <button><i class="fas fa-play"></i> Learn</button>
+        </div>
+
+        <div class="card-curso">
+          <h3><i class="fas fa-graduation-cap"></i> Título do Curso 2</h3>
+          <p><i class="fas fa-book"></i> Matéria: Nome da Matéria</p>
+          <p><i class="far fa-clock"></i> Duração: X horas</p>
+          <button><i class="fas fa-play"></i> Learn</button>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
