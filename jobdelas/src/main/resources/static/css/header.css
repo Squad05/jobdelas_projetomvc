@@ -1,0 +1,141 @@
+.header {
+    max-width: 100%;
+    display: flex;
+    padding: 25px 30px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    align-items: center;
+    position: relative;
+}
+
+.header .nav ul {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.header .nav div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header .caixa-item-navbar {
+    width: 70px;
+    padding-top: 5px;
+    border: 1px solid white;
+    background-color: #fff;
+
+}
+
+.header .icone_nav,
+.caixa-item-navbar a {
+    color: #B378FF;
+    text-decoration: none;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.header .nav ul li:hover {
+    border-radius: 10px;
+    border: 1px solid #B378FF;
+    box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.1);
+    
+}
+
+.header .search_bar {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.header .pesquisar_header {
+    border-radius: 10px;
+    border: 2px solid #B378FF;
+}
+
+.header .search_bar i {
+    font-size: 26px;
+    color: #B378FF;
+}
+
+.header .botao-perfil {
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+
+.header .logo_jobdelas {
+    height: 45px;
+}
+
+.header .img_perfil {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    z-index: 1000;
+    
+}
+
+@media only screen and (max-width: 1050px) {
+    .logo_jobdelas {
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .logo_jobdelas {
+        display: none;
+    }
+
+    .search_bar i {
+        font-size: 19px;
+    }
+
+    .pesquisar_header {
+        padding: 5px;
+    }
+
+    .img_perfil {
+        height: 40px;
+        
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .header {
+        padding: 20px 15px;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      color: white;
+      padding: 10px;
+    }
+  
+  }
+
+  .dropdown {    
+z-index: 200000;
+  }
+
+  .botao-perfil {
+    z-index: 20000;
+  }
