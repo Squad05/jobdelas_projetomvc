@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
+import com.squad05.jobdelas.services.EmailService;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
@@ -21,6 +22,9 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private EmailService emailService;
 
     @GetMapping("cadastrar")
     public ModelAndView cadastrar() {
@@ -53,6 +57,13 @@ public class UsuarioController {
         usuario.setSenha(senhaCriptografa);
 
         usuarioRepository.save(usuario);
+
+        System.out.println(usuario.getEmail());
+
+        emailService.enviarEmailTexto(usuario.getEmail(), "Bem vinda ao JobDelas",
+                "Bem vinda a JobDelas. Seu cadastro foi realizado com sucesso.");
+
+        System.out.println(emailService);
         return modelAndView;
 
     }
