@@ -52,6 +52,11 @@ button:focus,
     .lateral_home {
         display: none;
     }
+    .container_postagem {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 

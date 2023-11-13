@@ -7,11 +7,6 @@
  
 }
 
-:root{
-    --rosa-primario: #B378FF;
-    --branco: #ffffff;
-    --cinza-claro: #706273;
-}
 
 body {
     background-image: url(../img/Backimg.svg);

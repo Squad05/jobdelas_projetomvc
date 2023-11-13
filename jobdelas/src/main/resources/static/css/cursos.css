@@ -19,6 +19,7 @@
 
 .card-curso {
   background-color: #ffffff;
+  color:#B378FF;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -68,6 +69,13 @@
   cursor: pointer;
 }
 
+.card-curso button:hover {
+  background: var(--fundo-dividido);
+  color:#ffffff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #B378FF ;
+}
+
 .card-curso a {
   text-decoration: none;
   color: #fff;
@@ -79,6 +87,7 @@
   align-items: center;
   gap: 5px;
   margin-top: 20px;
+  overflow-y: hidden;
 }
 
 
@@ -98,6 +107,7 @@
   .icone-aprendizado {
     font-size: 1.6rem;
   }
+
 
   .elemento p {
     font-size: 15px;

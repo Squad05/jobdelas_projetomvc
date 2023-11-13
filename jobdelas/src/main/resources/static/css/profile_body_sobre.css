@@ -10,17 +10,26 @@
 
 .profile_sobre {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .botao_profile {
     width: 130px;
-    padding: 11px 16px;
-    border: none;
+    padding: 5px 9px !important;
+    border: 1px solid #B378FF ;
     color:#B378FF;
     border-radius: 4px;
     cursor: pointer;
     background-color: transparent;
+
+}
+
+.botao_profile:hover {
+    background: var(--fundo-dividido);
+    color:#ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #B378FF ;
 
 }
 
@@ -31,5 +40,5 @@
 }
 
 .titulo_profile {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
 }

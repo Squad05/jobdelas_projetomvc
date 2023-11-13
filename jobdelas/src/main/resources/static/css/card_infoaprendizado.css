@@ -1,3 +1,4 @@
+
 .container-aprendizado .icone-aprendizado {
     font-size: 80px;
 }
@@ -28,28 +29,18 @@
   }
 
   .elemento {
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(255, 255, 255);
-    height: 80px;
-    width: 90px;
-    padding: 5px;
+    height: max-content;
+    width: max-content;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: pulse 2s infinite; 
-    margin: 10px 0;
-    transform-origin: center;
-    display: inline-block; 
-    border: 1.9px solid #B378FF;
-
 }
 
 .elemento i {
-    font-size:30px;
+    font-size:42px;
     color:  #B378FF;
 }
 

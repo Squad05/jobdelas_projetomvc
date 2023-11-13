@@ -9,6 +9,14 @@
     overflow-x: hidden;
 }
 
+:root{
+    --rosa-primario: #B378FF;
+    --branco: #ffffff;
+    --cinza-claro: #706273;
+    --fundo-dividido: linear-gradient(to bottom, #B378FF 75%, #ffffff 25%);
+}
+
+
 body {
     background-color: #c192ff;
 }
