@@ -1,5 +1,8 @@
 package com.squad05.jobdelas.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,12 +61,10 @@ public class UsuarioController {
 
         usuarioRepository.save(usuario);
 
-        System.out.println(usuario.getEmail());
+        Map<String, Object> propriedades = new HashMap<>();
+        propriedades.put("nome", usuario.getNome());
 
-        emailService.enviarEmailTexto(usuario.getEmail(), "Bem vinda ao JobDelas",
-                "Bem vinda a JobDelas. Seu cadastro foi realizado com sucesso.");
-
-        System.out.println(emailService);
+        emailService.enviarEmailHtml(usuario.getEmail(), "Bem vinda ao JobDelas", propriedades);
         return modelAndView;
 
     }

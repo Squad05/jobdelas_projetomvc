@@ -1,99 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-DBXW1ggB4Q1E5fymTqFgIc5w9TkoqZZTL4O/ztINQgl3rh5aHDsVhaqPjNblIuZDHW+EsKnNNrOsK5cc/eHLW/Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      .container {
+        background-color: #ffffff;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #b378ff;
+      }
+
+      p {
+        color: #555555;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #888888;
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <section class="profile_body">
-        <div class="profile_sobre"></div>
+    <div class="container">
+      <h1>Bem-vinda ao JobDelas!</h1>
+      <p>Olá Eduarda,</p>
+      <p>
+        Seu cadastro foi um sucesso! Agora você faz parte da incrível comunidade
+        do JobDelas, a rede social exclusiva para mulheres.
+      </p>
+      <p>
+        Conecte-se, compartilhe suas experiências e explore oportunidades
+        profissionais. Estamos felizes por ter você conosco!
+      </p>
 
-        <div class="profile_educacao">
-          <div class="container_titulo_profile">
-            <h2 class="titulo_profile">Educação</h2>
+      <p>
+        Atenciosamente,<br />
+        Equipe JobDelas
+      </p>
+    </div>
 
-            <button
-              type="button"
-              class="btn btn-primary botao_profile"
-              data-toggle="modal"
-              data-target="#educacaoModal"
-            >
-              Adicionar
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-          </div>
-          <div class="lista_cardeducacao">
-            <div class="card_educacao">
-              <ul>
-                <li>
-                  <h3><i class="fas fa-university"></i> Nome da instituição</h3>
-                  <p><strong>Curso:</strong> Nome do curso</p>
-                  <p>
-                    <strong>Ano de Conclusão:</strong>
-                    YYYY
-                  </p>
-                </li>
-              </ul>
-              <button class="btn-excluir-educacao">
-                Excluir
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-            <div class="card_educacao">
-              <ul>
-                <li>
-                  <h3><i class="fas fa-university"></i> Nome da instituição</h3>
-                  <p><strong>Curso:</strong> Nome do curso</p>
-                  <p>
-                    <strong>Ano de Conclusão:</strong>
-                    YYYY
-                  </p>
-                </li>
-              </ul>
-              <button class="btn-excluir-educacao">
-                Excluir
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-            <div class="card_educacao">
-              <ul>
-                <li>
-                  <h3><i class="fas fa-university"></i> Nome da instituição</h3>
-                  <p><strong>Curso:</strong> Nome do curso</p>
-                  <p>
-                    <strong>Ano de Conclusão:</strong>
-                    YYYY
-                  </p>
-                </li>
-              </ul>
-              <button class="btn-excluir-educacao">
-                Excluir
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="footer">
+      Este é um email automático. Por favor, não responda.
+    </div>
   </body>
 </html>
