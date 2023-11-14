@@ -8,5 +8,7 @@ header.innerHTML = Navbar();
 const cardInfoAprendizado = document.querySelector(".container-aprendizado");
 cardInfoAprendizado.innerHTML = CardInfoAprendizado();
 
-// const curso = document.querySelector(".container-cursos");
-// curso.innerHTML = Curso();
+// const cursosHTML = dadosDosCursos.map(curso => Curso(curso)).join('');
+
+const curso = document.querySelector(".container-cursos");
+curso.innerHTML = Curso();
