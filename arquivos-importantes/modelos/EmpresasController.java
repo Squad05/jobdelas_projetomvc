@@ -10,29 +10,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.squad05.jobdelas.model.Aulas;
-import com.squad05.jobdelas.repository.AulasRepository;
-
+import com.squad05.jobdelas.model.Empresas;
+import com.squad05.jobdelas.repository.EmpresaRepository;
 
 
 @Controller
-@RequestMapping("/aulas")
-public class AulasController {
+@RequestMapping("/empresas")
+public class EmpresasController {
 
     @Autowired
-    private AulasRepository aulasRepository;
+    private EmpresaRepository empresaRepository;
 
     @GetMapping
     public ModelAndView aulas() {
-        ModelAndView modelAndView = new ModelAndView("/aulas.html");
+        ModelAndView modelAndView = new ModelAndView("/empresas.html");
 
-        modelAndView.addObject("aulas", aulasRepository.findAll());
+        modelAndView.addObject("empresas", empresaRepository.findAll());
 
         return modelAndView;
     }
-@PostMapping("/aulas.html")
-    public ResponseEntity<Aulas> createAulas(@RequestBody Aulas aulas) {
-        Aulas newAulas = aulasRepository.save(aulas);
-        return new ResponseEntity<>(newAulas, HttpStatus.CREATED);
+@PostMapping("/empresas.html")
+    public ResponseEntity<Empresas> createAulas(@RequestBody Empresas Empresas) {
+        Empresas newEmpresas = empresaRepository.save(Empresas);
+        return new ResponseEntity<>(newEmpresas, HttpStatus.CREATED);
     }
 }

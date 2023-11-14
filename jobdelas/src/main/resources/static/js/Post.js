@@ -28,8 +28,12 @@ export const Post = () => {
         <i class="fas fa-comment"></i> Comentar
       </button>
       <button class="read-comments-button">
+      <i class="fa-solid fa-circle-exclamation"></i> Denunciar
+      </button>
+      <button class="read-comments-button">
         <i class="fas fa-eye"></i> Ler Comentários
       </button>
+   
     </div>
   </div>`;
 };
