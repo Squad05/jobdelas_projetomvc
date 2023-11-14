@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("vagas")
 public class VagasController {
 
-    @GetMapping("vagas")
+    @GetMapping()
     public ModelAndView vagas() {
         ModelAndView modelAndView = new ModelAndView("/vagas/vagas.html");
 

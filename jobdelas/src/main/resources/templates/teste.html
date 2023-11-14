@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css"
+      integrity="sha384-rI2DBIG3Fv2jRwe7z9tc3R8pWFM9gGQVoTo5hcc4M2jtEkhl1ykI78zY3hY5FGEW"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Job Delas</title>
+  </head>
+
+  <body>
+    <div class="container mt-3">
+      <h2>Lista Postagens</h2>
+      <table>
+        <thead class="thead-dark">
+          <tr>
+            <th>Usuario Id</th>
+            <th>Categoria</th>
+            <th>Conteudo</th>
+            <th>dataComentario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="postagem : ${postagens}">
+            <td th:text="${postagem.id}"></td>
+            <td th:text="${postagem.categoria}"></td>
+            <td th:text="${postagem.conteudo}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

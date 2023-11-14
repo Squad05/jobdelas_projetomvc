@@ -37,7 +37,27 @@
           <div class="feed"></div>
         </div>
       </section>
-
+      <div class="container mt-3">
+        <h2>Lista Postagens</h2>
+        <table>
+          <thead class="thead-dark">
+            <tr>
+              <th>Usuario Id</th>
+              <th>Categoria</th>
+              <th>Conteudo</th>
+              <th>dataComentario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="postagem : ${postagens}">
+              <td th:text="${postagem.id}"></td>
+              <td th:text="${postagem.categoria}"></td>
+              <td th:text="${postagem.conteudo}"></td>
+              <td th:text="${postagem.dataComentario}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <!-- <div
         class="modal fade"
         id="tarefaModal"

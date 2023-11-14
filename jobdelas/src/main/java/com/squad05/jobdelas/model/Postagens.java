@@ -1,6 +1,7 @@
 package com.squad05.jobdelas.model;
 
 import java.security.Timestamp;
+import java.time.LocalDateTime;
 
 import org.hibernate.annotations.ManyToAny;
 
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -22,7 +24,7 @@ public class Postagens {
     private Long userId;
     private String categoria;
     private String conteudo;
-    private Timestamp dataComentario;
+    private LocalDateTime dataComentario;
 
     public Postagens() {
 

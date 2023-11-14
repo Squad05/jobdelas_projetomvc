@@ -1,12 +1,12 @@
-package com.squad05.jobdelas.servicesImpl;
+// package com.squad05.jobdelas.servicesImpl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 
-import com.squad05.jobdelas.repository.TarefasRepository;
+// import com.squad05.jobdelas.repository.TarefasRepository;
 
-public class TarefasServiceImpl {
+// public class TarefasServiceImpl {
 
-    @Autowired
-    private TarefasRepository tarefasRepository;
+// @Autowired
+// private TarefasRepository tarefasRepository;
 
-}
+// }
