@@ -15,7 +15,7 @@ public class Tarefas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Usuarios userId;
+    private int usuario_id;
     private String titulo;
     private String descricao;
     private Boolean concluida;

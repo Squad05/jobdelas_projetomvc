@@ -7,5 +7,4 @@ import com.squad05.jobdelas.model.Tarefas;
 
 @Repository
 public interface TarefasRepository extends JpaRepository<Tarefas, Long> {
-
 }

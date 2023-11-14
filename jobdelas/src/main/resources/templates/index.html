@@ -62,23 +62,36 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Qual sua tarefa?"
-                />
-                <textarea
-                  class="form-control"
-                  placeholder="Descrição da Tarefa"
-                  rows="3"
-                  style="max-height: 72px; overflow-y: auto"
-                ></textarea>
-                <small class="text-muted">Máximo de 3 linhas.</small>
-                <button type="button" class="btn btn-primary botao_addTarefa">
-                  Adicionar
-                </button>
-              </div>
+              <!-- Adicione o formulário aqui -->
+              <form
+                method="post"
+                th:object="${tarefa}"
+                th:action="@{/tarefa}"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Qual sua tarefa?"
+                    th:field="*{titulo}"
+                  />
+                  <textarea
+                    class="form-control"
+                    placeholder="Descrição da Tarefa"
+                    rows="3"
+                    style="max-height: 72px; overflow-y: auto"
+                    th:field="*{descricao}"
+                  ></textarea>
+                  <small class="text-muted">Máximo de 3 linhas.</small>
+
+                  <button type="submit" class="btn btn-primary botao_addTarefa">
+                    Adicionar
+                  </button>
+                </div>
+              </form>
+
+              <!-- Fim do formulário -->
 
               <ul class="list-group" id="modalTaskList">
                 <li
