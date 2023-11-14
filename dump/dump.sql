@@ -33,14 +33,13 @@ CREATE TABLE empresas (
      
 CREATE TABLE vagas (
     id SERIAL PRIMARY KEY,
-    experienciaNecessaria varchar(255),
-    empresaAnuciante INTEGER REFERENCES empresas(id),
+    empresaAnuciante INT REFERENCES empresas(id),
     descricao TEXT NOT NULL,
     cep VARCHAR(55),
     localizacao VARCHAR(255),
     funcao VARCHAR(255),
     statusVaga BOOLEAN NOT NULL
-    );
+);
        
 CREATE TABLE candidaturas (
     id SERIAL PRIMARY KEY,
@@ -96,4 +95,12 @@ CREATE TABLE cursos (
     materia VARCHAR(255) NOT NULL,
     duracao VARCHAR(255) NOT NULL
 );
-     
+    
+
+create table aulas (
+  id serial primary key, 
+  curso integer references cursos(id),
+  titulo varchar(255) not null,
+  link varchar(255) not null,
+  descricao varchar(255) not null
+  );
