@@ -49,17 +49,14 @@
     background-color: #B378FF;
     color: #fff;
     padding: 5px 10px;
-    border: 1px solid transparent ;
-    outline: 1px;
     border-radius: 4px;
     cursor: pointer;
+    border: 1px solid #B378FF ;
   }
   
   .btn-assistir:hover {
     background: var(--fundo-dividido);
     color:#ffffff;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #B378FF ;
   }
   
 .modal-content {

@@ -33,11 +33,10 @@
 
         <div class="container-cursos">
           <div th:each="curso : ${cursos}" class="card-curso">
-            <h3><i class="fas fa-graduation-cap"></i> Título do Curso 1</h3>
-            <p>
-              <i class="fas fa-book"></i> Matéria:
+            <h3>
+              <i class="fas fa-graduation-cap"></i>
               <span th:text="${curso.materia}"></span>
-            </p>
+            </h3>
             <p>
               <i class="far fa-clock"></i> Duração:
               <span th:text="${curso.duracao}"></span>
