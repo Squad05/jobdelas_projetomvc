@@ -132,6 +132,7 @@
   
   }
 
+<<<<<<< Updated upstream
   .dropdown {    
 z-index: 200000;
   }
@@ -139,3 +140,11 @@ z-index: 200000;
   .botao-perfil {
     z-index: 20000;
   }
+=======
+  .header .dropdown {
+    z-index: 1000;   
+
+  }
+
+ 
+>>>>>>> Stashed changes
