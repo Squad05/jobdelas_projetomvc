@@ -1,7 +1,7 @@
 CREATE DATABASE jobdelas;
 
 CREATE TABLE usuarios (
-id SERIAL PRIMARY KEY,
+id INTEGER AUTO_INCREMENT PRIMARY KEY,
 nome varchar(255) NOT NULL,
 email VARCHAR(255) UNIQUE NOT NULL,
 senha VARCHAR(255) NOT NULL,
@@ -13,15 +13,16 @@ linkDoPortfolio VARCHAR(255)
     
     
 CREATE TABLE educacao (
-    id SERIAL PRIMARY KEY,
-    userID INTEGER REFERENCES usuarios(id),
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    userID INTEGER,
     instituicao VARCHAR(255),
     areaDeEstudo VARCHAR(255) NOT NULL,
-    dataDeConclusao TIMESTAMP
-     );
+    dataDeConclusao TIMESTAMP,
+    FOREIGN KEY(userID) REFERENCES usuarios (id)
+);
      
 CREATE TABLE empresas (
-    id SERIAL PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     cnpj VARCHAR(18) NOT NULL,
     nome VARCHAR(255) NOT NULL,
     telefone VARCHAR(20),
@@ -29,78 +30,70 @@ CREATE TABLE empresas (
     senha VARCHAR(255) NOT NULL,
     areaDeAtuacao VARCHAR(255) NOT NULL,
     descricao VARCHAR(255)
-     );
+);
      
 CREATE TABLE vagas (
-    id SERIAL PRIMARY KEY,
-    empresaAnuciante INT REFERENCES empresas(id),
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    empresaAnuciante INTEGER,
     descricao TEXT NOT NULL,
     cep VARCHAR(55),
     localizacao VARCHAR(255),
     funcao VARCHAR(255),
-    statusVaga BOOLEAN NOT NULL
+    statusVaga BOOLEAN NOT NULL,
+    FOREIGN KEY(empresaAnuciante) REFERENCES empresas (id)
 );
        
 CREATE TABLE candidaturas (
-    id SERIAL PRIMARY KEY,
-    candidatoID INTEGER REFERENCES usuarios(id)
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    candidatoID INTEGER,
+    FOREIGN KEY(candidatoID) REFERENCES usuarios (id)
     );
          
       
 CREATE TABLE postagens (
-    id SERIAL PRIMARY KEY,
-    userID INTEGER REFERENCES usuarios(id),
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    userID INTEGER,
     categoria VARCHAR(255),
     conteudo TEXT NOT NULL,
-    dataPostagem TIMESTAMP
+    dataPostagem TIMESTAMP,
+    FOREIGN KEY(userID) REFERENCES usuarios (id)
 );
         
 CREATE TABLE comentarios (
-    id SERIAL PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     postID INTEGER REFERENCES postagens(id),
     userID INTEGER REFERENCES usuarios(id),
     conteudo TEXT NOT NULL,
-    dataComentario TIMESTAMP
+    dataComentario TIMESTAMP,
+    FOREIGN KEY(userID) REFERENCES usuarios (id),
+    FOREIGN KEY(postID) REFERENCES postagens (id)
 );
         
-        
-CREATE TABLE notificacoes (
-    id SERIAL PRIMARY KEY,
-    userID INTEGER REFERENCES usuarios(id),
-    mensagem VARCHAR(255) NOT NULL,
-    dataNotificacao TIMESTAMP,
-    lida BOOLEAN
-);
-       
+
 CREATE TABLE tarefas (
-    id SERIAL PRIMARY KEY,
-    usuario_id INTEGER REFERENCES usuarios(id),
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    userID INTEGER,
     titulo VARCHAR(255) NOT NULL,
     descricao VARCHAR(255) NOT NULL,
-    concluida BOOLEAN 
+    concluida BOOLEAN,
+    FOREIGN KEY(userID) REFERENCES usuarios (id),
+
 );
      
-     
-CREATE TABLE mensagens (
-    id SERIAL PRIMARY KEY,
-    remetenteID INTEGER REFERENCES usuarios(id),
-    destinatarioID INTEGER REFERENCES usuarios(id),
-    mensagem TEXT,
-    dataDeEnvio TIMESTAMP,
-    lida BOOLEAN
-);
+
 
 CREATE TABLE cursos (
-    id SERIAL PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     materia VARCHAR(255) NOT NULL,
     duracao VARCHAR(255) NOT NULL
 );
     
 
 create table aulas (
-  id serial primary key, 
-  curso integer references cursos(id),
+  id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+  cursoId INTEGER,
   titulo varchar(255) not null,
   link varchar(255) not null,
-  descricao varchar(255) not null
+  descricao varchar(255) not null,
+  FOREIGN KEY(cursoId) REFERENCES cursos(id)
   );
