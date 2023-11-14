@@ -34,7 +34,7 @@ CREATE TABLE empresas (
 CREATE TABLE vagas (
     id SERIAL PRIMARY KEY,
     experienciaNecessaria varchar(255),
-    empresaAnuciante INTEGER REFERENCES empresa(id),
+    empresaAnuciante INTEGER REFERENCES empresas(id),
     descricao TEXT NOT NULL,
     cep VARCHAR(55),
     localizacao VARCHAR(255),
@@ -75,7 +75,7 @@ CREATE TABLE notificacoes (
        
 CREATE TABLE tarefas (
     id SERIAL PRIMARY KEY,
-    userID INTEGER REFERENCES usuarios(id),
+    usuario_id INTEGER REFERENCES usuarios(id),
     titulo VARCHAR(255) NOT NULL,
     descricao VARCHAR(255) NOT NULL,
     concluida BOOLEAN 
@@ -90,3 +90,10 @@ CREATE TABLE mensagens (
     dataDeEnvio TIMESTAMP,
     lida BOOLEAN
 );
+
+CREATE TABLE cursos (
+    id SERIAL PRIMARY KEY,
+    materia VARCHAR(255) NOT NULL,
+    duracao VARCHAR(255) NOT NULL
+);
+     

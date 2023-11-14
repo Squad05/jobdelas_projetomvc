@@ -10,15 +10,15 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Entity
-public class Tarefas {
+public class Cursos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
-    private String descricao;
+    private String materia;
+    private String duracao;
 
-    public Tarefas() {
+    public Cursos() {
 
     }
 }

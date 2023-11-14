@@ -31,7 +31,26 @@
       <section class="container-principal">
         <div class="container-aprendizado"></div>
 
-        <div class="container-cursos"></div>
+        <div th:each="curso : ${cursos}" class="container-cursos">
+          <div class="card-curso">
+            <h3><i class="fas fa-graduation-cap"></i> Título do Curso 1</h3>
+            <p>
+              <i class="fas fa-book"></i> Matéria:
+              <span th:text="${curso.materia}"></span>
+            </p>
+            <p>
+              <i class="far fa-clock"></i> Duração:
+              <span th:text="${curso.duracao}"></span>
+            </p>
+            <button>
+              <i class="fas fa-play"></i> <a href="/curso">Learn </a>
+            </button>
+          </div>
+          <button>
+            <i class="fas fa-play"></i>
+            <a href="">Learn</a>
+          </button>
+        </div>
       </section>
     </main>
 

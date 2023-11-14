@@ -1,25 +1,27 @@
 package com.squad05.jobdelas.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.squad05.jobdelas.repository.CursosRepository;
+
 @Controller
-@RequestMapping("/")
+@RequestMapping("/cursos")
 public class CursosController {
 
-    @GetMapping("cursos")
+    @Autowired
+    private CursosRepository cursosRepository;
+
+    @GetMapping
     public ModelAndView cursos() {
         ModelAndView modelAndView = new ModelAndView("/aprendizado/cursos.html");
 
-        return modelAndView;
-    }
-
-    @GetMapping("curso")
-    public ModelAndView curso() {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/curso.html");
+        modelAndView.addObject("cursos", cursosRepository.findAll());
 
         return modelAndView;
     }
+
 }
