@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
+import com.squad05.jobdelas.services.UsuariosService;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
@@ -30,7 +31,7 @@ public class LoginController {
 
     @PostMapping("login")
     public ModelAndView login(String email, String senha) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/cadastrar");
+        ModelAndView modelAndView = new ModelAndView("redirect:/jobdelas");
 
         // Procura o usuário pelo email
         var usuarioEncontrado = this.usuarioRepository.findByEmail(email);

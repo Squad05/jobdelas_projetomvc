@@ -12,9 +12,4 @@ import com.squad05.jobdelas.model.Usuarios;
 public interface UsuarioRepository extends JpaRepository<Usuarios, Long> {
     Usuarios findByEmail(String email);
 
-    void save(Optional<Usuarios> usuarioExistente);
-
-    @Query(value = "select * from usuarios where email = :email and senha = :senha", nativeQuery = true)
-    public Usuarios Login(String email, String senha);
-
 }

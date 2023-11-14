@@ -7,21 +7,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.EmailService;
+import com.squad05.jobdelas.services.UsuariosService;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/")
 public class UsuarioController {
+
+    @Autowired
+    private UsuariosService usuariosService;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -53,13 +60,10 @@ public class UsuarioController {
 
         String nomeCompleto = primeiroNome + " " + sobrenome;
         usuario.setNome(nomeCompleto);
-        // O `withDefault` indica que está usandoa a biblitoeca do BCrypt,
-        // `hashToString´ gera o valor do hash , 12 é o custo da função, quanto maior,
-        // mais seguro. E o `toCharArray´ converte a senha em array de caracteres
         var senhaCriptografa = BCrypt.withDefaults().hashToString(12, usuario.getSenha().toCharArray());
         usuario.setSenha(senhaCriptografa);
 
-        usuarioRepository.save(usuario);
+        usuariosService.salvarUsuario(usuario);
 
         Map<String, Object> propriedades = new HashMap<>();
         propriedades.put("nome", usuario.getNome());
@@ -69,53 +73,26 @@ public class UsuarioController {
 
     }
 
-    @GetMapping("editar")
-    public ModelAndView editarUsuario() {
-        ModelAndView modelAndView = new ModelAndView("/usuario/usuario.html");
+    @GetMapping("/editar/{id}")
+    public String editarUsuario(@PathVariable Long id, Model model) {
 
-        modelAndView.addObject("usuario", new Usuarios());
-        return modelAndView;
+        Usuarios usuario = usuariosService.pegarUsuarioPorId(id);
+        model.addAttribute("usuario", usuario);
+        return "editarUsuario";
     }
 
-    @PutMapping("editar")
-    public ModelAndView atualizarUsuario(@ModelAttribute("usuario") Usuarios usuario,
-            @RequestParam("resumo") String resumo,
-            @RequestParam("telefone") String telefone, @RequestParam("portfolio") String portfolio,
-            @RequestParam("nome") String nome, @RequestParam("email") String email,
-            @RequestParam("senha") String senha) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/");
+    @PostMapping("editar/{id}")
+    public String atualizarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuarios usuario) {
+        usuariosService.deletarUsuario(id);
 
-        try {
-            // Verifica se o usuário com o ID fornecido existe no banco de dados
-            var usuarioExistente = usuarioRepository.findById(usuario.getId());
+        return "redirect:/index";
+    }
 
-            if (usuarioExistente.isPresent()) {
-                // Atualize os campos do usuário com os valores passados
-                Usuarios usuarioAtualizado = usuarioExistente.get();
-                usuarioAtualizado.setResumo(resumo);
-                usuarioAtualizado.setTelefone(telefone);
-                usuarioAtualizado.setLinkDoPorfolio(portfolio);
-                usuarioAtualizado.setNome(nome);
-                usuarioAtualizado.setEmail(email);
+    @GetMapping("/deletar/{id}")
+    public String deletarUsuario(@PathVariable Long id) {
+        usuariosService.deletarUsuario(id);
 
-                // Atualize a senha criptografada se necessário
-                if (!senha.isEmpty()) {
-                    var senhaCriptografada = BCrypt.withDefaults().hashToString(12, senha.toCharArray());
-                    usuarioAtualizado.setSenha(senhaCriptografada);
-                }
-
-                // Salve as alterações no banco de dados
-                usuarioRepository.save(usuarioAtualizado);
-            } else {
-                modelAndView.addObject("erro", "Usuário não encontrado");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            modelAndView.addObject("erro", "Ocorreu um erro ao atualizar o usuário");
-        }
-
-        return modelAndView;
+        return "redirect:/cadastro";
     }
 
     @GetMapping("perfil")
