@@ -45,7 +45,7 @@
                 <h4 th:text="${postagem.usuarios.getNome()}">Nome Usuario</h4>
               </div>
               <p
-                th:text="${#dates.format(postagem.data_postagem, 'dd/MM/yyyy HH:mm:ss')}"
+                th:text="${#temporals.format(postagem.data_postagem, 'dd/MM/yyyy HH:mm:ss')}"
                 class="post-date"
               ></p>
 
