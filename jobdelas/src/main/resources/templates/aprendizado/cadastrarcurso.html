@@ -14,12 +14,15 @@
         <label for="duracao">Duração:</label>
         <input type="text" id="duracao" name="duracao"  required><br>
 
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao"  required><br>
+
         <button type="submit">Cadastrar</button>
     </form>
 
     <h2>Lista de Cursos</h2>
     <ul th:each="curso : ${cursos}">
-        <li th:text="${curso.materia + ' - ' + curso.duracao}"></li>
+        <li th:text="${curso.materia + ' - ' + curso.duracao + ' - ' + curso.descricao}"></li>
         <a th:href="@{/cursos/editar/{id}(id=${curso.id})}">Editar</a>
         <a th:href="@{/cursos/deletar/{id}(id=${curso.id})}" onclick="return confirm('Tem certeza que deseja deletar este curso?')">Deletar</a>
     </ul>

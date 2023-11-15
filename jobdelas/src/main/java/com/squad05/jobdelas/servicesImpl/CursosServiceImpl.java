@@ -40,6 +40,7 @@ public class CursosServiceImpl implements CursosService {
         if (cursoExiste != null) {
             cursoExiste.setMateria(cursoAtualizado.getMateria());
             cursoExiste.setDuracao(cursoAtualizado.getDuracao());
+            cursoExiste.setDescricao(cursoAtualizado.getDescricao());
             return cursosRepository.save(cursoExiste);
         } else {
             throw new RuntimeException("Curso " + cursoAtualizado.getMateria() + " não encontrada.");

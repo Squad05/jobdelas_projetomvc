@@ -30,10 +30,11 @@ public class CursosController {
     }
 
     @PostMapping("/cadastrar")
-    public String cadastrarCurso(@RequestParam String materia, @RequestParam String duracao) {
+    public String cadastrarCurso(@RequestParam String materia, @RequestParam String duracao, @RequestParam String descricao) {
         Cursos curso = new Cursos();
         curso.setMateria(materia);
         curso.setDuracao(duracao);
+        curso.setDescricao(descricao);
 
         cursosRepository.save(curso);
 

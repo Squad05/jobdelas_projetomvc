@@ -17,6 +17,7 @@ public class Cursos {
     private Long id;
     private String materia;
     private String duracao;
+    private String descricao;
 
     public Cursos() {
 
