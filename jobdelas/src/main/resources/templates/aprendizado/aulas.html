@@ -69,7 +69,7 @@
                   <div class="modal-body">
                     <!-- Embed do vídeo do YouTube -->
                     <iframe
-                      src="${aula.link}"
+                    th:src="${#strings.isEmpty(aula.link) ? '' : aula.link}"
                       title="Título do Vídeo"
                       frameborder="0"
                       allowfullscreen

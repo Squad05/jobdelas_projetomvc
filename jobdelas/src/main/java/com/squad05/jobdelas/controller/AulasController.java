@@ -48,7 +48,7 @@ public class AulasController {
     @PostMapping("/adicionar")
     public String adicionarAula(@RequestParam Long cursoId, @RequestParam String titulo, @RequestParam String link,
             @RequestParam String descricao) {
-        // Lógica para adicionar aula ao banco de dados
+        // LÃ³gica para adicionar aula ao banco de dados
         Cursos curso = cursosRepository.findById(cursoId).orElse(null);
 
         if (curso != null) {
