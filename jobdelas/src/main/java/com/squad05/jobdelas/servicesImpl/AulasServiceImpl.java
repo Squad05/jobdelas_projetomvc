@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AulasServiceImpl implements AulasService {
 
+    @Autowired
     private final AulasRepository aulasRepository;
 
-    @Autowired
     public AulasServiceImpl(AulasRepository aulasRepository) {
         this.aulasRepository = aulasRepository;
     }

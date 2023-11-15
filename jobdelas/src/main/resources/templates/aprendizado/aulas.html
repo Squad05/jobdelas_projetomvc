@@ -29,8 +29,8 @@
       <section class="container-principal">
         <div class="container-aprendizado">
           <i class="fas fa-graduation-cap icone-aprendizado"></i>
-          <h1 class="titulo_curso">TITULO CURSO</h1>
-          <p>Descrição Curso</p>
+          <h1 class="titulo_curso" th:text="${curso.materia}"></h1>
+          <!-- <p th:text="${curso.descricao}"></p> -->
         </div>
         <ul class="lista-aulas">
           <li class="aula" th:each="aula : ${aulas}">

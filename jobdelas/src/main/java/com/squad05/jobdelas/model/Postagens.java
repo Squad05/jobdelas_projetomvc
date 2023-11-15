@@ -3,12 +3,12 @@ package com.squad05.jobdelas.model;
 import java.security.Timestamp;
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -21,10 +21,14 @@ public class Postagens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuarios usuarios;
+
     private String categoria;
     private String conteudo;
-    private LocalDateTime dataComentario;
+    private LocalDateTime data_postagem;
 
     public Postagens() {
 
