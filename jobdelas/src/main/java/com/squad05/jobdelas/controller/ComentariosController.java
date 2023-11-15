@@ -6,22 +6,23 @@
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.servlet.ModelAndView;
 
- import com.squad05.jobdelas.repository.VagasRepository;
+ import com.squad05.jobdelas.repository.ComentariosRepository;
 
  @Controller
- @RequestMapping("vagas")
- public class VagasController {
+ @RequestMapping("comentarios")
+ public class ComentariosController {
 
  @Autowired
- private VagasRepository vagasRepository;
+ private ComentariosRepository comentariosRepository;
      
     
      @GetMapping
-     public ModelAndView vagas() {
-         ModelAndView modelAndView = new ModelAndView("/vagas.html");
+     public ModelAndView comentarios() {
+         ModelAndView modelAndView = new ModelAndView("/comentarios.html");
 
 
-         modelAndView.addObject("vagas", vagasRepository.findAll());
+         modelAndView.addObject("comentarios", comentariosRepository.findAll());
          return modelAndView;
      }
  }
+

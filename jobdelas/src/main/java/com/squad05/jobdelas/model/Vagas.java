@@ -1,8 +1,5 @@
 package com.squad05.jobdelas.model;
 
-import java.security.Timestamp;
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,26 +8,28 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @Entity
-public class Postagens {
+public class Vagas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuarios usuarios;
+    @JoinColumn(name = "empresa_id")
+    private Empresas empresas;
 
-    private String categoria;
-    private String conteudo;
-    private LocalDateTime data_postagem;
+    
+    private String descricao;
+    private String cep;
+    private String localizacao;
+    private String funcao;
+    private String statusVaga;
+    
 
-    public Postagens() {
+    public Vagas() {
 
     }
 }

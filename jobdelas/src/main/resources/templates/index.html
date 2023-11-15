@@ -42,9 +42,13 @@
                   alt="User"
                   class="foto_criarpostagem"
                 />
-                <h4>Nome Usuario</h4>
+                <h4 th:text="${postagem.usuarios.getNome()}">Nome Usuario</h4>
               </div>
-              <p class="post-date">Publicado em 25 de Agosto de 2023</p>
+              <p
+                th:text="${#temporals.format(postagem.data_postagem, 'dd/MM/yyyy HH:mm:ss')}"
+                class="post-date"
+              ></p>
+
               <p class="post-content" th:text="${postagem.conteudo}"></p>
               <div class="post-actions">
                 <button class="like-button">
