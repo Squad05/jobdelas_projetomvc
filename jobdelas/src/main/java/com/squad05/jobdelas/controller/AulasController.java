@@ -13,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Aulas;
 import com.squad05.jobdelas.repository.AulasRepository;
 
-
-
 @Controller
 @RequestMapping("/aulas")
 public class AulasController {
@@ -24,13 +22,14 @@ public class AulasController {
 
     @GetMapping
     public ModelAndView aulas() {
-        ModelAndView modelAndView = new ModelAndView("/aulas.html");
+        ModelAndView modelAndView = new ModelAndView("/aprendizado/aulas.html");
 
-        modelAndView.addObject("aulas", aulasRepository.findAll());
+        modelAndView.addObject("cursos", aulasRepository.findAll());
 
         return modelAndView;
     }
-@PostMapping("/aulas.html")
+
+    @PostMapping("/aulas.html")
     public ResponseEntity<Aulas> createAulas(@RequestBody Aulas aulas) {
         Aulas newAulas = aulasRepository.save(aulas);
         return new ResponseEntity<>(newAulas, HttpStatus.CREATED);
