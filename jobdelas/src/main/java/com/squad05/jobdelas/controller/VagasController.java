@@ -15,11 +15,15 @@
 // @Autowired
 // private VagasRepository vagasRepository;
 
-// @GetMapping
-// public ModelAndView vagas() {
-// ModelAndView modelAndView = new ModelAndView("/vagas/vagas.html");
+//     @Autowired
+//     private VagasRepository vagasRepository;
+    
+//     @GetMapping
+//     public ModelAndView vagas() {
+//         ModelAndView modelAndView = new ModelAndView("/vagas/vagas.html");
 
-// modelAndView.addObject("vagas", vagasRepository.findAll());
-// return modelAndView;
-// }
+
+//         modelAndView.addObject("vagas", vagasRepository.findAll());
+//         return modelAndView;
+//     }
 // }

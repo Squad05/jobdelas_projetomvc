@@ -8,4 +8,7 @@
 // @Repository
 // public interface EmpresaRepository extends JpaRepository<Empresas, Long> {
 
+// @Repository
+// public interface EmpresaRepository extends JpaRepository<Empresas, Long> {
+
 // }
