@@ -42,7 +42,8 @@
               <span th:text="${curso.duracao}"></span>
             </p>
             <button>
-              <i class="fas fa-play"></i> <a href="/curso">Learn </a>
+              <i class="fas fa-play"></i>
+              <a th:href="@{/aulas/{id}(id=${curso.id})}">Learn</a>
             </button>
           </div>
         </div>

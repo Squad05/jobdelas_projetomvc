@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -33,97 +33,63 @@
           <p>Descrição Curso</p>
         </div>
         <ul class="lista-aulas">
-          <li class="aula">
+          <li class="aula" th:each="aula : ${aulas}">
             <div class="titulo">
-              <i class="fas fa-play-circle"></i> Título da Aula 1
+              <i class="fas fa-play-circle"></i>
+              <span th:text="${aula.titulo}"></span>
             </div>
             <button
               class="btn-assistir"
               data-toggle="modal"
-              data-target="#aulaModal1"
+              th:data-target="'#aulaModal' + ${aula.id}"
             >
               Assistir Aula
             </button>
-          </li>
-          <li class="aula">
-            <div class="titulo">
-              <i class="fas fa-play-circle"></i> Título da Aula 2
+
+            <!-- Modal para cada aula -->
+            <div
+              class="modal fade"
+              th:id="'aulaModal' + ${aula.id}"
+              tabindex="-1"
+              role="dialog"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" th:text="${aula.titulo}"></h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Fechar"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Embed do vídeo do YouTube -->
+                    <iframe
+                      src="https://www.youtube.com/embed/IeaadwctbD4"
+                      title="Título do Vídeo"
+                      frameborder="0"
+                      allowfullscreen
+                      width="100%"
+                      height="400px"
+                    >
+                      ></iframe
+                    >
+
+                    <p th:text="${aula.descricao}">
+                      Descrição detalhada da Aula.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button
-              class="btn-assistir"
-              data-toggle="modal"
-              data-target="#aulaModal2"
-            >
-              Assistir Aula
-            </button>
           </li>
         </ul>
       </section>
     </main>
-
-    <div
-      class="modal fade"
-      id="aulaModal1"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="aulaModalLabel1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="aulaModalLabel1">Título da Aula 1</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Fechar"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <video controls>
-              <source src="caminho/do/seu/video1.mp4" type="video/mp4" />
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <p>Descrição detalhada da Aula 1.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="aulaModal2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="aulaModalLabel2"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="aulaModalLabel2">Título da Aula 2</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Fechar"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <video controls>
-              <source src="caminho/do/seu/video2.mp4" type="video/mp4" />
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <p>Descrição detalhada da Aula 2.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="/js/index.js" type="module"></script>
     <script

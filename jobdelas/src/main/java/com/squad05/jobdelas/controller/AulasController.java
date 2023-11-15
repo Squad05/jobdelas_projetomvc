@@ -1,37 +1,27 @@
 package com.squad05.jobdelas.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.squad05.jobdelas.model.Aulas;
-import com.squad05.jobdelas.repository.AulasRepository;
+import com.squad05.jobdelas.services.AulasService;
 
 @Controller
-@RequestMapping("/aulas")
 public class AulasController {
 
     @Autowired
-    private AulasRepository aulasRepository;
+    private AulasService aulasService;
 
-    @GetMapping
-    public ModelAndView aulas() {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/aulas.html");
-
-        modelAndView.addObject("cursos", aulasRepository.findAll());
-
-        return modelAndView;
+    @GetMapping("/aulas/{cursoId}")
+    public String mostrarAulasDoCurso(@PathVariable Long cursoId, Model model) {
+        List<Aulas> aulasDoCurso = aulasService.listarAulasPorCursoId(cursoId);
+        model.addAttribute("aulas", aulasDoCurso);
+        return "aprendizado/aulas";
     }
 
-    @PostMapping("/aulas.html")
-    public ResponseEntity<Aulas> createAulas(@RequestBody Aulas aulas) {
-        Aulas newAulas = aulasRepository.save(aulas);
-        return new ResponseEntity<>(newAulas, HttpStatus.CREATED);
-    }
 }

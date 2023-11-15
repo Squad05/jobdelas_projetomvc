@@ -96,4 +96,4 @@ create table aulas (
   link varchar(255) not null,
   descricao varchar(255) not null,
   FOREIGN KEY(cursoId) REFERENCES cursos(id)
-  );
+);

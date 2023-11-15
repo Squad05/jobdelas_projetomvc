@@ -16,26 +16,27 @@
       crossorigin="anonymous"
     />
 
-    <title>Job Delas</title>
+    <title>Lista de Aulas</title>
   </head>
 
   <body>
     <div class="container mt-3">
-      <h2>Lista Postagens</h2>
-      <table>
+      <h2>Lista de Aulas</h2>
+      <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th>Usuario Id</th>
-            <th>Categoria</th>
-            <th>Conteudo</th>
-            <th>dataComentario</th>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Link</th>
+            <th>Descrição</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="postagem : ${postagens}">
-            <td th:text="${postagem.id}"></td>
-            <td th:text="${postagem.categoria}"></td>
-            <td th:text="${postagem.conteudo}"></td>
+          <tr th:each="aula : ${aulas}">
+            <td th:text="${aula.id}"></td>
+            <td th:text="${aula.titulo}"></td>
+            <td th:text="${aula.link}"></td>
+            <td th:text="${aula.descricao}"></td>
           </tr>
         </tbody>
       </table>
