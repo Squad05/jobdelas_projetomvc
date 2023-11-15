@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Categorias</title>
+	<!-- Link para o Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/empresas}">Listagem de Empresas</a>
+		<a class="navbar-brand" th:href="@{/vagas}">Listagem de Vagas</a>
+	</nav>
+
+	<div class="container mt-3">
+		<h2>Lista de Vagas</h2>
+		<a class="btn btn-primary mb-2" th:href="@{/vagas/novo}">Adicionar Vagas</a>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Empresa</th>
+					<th>Descrição</th>
+					<th>Cep</th>
+					<th>Localização</th>
+					<th>Função</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="vagas : ${vagas}">
+					<td th:text="${vagas.id}"></td>
+					<td th:text="${vagas.empresa}"></td>
+					<td th:text="${vagas.descricao}"></td>
+					<td th:text="${vagas.cep}"></td>
+					<td th:text="${vagas.funcao }"></td>
+					<td th:text="${vagas.status}"></td>
+					<td><span th:text="'R$ ' + ${produto.preco}"></span></td>
+
+						<a class="btn btn-info btn-sm"
+							th:href="@{/vagas/editar/{id}(id=${vagas.id})}">Editar</a>
+						<a class="btn btn-danger btn-sm"
+							th:href="@{/vagas/deletar/{id}(id=${vagas.id})}">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

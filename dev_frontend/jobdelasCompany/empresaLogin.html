@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,15 +14,14 @@
         <!-- Parte esquerda do formulário -->
         <section class="cantact_info">
             <section class="info_titulo">
+                <span class="fa fa-user-circle"></span>
                 <h2>Jobdelas</h2>
-            </section>
-            <section class="info_items">
-                <p><span class="fa fa-envelope"></span> Cadastre sua empresa</p>
+                <h2>Empresas</h2>
             </section>
         </section>
         <!-- Final da parte esquerda do formulário -->
-        <form action="@{empresas/save}" th:object="${empresas}" class="form_corpo" method="post">
-            <h2>Cadastrar Empresa</h2>
+        <form action="" class="form_corpo">
+            <h2>Faça Login com sua Empresa</h2>
             <div class="user_info">
                 <label for="empresa">Nome da Empresa:</label>
                 <input type="text" id="nome-empresa" name="nome-empresa" required>
@@ -33,18 +32,12 @@
                 <label for="senha">Senha:</label>
                 <input type="password" class="form-control" id="senha" name="senha" required>
 
-                <label for="areaDeAtuacao">Área de Atuação:</label>
-                <input type="text" class="form-control" id="areaDeAtuacao" name="areaDeAtuacao" required>
-
-                <label for="descricao">Descrição:</label>
-                <textarea id="descricao" name="descricao"></textarea>
-
-                <a class="esqueceu" href="#">Tem conta? Login aqui</a>
-
+                <a class="esqueceu" href="empresaCadastro.html">Não tem conta?</a>
 
                 <button id="botao-formulario" class="btn" role="button" type="submit">
-                    Cadastrar
+                    Login
                   </button>
+            
             </div>
         </form>
 

@@ -135,6 +135,7 @@ form.form_corpo input[type="button"] {
     text-transform: uppercase;
     color: #B378FF;
     border: 1px solid #B378FF;
+    cursor: pointer;
 }
 
 #botao-formulario:hover {
