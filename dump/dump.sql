@@ -55,9 +55,10 @@ CREATE TABLE postagens (
     usuario_id INTEGER,
     categoria VARCHAR(255),
     conteudo TEXT NOT NULL,
-    data_postagem TIMESTAMP,
+    data_postagem DATETIME,
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
+
         
 CREATE TABLE comentarios (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
