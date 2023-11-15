@@ -52,21 +52,21 @@ CREATE TABLE candidaturas (
       
 CREATE TABLE postagens (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    userID INTEGER,
+    usuario_id INTEGER,
     categoria VARCHAR(255),
     conteudo TEXT NOT NULL,
-    dataPostagem TIMESTAMP,
-    FOREIGN KEY(userID) REFERENCES usuarios (id)
+    data_postagem TIMESTAMP,
+    FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
         
 CREATE TABLE comentarios (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    postID INTEGER REFERENCES postagens(id),
-    userID INTEGER REFERENCES usuarios(id),
+    postagem_id INTEGER REFERENCES postagens(id),
+    usuario_id INTEGER REFERENCES usuarios(id),
     conteudo TEXT NOT NULL,
-    dataComentario TIMESTAMP,
-    FOREIGN KEY(userID) REFERENCES usuarios (id),
-    FOREIGN KEY(postID) REFERENCES postagens (id)
+    data_comentario DATETIME,
+    FOREIGN KEY(usuario_id) REFERENCES usuarios (id),
+    FOREIGN KEY(postagem_id ) REFERENCES postagens (id)
 );
         
 

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Postagens;
+import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.services.PostagensService;
+import com.squad05.jobdelas.services.UsuariosService;
 
 @Controller
 @RequestMapping("/")
@@ -22,6 +24,7 @@ public class IndexAppController {
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("index.html");
         List<Postagens> postagens = postagensService.listarTodasPostagens();
+
         modelAndView.addObject("postagens", postagens);
         return modelAndView;
     }
