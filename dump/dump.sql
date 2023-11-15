@@ -61,12 +61,12 @@ CREATE TABLE postagens (
         
 CREATE TABLE comentarios (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    postagem_id INTEGER REFERENCES postagens(id),
-    usuario_id INTEGER REFERENCES usuarios(id),
+    postagem_id INTEGER,
+    usuario_id INTEGER,
     conteudo TEXT NOT NULL,
     data_comentario DATETIME,
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id),
-    FOREIGN KEY(postagem_id ) REFERENCES postagens (id)
+    FOREIGN KEY(postagem_id) REFERENCES postagens (id)
 );
         
 
