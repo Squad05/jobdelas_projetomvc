@@ -29,7 +29,7 @@ public class EmpresasController {
 
         return modelAndView;
     }
-@PostMapping("/empresas.html")
+@PostMapping("/empresa")
     public ResponseEntity<Empresas> createAulas(@RequestBody Empresas Empresas) {
         Empresas newEmpresas = empresaRepository.save(Empresas);
         return new ResponseEntity<>(newEmpresas, HttpStatus.CREATED);
