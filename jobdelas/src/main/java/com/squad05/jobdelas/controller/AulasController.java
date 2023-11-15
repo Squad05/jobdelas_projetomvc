@@ -4,6 +4,11 @@ import com.squad05.jobdelas.model.Aulas;
 import com.squad05.jobdelas.model.Cursos;
 import com.squad05.jobdelas.repository.AulasRepository;
 import com.squad05.jobdelas.repository.CursosRepository;
+import com.squad05.jobdelas.services.AulasService;
+import com.squad05.jobdelas.services.CursosService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,14 +29,20 @@ public class AulasController {
     @Autowired
     private CursosRepository cursosRepository;
 
-    @GetMapping
-    public ModelAndView aulas() {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/cadastraraula.html");
+    @Autowired
+    private AulasService aulasService;
 
-        modelAndView.addObject("aulas", aulasRepository.findAll());
-        modelAndView.addObject("cursos", cursosRepository.findAll());
+    @Autowired
+    private CursosService cursosService;
 
-        return modelAndView;
+    @GetMapping("/{cursoId}")
+    public String mostrarAulasDoCurso(@PathVariable Long cursoId, Model model) {
+        List<Aulas> aulasDoCurso = aulasService.listarAulasPorCursoId(cursoId);
+        Cursos curso = cursosService.pegarCursoPorId(cursoId);
+
+        model.addAttribute("curso", curso);
+        model.addAttribute("aulas", aulasDoCurso);
+        return "aprendizado/aulas";
     }
 
     @PostMapping("/adicionar")
