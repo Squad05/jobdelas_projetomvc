@@ -23,18 +23,30 @@
       </div>
 
       <form
-        action="@{empresas/save}"
+        method="POST"
         th:object="${empresas}"
+        enctype="multipart/form-data"
         class="form_corpo"
-        method="post"
       >
         <h2>Cadastrar Empresa</h2>
         <div class="empresa">
           <label for="empresa">Nome da Empresa:</label>
-          <input type="text" id="nome-empresa" name="nome-empresa" required />
+          <input
+            type="text"
+            id="nome"
+            name="nome-empresa"
+            th:field="*{nome}"
+            required
+          />
 
           <label for="email">Email:</label>
-          <input type="text" id="email-empresa" name="email-empresa" required />
+          <input
+            type="text"
+            id="email"
+            name="email-empresa"
+            th:field="*{email}"
+            required
+          />
 
           <label for="senha">Senha:</label>
           <input
@@ -42,6 +54,7 @@
             class="form-control"
             id="senha"
             name="senha"
+            th:field="*{senha}"
             required
           />
 
@@ -49,15 +62,29 @@
           <input
             type="text"
             class="form-control"
-            id="areaDeAtuacao"
+            id="area_de_atuacao"
             name="areaDeAtuacao"
+            th:field="*{area_de_atuacao}"
             required
           />
 
           <label for="descricao">Descrição:</label>
-          <textarea id="descricao" name="descricao"></textarea>
+          <textarea
+            id="descricao"
+            name="descricao"
+            th:field="*{descricao}"
+          ></textarea>
 
-          <a class="esqueceu" href="empresaLogin.html">Tem conta? Login aqui</a>
+          <label for="cnpj">CNPJ:</label>
+          <input
+            type="text"
+            id="cnpj"
+            name="cnpj-empresa"
+            th:field="*{cnpj}"
+            required
+          />
+
+          <!-- <a class="esqueceu" href="empresaLogin.html">Tem conta? Login aqui</a> -->
 
           <button id="botao-formulario" class="btn" role="button" type="submit">
             Cadastrar
