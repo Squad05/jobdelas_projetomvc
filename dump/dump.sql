@@ -28,19 +28,19 @@ CREATE TABLE empresas (
     telefone VARCHAR(20),
     email VARCHAR(255) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    areaDeAtuacao VARCHAR(255) NOT NULL,
+    area_de_atuacao VARCHAR(255) NOT NULL,
     descricao VARCHAR(255)
 );
      
 CREATE TABLE vagas (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    empresaAnuciante INTEGER,
+    empresa_anunciante INTEGER,
     descricao TEXT NOT NULL,
     cep VARCHAR(55),
     localizacao VARCHAR(255),
     funcao VARCHAR(255),
-    statusVaga BOOLEAN NOT NULL,
-    FOREIGN KEY(empresaAnuciante) REFERENCES empresas (id)
+    status_vaga BOOLEAN NOT NULL,
+    FOREIGN KEY(empresa_anunciante) REFERENCES empresas (id)
 );
        
 CREATE TABLE candidaturas (

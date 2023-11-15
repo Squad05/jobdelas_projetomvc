@@ -25,7 +25,7 @@
 // private String cep;
 // private String localizacao;
 // private String funcao;
-// private String statusVaga;
+// private String status_vaga;
 
 // public Vagas() {
 

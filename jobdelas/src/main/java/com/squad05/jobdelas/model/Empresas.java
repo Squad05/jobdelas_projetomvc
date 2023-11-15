@@ -21,7 +21,7 @@ public class Empresas {
     private String email;
     private String senha;
 
-    private String area_de_atuacaos;
+    private String area_de_atuacao;
     private String descricao;
 
     public Empresas() {
