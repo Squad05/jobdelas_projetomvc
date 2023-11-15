@@ -13,7 +13,7 @@ export const Navbar = () => {
           </a>
         </li>
         <li class="caixa-item-navbar">
-          <a href="/mensagens">
+          <a href="mensagens">
             <div><i class="fa fa-envelope icone_nav"></i> Chat</div>
           </a>
         </li>

@@ -22,7 +22,7 @@ public class CursosController {
 
     @GetMapping
     public ModelAndView cursos() {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/cadastrarcurso.html");
+        ModelAndView modelAndView = new ModelAndView("/aprendizado/cursos.html");
 
         modelAndView.addObject("cursos", cursosRepository.findAll());
 
@@ -44,7 +44,6 @@ public class CursosController {
     public ModelAndView editarCurso(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("/aprendizado/editar-curso.html");
 
-
         Cursos cursos = cursosRepository.findById(id).orElse(null);
         modelAndView.addObject("curso", cursos);
 
@@ -53,19 +52,17 @@ public class CursosController {
 
     @PostMapping("/atualizar")
     public String atualizarCurso(@ModelAttribute Cursos cursos) {
-     
+
         cursosRepository.save(cursos);
 
-     
         return "redirect:/cursos";
     }
 
     @GetMapping("/deletar/{id}")
     public String deletarCurso(@PathVariable Long id) {
-       
+
         cursosRepository.deleteById(id);
 
-       
         return "redirect:/cursos";
     }
 
