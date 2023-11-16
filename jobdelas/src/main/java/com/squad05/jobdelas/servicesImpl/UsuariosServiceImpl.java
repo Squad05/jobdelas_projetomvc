@@ -44,7 +44,7 @@ public class UsuariosServiceImpl implements UsuariosService {
             usuarioExiste.setSenha(usuarioAtualizado.getSenha());
             usuarioExiste.setFoto(usuarioAtualizado.getFoto());
             usuarioExiste.setResumo(usuarioAtualizado.getResumo());
-            usuarioAtualizado.setLinkDoPorfolio(usuarioAtualizado.getLinkDoPorfolio());
+            usuarioAtualizado.setLink_do_portfolio(usuarioAtualizado.getLink_do_portfolio());
 
             return usuarioRepository.save(usuarioExiste);
         } else {

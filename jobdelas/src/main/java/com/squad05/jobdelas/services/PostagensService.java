@@ -10,13 +10,12 @@ public interface PostagensService {
 
     List<Postagens> listarPostagensPorCategoria(String categoria);
 
-    Postagens cadastrarpostagens(Postagens postagens);
+    // Postagens cadastrarpostagens(Postagens postagens);
 
-    Postagens atualizarPostagens(Long id, Postagens postagensAtualizado);
+    // Postagens atualizarPostagens(Long id, Postagens postagensAtualizado);
 
-    void deletarPostagens(Long id);
+    // void deletarPostagens(Long id);
 
-    Postagens pegarPostagensPorId(Long id);
-
+    // Postagens pegarPostagensPorId(Long id);
 
 }
