@@ -39,6 +39,7 @@ CREATE TABLE vagas (
     localizacao VARCHAR(255),
     funcao VARCHAR(255),
     status_vaga BOOLEAN NOT NULL,
+    salario int not null,
     FOREIGN KEY(empresa_anunciante) REFERENCES empresas (id)
 );
        
