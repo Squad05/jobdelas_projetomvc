@@ -22,7 +22,7 @@ public class LoginController {
 
     @GetMapping("login")
     public ModelAndView login() {
-        ModelAndView modelAndView = new ModelAndView("/login/login.html");
+        ModelAndView modelAndView = new ModelAndView("jobdelas/login.html");
         modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;
     }
@@ -34,7 +34,7 @@ public class LoginController {
         var usuarioEncontrado = usuariosService.encontrarPorEmail(email);
 
         if (usuarioEncontrado == null) {
-            modelAndView.setViewName("/login/login.html");
+            modelAndView.setViewName("jobdelas/login.html");
             modelAndView.addObject("erro", "Email ou senha incorretos");
             return modelAndView;
         }
@@ -42,7 +42,7 @@ public class LoginController {
         if (BCrypt.verifyer().verify(senha.toCharArray(), usuarioEncontrado.getSenha()).verified) {
             modelAndView.addObject("usuarioLogado", usuarioEncontrado);
         } else {
-            modelAndView.setViewName("/login/login.html");
+            modelAndView.setViewName("jobdelas/login.html");
             modelAndView.addObject("erro", "Email ou senha incorretos");
         }
 

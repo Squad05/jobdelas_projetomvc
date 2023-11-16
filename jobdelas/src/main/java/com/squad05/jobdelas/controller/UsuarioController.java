@@ -33,7 +33,7 @@ public class UsuarioController {
 
     @GetMapping("cadastrar")
     public ModelAndView cadastrar() {
-        ModelAndView modelAndView = new ModelAndView("jobdelas/login/cadastro.html");
+        ModelAndView modelAndView = new ModelAndView("jobdelas/cadastro.html");
 
         modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;
