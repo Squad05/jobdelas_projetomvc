@@ -14,7 +14,7 @@
   .cointaner-principal {
     width: 100%;
     max-width: 1050px;
-    height: 530px;
+    height: 600px;
     margin: 50px auto;
     display: flex;
     background: #fff;
@@ -94,7 +94,7 @@
   form.form_corpo {
     width: 62%;
     padding: 30px;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -118,8 +118,8 @@
   form.form_corpo textarea {
     width: 100%;
     padding: 8px 0px 5px;
-    border: none;
-    border-bottom: 1px solid #B378FF;
+    border: 1px solid #B378FF;
+    border-radius: 13px;
     font-size: 14px;
     font-weight: 400;
   }
@@ -133,6 +133,13 @@
     min-height: 30px;
   }
   
+
+  #area_de_atuacao {
+    margin-top: 20px;
+    border: none;
+  }
+
+
   
   #botao-formulario {
     width: 200px;
@@ -143,6 +150,7 @@
     border-radius: 10px;
     border: 1px solid #B378FF;
     cursor: pointer;
+    margin-top: 10px;
   }
   
   #botao-formulario:hover {
@@ -178,3 +186,60 @@
     }
   }
   
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: 1px solid #B378FF;
+    
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    background-color: #B378FF;
+    padding: 5px;
+    color: #fff;
+    width: 100%;
+}
+
+.card-button {
+  background-color: #fff;
+  color: #B378FF;
+   border: 1px solid #B378FF;
+   border-radius: 5px;
+   cursor: pointer;
+   padding: 5px 10px;
+} 
+
+.card-button:hover {
+  background-color: #B378FF;
+  color: #fff;
+}
+
+.form_corpo_cards {
+  width: 62%;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.listar h2 {
+  color: #303030;
+}
+
+
+.card-content p {
+  text-transform: uppercase;
+}

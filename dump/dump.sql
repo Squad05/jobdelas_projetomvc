@@ -27,7 +27,6 @@ CREATE TABLE empresas (
     nome VARCHAR(255) NOT NULL,
     telefone VARCHAR(20),
     email VARCHAR(255) UNIQUE NOT NULL,
-    senha VARCHAR(255) NOT NULL,
     area_de_atuacao VARCHAR(255) NOT NULL,
     descricao VARCHAR(255)
 );
