@@ -28,4 +28,13 @@ public class EmpresasServiceImpl implements EmpresasService {
         return empresasRepository.save(empresas);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Empresas pegarEmpresaPorId(Long id) {
+        return empresasRepository.findById(id).orElse(null);
+    }
+
+    public void deletarEmpresa(Long id) {
+        empresasRepository.deleteById(id);
+    }
 }

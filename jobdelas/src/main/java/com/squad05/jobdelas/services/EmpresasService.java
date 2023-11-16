@@ -10,4 +10,8 @@ public interface EmpresasService {
 
     Empresas cadastrarEmpresa(Empresas empresas);
 
+    Empresas pegarEmpresaPorId(Long id);
+
+    void deletarEmpresa(Long id);
+
 }

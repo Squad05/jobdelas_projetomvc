@@ -2,9 +2,12 @@ package com.squad05.jobdelas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Empresas;
@@ -25,12 +28,39 @@ public class EmpresasController {
         return modelAndView;
     }
 
+    @GetMapping("/listar/empresas")
+    public ModelAndView listarEmpresas() {
+        ModelAndView modelAndView = new ModelAndView("/jb_company/listarEmpresas.html");
+        modelAndView.addObject("empresas", empresasService.listarEmpresas());
+
+        return modelAndView;
+    }
+
+    @GetMapping("/buscar/empresas")
+    public ModelAndView buscarEmpresas() {
+        ModelAndView modelAndView = new ModelAndView("/jb_company/buscarEmpresas.html");
+
+        return modelAndView;
+    }
+
     @PostMapping("/empresas")
     public String cadastrarEmpresa(Empresas empresas) {
-        System.out.println(empresas);
         empresasService.cadastrarEmpresa(empresas);
 
         return "redirect:/";
     }
+
+    @PostMapping("/deletar/empresa")
+    public String deletarEmpresa(@RequestParam Long id) {
+        empresasService.deletarEmpresa(id);
+        return "redirect:/listar/empresas";
+    }
+
+    // @GetMapping
+    // public String consultarEmpresa(@RequestParam Long id, Model model) {
+    // Empresas empresas = empresasService.pegarEmpresaPorId(id);
+    // model.addAttribute("empresas", empresas);
+
+    // }
 
 }
