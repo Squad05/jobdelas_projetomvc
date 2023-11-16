@@ -47,7 +47,7 @@ public class EmpresasController {
     public String cadastrarEmpresa(Empresas empresas) {
         empresasService.cadastrarEmpresa(empresas);
 
-        return "redirect:/";
+        return "redirect:/jbcompany/listar/empresas";
     }
 
     @PostMapping("/deletar/empresa")

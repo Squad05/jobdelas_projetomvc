@@ -1,62 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Cadastro de Produto</title>
     <!-- Link para o Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" th:href="@{/categorias}">Listagem de Categorias</a>
-        <a class="navbar-brand" th:href="@{/produtos}">Listagem de Produtos</a>
+      <a class="navbar-brand" th:href="@{/categorias}"
+        >Listagem de Categorias</a
+      >
+      <a class="navbar-brand" th:href="@{/produtos}">Listagem de Produtos</a>
     </nav>
 
     <div class="container mt-3">
-        <h2>Publicar vaga</h2>
-        <form th:action="@{/vagas/save}" th:object="${vagas}" method="post">
+      <h2>Publicar vaga</h2>
+      <form th:action="@{/vagas/save}" th:object="${vagas}" method="post">
+        <div th:each="empresa : ${empresas}">
+          <div class="form-group">
+            <label for="'empresa-' + ${empresa.id}">Nome empresa:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="'empresa-' + ${empresa.id}"
+              name="empresas"
+              th:value="${empresa.id}"
+              th:checked="${vagas.empresas.contains(empresa)}"
+            />
+            <label
+              class="form-check-label"
+              th:for="'empresa-' + ${empresa.id}"
+              th:text="${empresa.nome}"
+            ></label>
+          </div>
 
-            <div class="form-group">
-                <label for="funcao">Função:</label>
-                <input type="text" id="funcao" class="form-control" th:field="*{funcao}" />
-            </div>
+          <div class="form-group">
+            <label for="funcao">Função:</label>
+            <input
+              type="text"
+              id="funcao"
+              class="form-control"
+              th:field="*{funcao}"
+            />
+          </div>
 
-            <div th:each="empresas : ${empresas}">
-                <div class="form-group">
-                    <label for="nome-empresa">Nome empresa:</label>
-                    <input class="form-control" type="text" id="empresa${empresas.id}" name="empresas"
-                        th:value="${empresas.id}" th:checked="${vagas.empresas.contains(empresa)}" />
-                    <label class="form-check-label" th:for="'empresa-' + ${empresas.id}"
-                        th:text="${empresas.nome}"></label>
-                </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input
+              type="text"
+              id="descricao"
+              class="form-control"
+              th:field="*{descricao}"
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="descricao">Descrição:</label>
-                    <input type="text" id="descricao" class="form-control" th:field="*{descricao}" />
-                </div>
+          <div class="form-group">
+            <label for="localizacao">Localização:</label>
+            <input
+              type="text"
+              id="localizacao"
+              class="form-control"
+              th:field="*{localizacao}"
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="localização">Localização:</label>
-                    <input type="text" id="localizacao" class="form-control" th:field="*{localizacao}" />
-                </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <input
+              type="text"
+              id="status"
+              class="form-control"
+              th:field="*{status}"
+            />
+          </div>
+        </div>
 
-                <div class="form-group">
-                    <label for="status">Status:</label>
-                    <input type="" id="status" class="form-control" th:field="*{status}" />
-                </div>
-
-
-
-
-
-                <button type="submit" class="btn btn-primary">Publicar</button>
-        </form>
+        <button type="submit" class="btn btn-primary">Publicar</button>
+      </form>
     </div>
-
-
-</body>
-
+  </body>
 </html>

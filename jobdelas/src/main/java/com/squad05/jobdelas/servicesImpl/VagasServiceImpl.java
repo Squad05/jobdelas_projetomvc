@@ -11,8 +11,6 @@ import com.squad05.jobdelas.services.VagasService;
 
 import jakarta.persistence.EntityNotFoundException;
 
-import org.springframework.transaction.annotation.Transactional;
-
 @Service
 public class VagasServiceImpl implements VagasService {
 
