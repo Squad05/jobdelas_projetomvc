@@ -117,7 +117,7 @@
   form.form_corpo input,
   form.form_corpo textarea {
     width: 100%;
-    padding: 8px 0px 5px;
+    padding: 8px 5px 5px;
     border: 1px solid #B378FF;
     border-radius: 13px;
     font-size: 14px;
@@ -136,7 +136,9 @@
 
   #area_de_atuacao {
     margin-top: 20px;
-    border: none;
+    border: 1px solid #B378FF;
+    border-radius: 13px;
+    height: 30px;
   }
 
 

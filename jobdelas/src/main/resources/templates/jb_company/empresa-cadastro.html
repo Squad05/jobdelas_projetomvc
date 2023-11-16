@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Cadastrar Empresa</title>
   <link rel="stylesheet" href="/css/jobdelas_empresas.css" />
 </head>
 
@@ -12,8 +12,8 @@
   <section class="cointaner-principal">
     <div class="menu">
       <nav>
-        <a href="#"><i class="fas fa-building"></i> Cadastrar Empresa</a>
-        <a href="#"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
+        <a href="/jbcompany/empresas"><i class="fas fa-building"></i> Cadastrar Empresa</a>
+        <a href="/jbcompany/cadastrar/vagas"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
         <a href="#"><i class="fas fa-search"></i> Buscar Vaga</a>
         <a href="#"><i class="fas fa-search"></i> Buscar Empresa</a>
         <a href="#"><i class="fas fa-users"></i> Visualizar Candidatos</a>
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <form method="POST" th:object="${empresas}" enctype="multipart/form-data" class="form_corpo">
+    <form method="POST" action="/empresa/cadastrar" th:object="${empresas}" enctype="multipart/form-data" class="form_corpo">
       <h2>Cadastrar Empresa</h2>
       <div class="empresa">
         <label for="empresa">Nome da Empresa:</label>
