@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.squad05.jobdelas.model.Empresas;
 import com.squad05.jobdelas.model.Postagens;
 import com.squad05.jobdelas.repository.PostagemRepository;
 import com.squad05.jobdelas.repository.UsuarioRepository;
@@ -27,4 +29,21 @@ public class PostagensServiceImpl implements PostagensService {
 
     }
 
+     @Override
+    @Transactional
+    public Postagens cadastrarPostagens(Postagens postagens) {
+        return postagemRepository.save(postagens);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Postagens pegarPostagensPorId(Long id) {
+        return postagemRepository.findById(id).orElse(null);
+    }
+
+    public void deletarPostagens(Long id) {
+        postagemRepository.deleteById(id);
+    }
+
 }
+
