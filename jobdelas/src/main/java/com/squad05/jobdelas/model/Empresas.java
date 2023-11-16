@@ -20,7 +20,6 @@ public class Empresas {
     private String nome;
     private String telefone;
     private String email;
-    private String senha;
     private String area_de_atuacao;
     private String descricao;
 

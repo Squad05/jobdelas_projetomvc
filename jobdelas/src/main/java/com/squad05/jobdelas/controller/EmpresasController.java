@@ -22,7 +22,7 @@ public class EmpresasController {
 
     @GetMapping("/empresas")
     public ModelAndView cadastrar() {
-        ModelAndView modelAndView = new ModelAndView("/jb_company/empresaCadastro.html");
+        ModelAndView modelAndView = new ModelAndView("/jb_company/empresa-cadastro.html");
         modelAndView.addObject("empresas", new Empresas());
 
         return modelAndView;
@@ -30,7 +30,7 @@ public class EmpresasController {
 
     @GetMapping("/listar/empresas")
     public ModelAndView listarEmpresas() {
-        ModelAndView modelAndView = new ModelAndView("/jb_company/listarEmpresas.html");
+        ModelAndView modelAndView = new ModelAndView("/jb_company/listar-empresas.html");
         modelAndView.addObject("empresas", empresasService.listarEmpresas());
 
         return modelAndView;
@@ -38,7 +38,7 @@ public class EmpresasController {
 
     @GetMapping("/buscar/empresas")
     public ModelAndView buscarEmpresas() {
-        ModelAndView modelAndView = new ModelAndView("/jb_company/buscarEmpresas.html");
+        ModelAndView modelAndView = new ModelAndView("/jb_company/buscar-empresas.html");
 
         return modelAndView;
     }
