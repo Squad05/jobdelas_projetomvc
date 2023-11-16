@@ -243,3 +243,19 @@
 .card-content p {
   text-transform: uppercase;
 }
+
+
+/* Vagas abaixo */
+
+select#empresa_id {
+  border: 1px solid #B378FF;
+  height: 30px;
+  margin-top: 5px;
+  border-radius: 13px;
+}
+
+select#status_vaga {
+  border: 1px solid #B378FF;
+  height: 30px;
+  border-radius: 13px;
+}

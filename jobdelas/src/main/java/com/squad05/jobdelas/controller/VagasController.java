@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Vagas;
+import com.squad05.jobdelas.services.EmpresasService;
 import com.squad05.jobdelas.services.VagasService;
 
 @Controller
@@ -15,6 +16,9 @@ public class VagasController {
 
     @Autowired
     private VagasService vagasService;
+
+    @Autowired
+    private EmpresasService empresasService;
 
     @GetMapping("vagas")
     public ModelAndView vagas() {
@@ -26,9 +30,12 @@ public class VagasController {
     }
 
     @GetMapping("jbcompany/cadastrar/vagas")
+    // Exemplo de verificação de erro de sintaxe
     public ModelAndView cadastroView() {
         ModelAndView modelAndView = new ModelAndView("/jb_company/criar-vagas.html");
+
         modelAndView.addObject("vagas", new Vagas());
+        modelAndView.addObject("empresas", empresasService.listarEmpresas());
 
         return modelAndView;
     }
@@ -38,7 +45,6 @@ public class VagasController {
         vagasService.cadastrarVagas(vagas);
 
         return "redirect:/vagas";
-
     }
 
     @GetMapping("jbcompany/deletar/vagas/{id}")

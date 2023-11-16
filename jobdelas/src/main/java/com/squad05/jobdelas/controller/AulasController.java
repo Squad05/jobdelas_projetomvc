@@ -2,8 +2,6 @@ package com.squad05.jobdelas.controller;
 
 import com.squad05.jobdelas.model.Aulas;
 import com.squad05.jobdelas.model.Cursos;
-import com.squad05.jobdelas.repository.AulasRepository;
-import com.squad05.jobdelas.repository.CursosRepository;
 import com.squad05.jobdelas.services.AulasService;
 import com.squad05.jobdelas.services.CursosService;
 
@@ -22,12 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/aulas")
 public class AulasController {
-
-    @Autowired
-    private AulasRepository aulasRepository;
-
-    @Autowired
-    private CursosRepository cursosRepository;
 
     @Autowired
     private AulasService aulasService;

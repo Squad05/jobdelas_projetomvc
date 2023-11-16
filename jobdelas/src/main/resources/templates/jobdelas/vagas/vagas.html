@@ -52,7 +52,7 @@
       <section class="container-vagas">
         <div th:each="vaga : ${vagas}" class="vagas">
           <h2 th:text="${vaga.funcao}" class="funcao"></h2>
-          <p th:text="${vaga.empresas.nome}" class="empresa"></p>
+          <td th:text="${vaga.empresas != null ? vaga.empresas.nome : ''}">Nome da Empresa</td>
           <p th:text="'R$ ' + ${vaga.salario}" class="salario"></p>
           <p class="sobre">Sobre</p>
           <p th:text="${vaga.descricao}" class="sobre-vaga"></p>
