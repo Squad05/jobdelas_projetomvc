@@ -1,6 +1,7 @@
 package com.squad05.jobdelas.servicesImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,5 +65,10 @@ public class UsuariosServiceImpl implements UsuariosService {
     @Override
     public Usuarios encontrarPorEmail(String email) {
         return usuarioRepository.findByEmail(email);
+    }
+
+    @Override
+    public Optional<Usuarios> buscarUsuarioPorEmail(String email) {
+        return Optional.ofNullable(usuarioRepository.findByEmail(email));
     }
 }

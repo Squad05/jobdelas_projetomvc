@@ -1,6 +1,7 @@
 package com.squad05.jobdelas.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.squad05.jobdelas.model.Usuarios;
 
@@ -19,5 +20,7 @@ public interface UsuariosService {
     boolean verificarEmailExistente(String email);
 
     Usuarios encontrarPorEmail(String email);
+
+    Optional<Usuarios> buscarUsuarioPorEmail(String email);
 
 }
