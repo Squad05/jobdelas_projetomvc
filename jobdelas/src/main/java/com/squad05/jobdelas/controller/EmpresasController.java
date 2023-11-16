@@ -56,11 +56,4 @@ public class EmpresasController {
         return "redirect:/listar/empresas";
     }
 
-    // @GetMapping
-    // public String consultarEmpresa(@RequestParam Long id, Model model) {
-    // Empresas empresas = empresasService.pegarEmpresaPorId(id);
-    // model.addAttribute("empresas", empresas);
-
-    // }
-
 }

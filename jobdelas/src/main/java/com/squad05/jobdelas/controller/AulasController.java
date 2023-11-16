@@ -42,14 +42,13 @@ public class AulasController {
 
         model.addAttribute("curso", curso);
         model.addAttribute("aulas", aulasDoCurso);
-        return "aprendizado/aulas";
+        return "jobdelas/aprendizado/aulas";
     }
 
     @PostMapping("/adicionar")
     public String adicionarAula(@RequestParam Long cursoId, @RequestParam String titulo, @RequestParam String link,
             @RequestParam String descricao) {
-        // LÃ³gica para adicionar aula ao banco de dados
-        Cursos curso = cursosRepository.findById(cursoId).orElse(null);
+        Cursos curso = cursosService.pegarCursoPorId(cursoId);
 
         if (curso != null) {
             Aulas aula = new Aulas();
@@ -58,7 +57,7 @@ public class AulasController {
             aula.setLink(link);
             aula.setDescricao(descricao);
 
-            aulasRepository.save(aula);
+            aulasService.cadastrarAula(aula);
         }
 
         return "redirect:/aulas";
@@ -66,11 +65,11 @@ public class AulasController {
 
     @GetMapping("/editar/{id}")
     public ModelAndView editarAula(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/editar-aula.html");
+        ModelAndView modelAndView = new ModelAndView("");
 
-        Aulas aula = aulasRepository.findById(id).orElse(null);
+        Aulas aula = aulasService.pegarAulaPorId(id);
         modelAndView.addObject("aula", aula);
-        modelAndView.addObject("cursos", cursosRepository.findAll());
+        modelAndView.addObject("cursos", cursosService.listarCursos());
 
         return modelAndView;
     }
@@ -78,17 +77,19 @@ public class AulasController {
     @PostMapping("/atualizar")
     public String atualizarAula(@RequestParam Long id, @RequestParam Long cursoId, @RequestParam String titulo,
             @RequestParam String link, @RequestParam String descricao) {
-        Aulas aula = aulasRepository.findById(id).orElse(null);
+
+        Aulas aula = aulasService.pegarAulaPorId(id);
 
         if (aula != null) {
-            Cursos curso = cursosRepository.findById(cursoId).orElse(null);
+            Cursos curso = cursosService.pegarCursoPorId(cursoId);
+
             if (curso != null) {
                 aula.setCurso(curso);
                 aula.setTitulo(titulo);
                 aula.setLink(link);
                 aula.setDescricao(descricao);
 
-                aulasRepository.save(aula);
+                aulasService.cadastrarAula(aula);
             }
         }
 
@@ -97,7 +98,7 @@ public class AulasController {
 
     @GetMapping("/deletar/{id}")
     public String deletarAula(@PathVariable Long id) {
-        aulasRepository.deleteById(id);
+        aulasService.deletarAula(id);
         return "redirect:/aulas";
     }
 

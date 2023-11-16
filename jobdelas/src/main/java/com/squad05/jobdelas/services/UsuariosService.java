@@ -16,4 +16,8 @@ public interface UsuariosService {
 
     void deletarUsuario(Long id);
 
+    boolean verificarEmailExistente(String email);
+
+    Usuarios encontrarPorEmail(String email);
+
 }

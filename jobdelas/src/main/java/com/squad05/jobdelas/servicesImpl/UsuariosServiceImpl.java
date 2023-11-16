@@ -54,4 +54,15 @@ public class UsuariosServiceImpl implements UsuariosService {
     public void deletarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+    @Override
+    public boolean verificarEmailExistente(String email) {
+        Usuarios usuarioEncontrado = usuarioRepository.findByEmail(email);
+        return usuarioEncontrado != null;
+    }
+
+    @Override
+    public Usuarios encontrarPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
 }

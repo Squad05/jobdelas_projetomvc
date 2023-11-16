@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
@@ -31,14 +29,11 @@ public class UsuarioController {
     private UsuariosService usuariosService;
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Autowired
     private EmailService emailService;
 
     @GetMapping("cadastrar")
     public ModelAndView cadastrar() {
-        ModelAndView modelAndView = new ModelAndView("/login/cadastro.html");
+        ModelAndView modelAndView = new ModelAndView("jobdelas/login/cadastro.html");
 
         modelAndView.addObject("usuario", new Usuarios());
         return modelAndView;
@@ -49,9 +44,9 @@ public class UsuarioController {
             @RequestParam("sobrenome") String sobrenome) {
         ModelAndView modelAndView = new ModelAndView("redirect:/login");
 
-        var usuarioEncontrado = this.usuarioRepository.findByEmail(usuario.getEmail());
+        boolean emailExistente = usuariosService.verificarEmailExistente(usuario.getEmail());
 
-        if (usuarioEncontrado != null) {
+        if (emailExistente) {
             modelAndView.setViewName("/login/cadastro.html");
             modelAndView.addObject("usuario", usuario);
             modelAndView.addObject("erro", "Email já existente");
@@ -75,7 +70,6 @@ public class UsuarioController {
 
     @GetMapping("/editar/{id}")
     public String editarUsuario(@PathVariable Long id, Model model) {
-
         Usuarios usuario = usuariosService.pegarUsuarioPorId(id);
         model.addAttribute("usuario", usuario);
         return "editarUsuario";
@@ -84,21 +78,18 @@ public class UsuarioController {
     @PostMapping("editar/{id}")
     public String atualizarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuarios usuario) {
         usuariosService.deletarUsuario(id);
-
-        return "redirect:/index";
+        return "redirect:/jobdelas/index";
     }
 
     @GetMapping("/deletar/{id}")
     public String deletarUsuario(@PathVariable Long id) {
         usuariosService.deletarUsuario(id);
-
         return "redirect:/cadastro";
     }
 
     @GetMapping("perfil")
     public ModelAndView perfil() {
         ModelAndView modelAndView = new ModelAndView("/usuario/perfil.html");
-
         return modelAndView;
     }
 }

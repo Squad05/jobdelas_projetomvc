@@ -11,41 +11,42 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Cursos;
-import com.squad05.jobdelas.repository.CursosRepository;
+import com.squad05.jobdelas.services.CursosService;
 
 @Controller
 @RequestMapping("/cursos")
 public class CursosController {
 
     @Autowired
-    private CursosRepository cursosRepository;
+    private CursosService cursosService;
 
     @GetMapping
     public ModelAndView cursos() {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/cursos.html");
+        ModelAndView modelAndView = new ModelAndView("jobdelas/aprendizado/cursos.html");
 
-        modelAndView.addObject("cursos", cursosRepository.findAll());
+        modelAndView.addObject("cursos", cursosService.listarCursos());
 
         return modelAndView;
     }
 
     @PostMapping("/cadastrar")
-    public String cadastrarCurso(@RequestParam String materia, @RequestParam String duracao, @RequestParam String descricao) {
+    public String cadastrarCurso(@RequestParam String materia, @RequestParam String duracao,
+            @RequestParam String descricao) {
         Cursos curso = new Cursos();
         curso.setMateria(materia);
         curso.setDuracao(duracao);
         curso.setDescricao(descricao);
 
-        cursosRepository.save(curso);
+        cursosService.cadastrarCurso(curso);
 
         return "redirect:/cursos";
     }
 
     @GetMapping("/editar/{id}")
     public ModelAndView editarCurso(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView("/aprendizado/editar-curso.html");
+        ModelAndView modelAndView = new ModelAndView("");
 
-        Cursos cursos = cursosRepository.findById(id).orElse(null);
+        Cursos cursos = cursosService.atualizarCurso(id, null);
         modelAndView.addObject("curso", cursos);
 
         return modelAndView;
@@ -54,7 +55,7 @@ public class CursosController {
     @PostMapping("/atualizar")
     public String atualizarCurso(@ModelAttribute Cursos cursos) {
 
-        cursosRepository.save(cursos);
+        cursosService.cadastrarCurso(cursos);
 
         return "redirect:/cursos";
     }
@@ -62,7 +63,7 @@ public class CursosController {
     @GetMapping("/deletar/{id}")
     public String deletarCurso(@PathVariable Long id) {
 
-        cursosRepository.deleteById(id);
+        cursosService.deletarCurso(id);
 
         return "redirect:/cursos";
     }

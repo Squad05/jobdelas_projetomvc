@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad05.jobdelas.model.Usuarios;
-import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.UsuariosService;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
@@ -19,9 +18,8 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 public class LoginController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuariosService usuariosService;
 
-    // Código para login
     @GetMapping("login")
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView("/login/login.html");
@@ -33,8 +31,7 @@ public class LoginController {
     public ModelAndView login(String email, String senha) {
         ModelAndView modelAndView = new ModelAndView("redirect:/jobdelas");
 
-        // Procura o usuário pelo email
-        var usuarioEncontrado = this.usuarioRepository.findByEmail(email);
+        var usuarioEncontrado = usuariosService.encontrarPorEmail(email);
 
         if (usuarioEncontrado == null) {
             modelAndView.setViewName("/login/login.html");
@@ -42,12 +39,7 @@ public class LoginController {
             return modelAndView;
         }
 
-        // Verifica a senha usando a biblioteca BCrypt
         if (BCrypt.verifyer().verify(senha.toCharArray(), usuarioEncontrado.getSenha()).verified) {
-            // Senha válida, pode prosseguir com a lógica de login
-            // ...
-
-            // Exemplo de como você pode usar o usuário logado
             modelAndView.addObject("usuarioLogado", usuarioEncontrado);
         } else {
             modelAndView.setViewName("/login/login.html");
