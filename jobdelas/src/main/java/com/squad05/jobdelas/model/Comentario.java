@@ -1,5 +1,7 @@
 package com.squad05.jobdelas.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,17 +16,18 @@ import lombok.Data;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Comentarios {
+public class Comentario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "postagem_id")
-    private Postagens postagem;
+    @JoinColumn(name = "usuario_id")
+    private Usuarios usuarios;
 
-    @ManyToOne
-    @JoinColumn(name = "comentario_id")
-    private Comentario comentario;
+    private String conteudo;
+
+    private LocalDateTime data_comentario;
+
 }

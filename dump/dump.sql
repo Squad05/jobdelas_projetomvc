@@ -59,7 +59,7 @@ CREATE TABLE postagens (
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
 
-CREATE TABLE comentarios (
+CREATE TABLE comentario (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     usuario_id INTEGER,
     conteudo TEXT NOT NULL,
@@ -67,13 +67,14 @@ CREATE TABLE comentarios (
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
 
-CREATE TABLE postagem_comentario (
+CREATE TABLE comentarios (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     postagem_id INTEGER,
     comentario_id INTEGER,
-    PRIMARY KEY (postagem_id, comentario_id),
     FOREIGN KEY(postagem_id) REFERENCES postagens (id),
-    FOREIGN KEY(comentario_id) REFERENCES comentarios (id)
+    FOREIGN KEY(comentario_id) REFERENCES comentario (id)
 );
+
         
 
 CREATE TABLE tarefas (

@@ -57,237 +57,64 @@
                 <button class="comment-button">
                   <i class="fas fa-comment"></i> Comentar
                 </button>
-                <button class="read-comments-button">
-                  <i class="fa-solid fa-circle-exclamation"></i> Denunciar
-                </button>
-                <button class="read-comments-button">
+                <button
+                  class="read-comments-button"
+                  data-toggle="modal"
+                  th:data-target="'#comentariosModal_' + ${postagem.id}"
+                >
                   <i class="fas fa-eye"></i> Ler Comentários
                 </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  th:id="'comentariosModal_' + ${postagem.id}"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="comentariosModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="comentariosModalLabel">
+                          Comentários
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Fechar"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Iteração dos comentários -->
+                        <div
+                          th:each="comentario : ${comentarios}"
+                          class="comentario"
+                        >
+                          <p th:text="${comentario.conteudo}"></p>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Fechar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- <div class="container mt-3">
-        <h2>Lista Postagens</h2>
-        <table>
-          <thead class="thead-dark">
-            <tr>
-              <th>Usuario Id</th>
-              <th>Categoria</th>
-              <th>Conteudo</th>
-              <th>dataComentario</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td th:text="${postagem.id}"></td>
-              <td th:text="${postagem.categoria}"></td>
-              <td th:text="${postagem.conteudo}"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
-      <!-- <div
-        class="modal fade"
-        id="tarefaModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content modaltarefa">
-            <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">Lista de Tarefa</h4>
-              <button
-                type="button"
-                class="close btn-close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form
-                method="post"
-                th:object="${tarefa}"
-                th:action="@{/tarefa}"
-                enctype="multipart/form-data"
-              >
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Qual sua tarefa?"
-                    th:field="*{titulo}"
-                  />
-                  <textarea
-                    class="form-control"
-                    placeholder="Descrição da Tarefa"
-                    rows="3"
-                    style="max-height: 72px; overflow-y: auto"
-                    th:field="*{descricao}"
-                  ></textarea>
-                  <small class="text-muted">Máximo de 3 linhas.</small>
-
-                  <button type="submit" class="btn btn-primary botao_addTarefa">
-                    Adicionar
-                  </button>
-                </div>
-              </form>
-
-              <ul class="list-group" id="modalTaskList">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-center"
-                >
-                  Tarefa 1
-                  <button type="button" class="btn btn-success">
-                    <i class="fa fa-check"></i> Concluir
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="modal" id="writePostModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Compartilhar Momento Especial</h5>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="postTextarea"
-                  rows="4"
-                  placeholder="Descreva seu momento especial..."
-                ></textarea>
-              </div>
-              <div class="form-group">
-                <label for="imageUpload">Anexar Imagem/Arquivo:</label>
-                <input type="file" class="form-control-file" id="imageUpload" />
-              </div>
-
-              <div class="form-group">
-                <label for="tagsInput">Adicionar Tags/Assuntos:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tagsInput"
-                  placeholder="Separadas por vírgulas"
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="botao_criarpostagem cancelar"
-                data-dismiss="modal"
-              >
-                Cancelar
-              </button>
-              <button
-                type="button"
-                class="botao_criarpostagem compartilhar"
-                onclick="submitPost()"
-              >
-                Compartilhar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal" id="editarModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Perfil</h4>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-
-          Corpo do Modal -->
-      <!-- <div class="modal-body">
-              <form
-                method="PUT"
-                class="formulario"
-                th:object="${usuario}"
-                enctype="multipart/form-data"
-              >
-                <div class="form-group">
-                  <label for="imageUpload">Anexar Foto de Perfil:</label>
-                  <input
-                    type="file"
-                    class="form-control-file"
-                    id="imageUpload"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="nome">Nome:</label>
-                  <input type="text" class="form-control" id="nome" required />
-                </div>
-
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="text" class="form-control" id="email" required />
-                </div>
-
-                <div class="form-group">
-                  <label for="senha">Senha:</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="senha"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="resumo">Resumo:</label>
-                  <textarea class="form-control" id="resumo"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="telefone">Telefone:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="telefone"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="portfolio">Link para o Portfólio:</label>
-                  <input type="text" class="form-control" id="portfolio" />
-                </div>
-              </form>
-            </div> -->
-
-      <!-- Rodapé do Modal -->
-      <!-- <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-dismiss="modal"
-              >
-                Fechar
-              </button>
-              <button type="submit" class="btn btn-primary">Atualizar</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </main>
     <script src="/js/home.js" type="module"></script>
 
@@ -310,5 +137,43 @@
       src="https://kit.fontawesome.com/cda1aa7b4f.js"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // Escute o evento de clique nos botões "Ler Comentários"
+      document.querySelectorAll(".read-comments-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Obtém o ID da postagem associado a este botão
+          const postId = this.getAttribute("data-postid");
+
+          // Aqui você pode usar esse postId para fazer uma requisição AJAX
+          // e buscar os comentários correspondentes à postagem com este ID
+          // Após obter os comentários, você pode exibi-los no modal
+          // (Isso depende de como você planeja buscar os comentários do backend)
+
+          // Exemplo simples de exibição dos comentários (substitua isso pelo seu código real)
+          const modal = document.getElementById("comentariosModal");
+          const comentariosDiv = modal.querySelector(".modal-body");
+
+          // Limpando os comentários existentes no modal
+          comentariosDiv.innerHTML = "";
+
+          // Aqui você adicionaria os comentários correspondentes à postagem ao modal
+          // Você precisará de um método para buscar os comentários do backend e adicionar
+          // o HTML dos comentários à variável "comentariosDiv.innerHTML"
+
+          // Exemplo de adição de um comentário fictício ao modal (substitua isso pelo seu código real)
+          const comentarioHTML = `
+      <div class="comentario">
+        <strong>Nome do Comentador:</strong> Comentário
+        <br />
+        <small>Data do Comentário</small>
+      </div>
+    `;
+
+          // Adicionando o comentário fictício ao modal
+          comentariosDiv.insertAdjacentHTML("beforeend", comentarioHTML);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,19 +1,11 @@
-// package com.squad05.jobdelas.services;
+package com.squad05.jobdelas.services;
 
-// import java.util.List;
+import java.util.List;
 
-// import com.squad05.jobdelas.model.Comentarios;
+import com.squad05.jobdelas.model.Comentarios;
 
-// public interface ComentariosService {
+public interface ComentariosService {
 
-// List<Comentarios> listarComentarios();
+    List<Comentarios> listarComentariosPorIdPostagem(Long idPostagem);
 
-// Comentarios cadastrarcomentarios(Comentarios comentarios);
-
-// Comentarios atualizarComentarios(Long id, Comentarios comentariosAtualizado);
-
-// void deletarComentarios(Long id);
-
-// Comentarios pegarComentariosPorId(Long id);
-
-// }
+}

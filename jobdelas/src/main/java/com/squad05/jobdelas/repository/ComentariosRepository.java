@@ -1,12 +1,18 @@
-// package com.squad05.jobdelas.repository;
+package com.squad05.jobdelas.repository;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
-// import org.springframework.stereotype.Repository;
+import java.util.List;
 
-// import com.squad05.jobdelas.model.Comentarios;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-// @Repository
-// public interface ComentariosRepository extends JpaRepository<Comentarios,
-// Long> {
+import com.squad05.jobdelas.model.Comentarios;
 
-// }
+@Repository
+public interface ComentariosRepository extends JpaRepository<Comentarios, Long> {
+
+    @Query("SELECT c FROM Comentarios c WHERE c.postagem.id = :idPostagem")
+    List<Comentarios> encontrarComentariosPorPostagemID(@Param("idPostagem") Long idPostagem);
+
+}

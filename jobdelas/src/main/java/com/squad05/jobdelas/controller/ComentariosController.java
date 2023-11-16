@@ -1,25 +1,32 @@
-// package com.squad05.jobdelas.controller;
+package com.squad05.jobdelas.controller;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Controller;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.servlet.ModelAndView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
+import org.springframework.ui.Model;
 
-// import com.squad05.jobdelas.repository.ComentariosRepository;
+import com.squad05.jobdelas.model.Comentario;
+import com.squad05.jobdelas.model.Comentarios;
 
-// @Controller
-// @RequestMapping("comentarios")
-// public class ComentariosController {
+import com.squad05.jobdelas.repository.ComentariosRepository;
+import com.squad05.jobdelas.services.ComentariosService;
 
-// @Autowired
-// private ComentariosRepository comentariosRepository;
+@Controller
+@RequestMapping("comentarios")
+public class ComentariosController {
 
-// @GetMapping
-// public ModelAndView comentarios() {
-// ModelAndView modelAndView = new ModelAndView("/comentarios.html");
+    @Autowired
+    private ComentariosService comentariosService;
 
-// modelAndView.addObject("comentarios", comentariosRepository.findAll());
-// return modelAndView;
-// }
-// }
+    @GetMapping("/{postId}")
+    public String getComentariosByPostId(@PathVariable Long postId, Model model) {
+        List<Comentarios> comentarios = comentariosService.listarComentariosPorIdPostagem(postId);
+        model.addAttribute("comentarios", comentarios);
+        return "modal-comentarios"; // Nome do template Thymeleaf para os comentários
+
+    }
+}
