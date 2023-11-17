@@ -2,28 +2,28 @@
   display: flex;
   text-align: center;
   flex-direction: column;
+  margin: 0 20px; /* Margem ajustada para telas menores */
 }
-
 
 .container-cursos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap:30px;
+  gap: 30px;
   margin-top: 30px;
 }
 
 .container-aprendizado {
   border-radius: 20px;
   background-color: white;
-  gap:20px;
+  gap: 20px;
   padding: 10px;
 }
 
 .card-curso {
   background-color: #ffffff;
-  color:#B378FF;
+  color: #B378FF;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -44,10 +44,6 @@
   overflow-wrap: break-word;
 }
 
-
-
-
-
 .card-curso p {
   color: #202020;
 }
@@ -63,9 +59,9 @@
 
 .card-curso button:hover {
   background: var(--fundo-dividido);
-  color:#ffffff;
+  color: #ffffff;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #B378FF ;
+  border: 1px solid #B378FF;
 }
 
 .card-curso a {
@@ -82,6 +78,7 @@
   overflow-y: hidden;
 }
 
+/* Adicionando responsividade */
 
 @media only screen and (max-width: 896px) {
   .container-cursos {
@@ -100,18 +97,14 @@
     font-size: 1.6rem;
   }
 
-
   .elemento p {
     font-size: 15px;
   }
-
 }
 
-
 @media only screen and (max-width: 650px) {
-
   .container-principal {
     margin: 20px 15px;
-
   }
+  
 }
