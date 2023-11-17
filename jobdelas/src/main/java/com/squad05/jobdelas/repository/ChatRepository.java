@@ -1,32 +1,12 @@
-// package com.squad05.jobdelas.repository;
+package com.squad05.jobdelas.repository;
 
-// import org.springframework.context.annotation.Configuration;
-// import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
-// import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
-// import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-// @Configuration
-// @EnableWebSocketMessageBroker
+import com.squad05.jobdelas.model.Chat;
 
-// public class ChatRepository implements WebSocketMessageBrokerConfigurer{
+@Repository
+public interface ChatRepository extends JpaRepository<Chat, Long> {
 
-//     @Override
-//     As linhas comentadas estão com algum erro que eu não sei arrumar  =/ 
-
-//    public void configureMessageBroker(MessageBrokerRegistry registry){
-//        registry.enableSimpleBroker(destinationPrefixes:"/chat");
-//        registry.setApplicationDestinationPrefixes(prefixes:"/ChatController");
-
-//    }
     
-
-
-//     @Override
-//     public void registerStompEndpoints(StompEndpointRegistry registry) {
-//         registry.addEndpoint("/conect");
-//         registry.addEndpoint("/conect").withSockJS();
-
-
-//     }
-    
-// }
+}
