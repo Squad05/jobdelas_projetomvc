@@ -117,5 +117,34 @@
       src="https://kit.fontawesome.com/cda1aa7b4f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#cep").blur(function () {
+          let cep = $(this).val().replace(/\D/g, "");
+
+          if (cep.length !== 8) {
+            alert("CEP inválido. Informe um CEP válido.");
+            return;
+          }
+
+          $.getJSON(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+            if (!data.erro) {
+              $("#localizacao").val(
+                `${data.logradouro}, ${data.localidade} - ${data.uf}`
+              );
+            } else {
+              alert(
+                "CEP não encontrado. Por favor, verifique o CEP informado."
+              );
+            }
+          }).fail(function () {
+            alert(
+              "Erro ao encontrar informações do CEP. Tente novamente mais tarde."
+            );
+          });
+        });
+      });
+    </script>
   </body>
 </html>
