@@ -207,6 +207,9 @@ body {
     position: relative;
     width: 100%;
     border: 1px solid #B378FF;
+    padding: 10px;
+    justify-content: space-between;
+    gap:3px;
     
 }
 
@@ -218,7 +221,7 @@ body {
 }
 
 .card-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     background-color: #B378FF;
     text-align: center;
     padding: 5px 0;
@@ -342,3 +345,81 @@ select#status_vaga {
 
 
 /* Fim do jb company */
+
+
+/* Area Aulas */
+.container_aula {
+  width: 62%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container_aula form {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap:2px;
+
+}
+
+.container_aula form h2 {
+  font-size: 35px;
+  color: #B378FF;
+  text-align: center;
+}
+
+.container_aula form input , .container_aula form textarea, .container_aula form select {
+  padding: 8px 5px 5px;
+  border: 1px solid #B378FF;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+.container_aula form textarea {
+  resize: none;
+}
+
+.container_aula form button {
+  width: 150px;
+  height: 40px;
+  background-color: #B378FF;
+  color: #fff;
+   border: 1px solid #B378FF;
+   border-radius: 5px;
+   cursor: pointer;
+   align-self: center;
+   padding: 5px 10px;
+}
+
+
+.container_aula form button:hover {
+  background: linear-gradient(to bottom, #B378FF 75%, #fff 25%) !important;
+
+}
+/* Fim area aulas */
+
+/* Area cursos - Listar Cursos */
+
+
+
+.titulo-curso {
+  text-align: center;
+  color: #fff;
+  background-color: #B378FF;
+  font-size: 1.3em;
+  padding-bottom: 3px;
+}
+
+.mensagem-erro {
+  color:rgb(255, 99, 99);
+}
+
+.form_corpo_cards h2 {
+  text-align: center;
+}
+/* Fim area cursos - listar cursos */

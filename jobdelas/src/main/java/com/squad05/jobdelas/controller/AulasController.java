@@ -2,6 +2,7 @@ package com.squad05.jobdelas.controller;
 
 import com.squad05.jobdelas.model.Aulas;
 import com.squad05.jobdelas.model.Cursos;
+import com.squad05.jobdelas.model.Empresas;
 import com.squad05.jobdelas.services.AulasService;
 import com.squad05.jobdelas.services.CursosService;
 
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/aulas")
 public class AulasController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class AulasController {
     @Autowired
     private CursosService cursosService;
 
-    @GetMapping("/{cursoId}")
+    @GetMapping("aulas/{cursoId}")
     public String mostrarAulasDoCurso(@PathVariable Long cursoId, Model model) {
         List<Aulas> aulasDoCurso = aulasService.listarAulasPorCursoId(cursoId);
         Cursos curso = cursosService.pegarCursoPorId(cursoId);
@@ -37,8 +37,17 @@ public class AulasController {
         return "jobdelas/aprendizado/aulas";
     }
 
-    @PostMapping("/adicionar")
-    public String adicionarAula(@RequestParam Long cursoId, @RequestParam String titulo, @RequestParam String link,
+    @GetMapping("jbcompany/cadastrar/aula")
+    public ModelAndView cadastrarAulaView() {
+        ModelAndView modelAndView = new ModelAndView("/jb_company/cadastrar-aula.html");
+        modelAndView.addObject("aulas", new Aulas());
+        modelAndView.addObject("cursos", cursosService.listarCursos());
+
+        return modelAndView;
+    }
+
+    @PostMapping("jbcompany/cadastrar/aula")
+    public String cadastrarAula(@RequestParam Long cursoId, @RequestParam String titulo, @RequestParam String link,
             @RequestParam String descricao) {
         Cursos curso = cursosService.pegarCursoPorId(cursoId);
 
@@ -52,46 +61,55 @@ public class AulasController {
             aulasService.cadastrarAula(aula);
         }
 
-        return "redirect:/aulas";
+        return "redirect:/jbcompany/listar/aula";
     }
 
-    @GetMapping("/editar/{id}")
-    public ModelAndView editarAula(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView("");
-
-        Aulas aula = aulasService.pegarAulaPorId(id);
-        modelAndView.addObject("aula", aula);
+    @GetMapping("jbcompany/listar/aula")
+    public ModelAndView listarAulaView() {
+        ModelAndView modelAndView = new ModelAndView("/jb_company/listar-aulas.html");
+        modelAndView.addObject("aulas", new Aulas());
         modelAndView.addObject("cursos", cursosService.listarCursos());
-
         return modelAndView;
     }
 
-    @PostMapping("/atualizar")
-    public String atualizarAula(@RequestParam Long id, @RequestParam Long cursoId, @RequestParam String titulo,
-            @RequestParam String link, @RequestParam String descricao) {
+    // @GetMapping("/editar/{id}")
+    // public ModelAndView editarAula(@PathVariable Long id) {
+    // ModelAndView modelAndView = new ModelAndView("");
 
-        Aulas aula = aulasService.pegarAulaPorId(id);
+    // Aulas aula = aulasService.pegarAulaPorId(id);
+    // modelAndView.addObject("aula", aula);
+    // modelAndView.addObject("cursos", cursosService.listarCursos());
 
-        if (aula != null) {
-            Cursos curso = cursosService.pegarCursoPorId(cursoId);
+    // return modelAndView;
+    // }
 
-            if (curso != null) {
-                aula.setCurso(curso);
-                aula.setTitulo(titulo);
-                aula.setLink(link);
-                aula.setDescricao(descricao);
+    // @PostMapping("/atualizar")
+    // public String atualizarAula(@RequestParam Long id, @RequestParam Long
+    // cursoId, @RequestParam String titulo,
+    // @RequestParam String link, @RequestParam String descricao) {
 
-                aulasService.cadastrarAula(aula);
-            }
-        }
+    // Aulas aula = aulasService.pegarAulaPorId(id);
 
-        return "redirect:/aulas";
-    }
+    // if (aula != null) {
+    // Cursos curso = cursosService.pegarCursoPorId(cursoId);
 
-    @GetMapping("/deletar/{id}")
-    public String deletarAula(@PathVariable Long id) {
-        aulasService.deletarAula(id);
-        return "redirect:/aulas";
-    }
+    // if (curso != null) {
+    // aula.setCurso(curso);
+    // aula.setTitulo(titulo);
+    // aula.setLink(link);
+    // aula.setDescricao(descricao);
+
+    // aulasService.cadastrarAula(aula);
+    // }
+    // }
+
+    // return "redirect:/aulas";
+    // }
+
+    // @GetMapping("/deletar/{id}")
+    // public String deletarAula(@PathVariable Long id) {
+    // aulasService.deletarAula(id);
+    // return "redirect:/aulas";
+    // }
 
 }

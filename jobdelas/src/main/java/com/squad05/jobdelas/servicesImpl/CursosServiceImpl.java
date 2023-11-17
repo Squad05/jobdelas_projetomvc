@@ -23,7 +23,6 @@ public class CursosServiceImpl implements CursosService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Cursos cadastrarCurso(Cursos curso) {
         return cursosRepository.save(curso);
     }
