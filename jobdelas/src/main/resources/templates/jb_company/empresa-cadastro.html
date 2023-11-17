@@ -1,82 +1,204 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Empresa</title>
+    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastrar Empresa</title>
-  <link rel="stylesheet" href="/css/jobdelas_empresas.css" />
-</head>
-
-<body>
-  <section class="cointaner-principal">
-    <div class="menu">
-      <nav>
-        <a href="/jbcompany/empresas"><i class="fas fa-building"></i> Cadastrar Empresa</a>
-        <a href="/jbcompany/cadastrar/vagas"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
-        <a href="#"><i class="fas fa-search"></i> Buscar Vaga</a>
-        <a href="#"><i class="fas fa-search"></i> Buscar Empresa</a>
-        <a href="#"><i class="fas fa-users"></i> Visualizar Candidatos</a>
-      </nav>
-      <div class="logo">
-        <img src="/img/jb_company.png" alt="Sua Logo" />
+  <body>
+    <section class="cointaner-principal">
+      <div class="menu">
+        <nav>
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-building"></i> Cadastrar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/vagas"
+            ><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a
+          >
+          <a href="/jbcompany/listar/empresas"
+            ><i class="fas fa-list"></i> Listar Empresas
+          </a>
+          <a href="/jbcompany/buscar/empresas"
+            ><i class="fas fa-search"></i> Buscar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-users"></i> Visualizar Candidatos</a
+          >
+        </nav>
+        <div class="logo">
+          <img src="/img/jb_company.png" alt="Sua Logo" />
+        </div>
       </div>
-    </div>
 
-    <form method="POST" action="/empresa/cadastrar" th:object="${empresas}" enctype="multipart/form-data" class="form_corpo">
-      <h2>Cadastrar Empresa</h2>
-      <div class="empresa">
-        <label for="empresa">Nome da Empresa:</label>
-        <input type="text" id="nome" name="nome-empresa" th:field="*{nome}" required />
+      <form
+        method="POST"
+        action="/empresa/cadastrar"
+        th:object="${empresas}"
+        enctype="multipart/form-data"
+        class="form_corpo"
+      >
+        <h2>Cadastrar Empresa</h2>
+        <div class="empresa">
+          <label for="empresa">Nome da Empresa:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome-empresa"
+            th:field="*{nome}"
+            required
+          />
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email-empresa" th:field="*{email}" required />
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email-empresa"
+            th:field="*{email}"
+            required
+          />
 
+          <label for="telefone">Telefone:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            name="telefone"
+            th:field="*{telefone}"
+            required
+          />
 
-        <label for="telefone">Telefone:</label>
-        <input type="text" class="form-control" id="telefone" name="telefone" th:field="*{telefone}" required />
+          <label for="cnpj">CNPJ:</label>
+          <input
+            type="text"
+            id="cnpj"
+            name="cnpj-empresa"
+            th:field="*{cnpj}"
+            required
+          />
 
-        <label for="cnpj">CNPJ:</label>
-        <input type="text" id="cnpj" name="cnpj-empresa" th:field="*{cnpj}" required />
+          <label for="descricao">Descrição:</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            th:field="*{descricao}"
+          ></textarea>
 
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" th:field="*{descricao}"></textarea>
+          <select id="area_de_atuacao" name="area_de_atuacao">
+            <option value="Escolha a área de atuação" disabled selected>
+              Escolha a área de atuação
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="TI"
+            >
+              Tecnologia da Informação
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Marketing"
+            >
+              Marketing
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Financas"
+            >
+              Finanças
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="RH"
+            >
+              Recursos Humanos
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Vendas"
+            >
+              Vendas
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Producao"
+            >
+              Produção
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Logistica"
+            >
+              Logística
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Juridico"
+            >
+              Jurídico
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Educacao"
+            >
+              Educação
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Saude"
+            >
+              Saúde
+            </option>
+            <option
+              id="area_de_atuacao"
+              th:field="*{area_de_atuacao}"
+              required
+              name="area_de_atuacao"
+              value="Consultoria"
+            >
+              Consultoria
+            </option>
+          </select>
 
-        <select id="area_de_atuacao" name="area_de_atuacao">
-          <option value="Escolha a área de atuação" disabled
-            selected>Escolha a área de atuação</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="TI">
-            Tecnologia da Informação</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Marketing">
-            Marketing</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Financas">
-            Finanças</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="RH">Recursos
-            Humanos</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Vendas">
-            Vendas</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Producao">
-            Produção</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Logistica">
-            Logística</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Juridico">
-            Jurídico</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Educacao">
-            Educação</option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao" value="Saude">Saúde
-          </option>
-          <option id="area_de_atuacao" th:field="*{area_de_atuacao}" required name="area_de_atuacao"
-            value="Consultoria">Consultoria</option>
-        </select>
-
-
-        <button id="botao-formulario" class="btn" role="button" type="submit">
-          Cadastrar
-        </button>
-      </div>
-    </form>
-  </section>
-  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
-</body>
-
+          <button id="botao-formulario" class="btn" role="button" type="submit">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -4,12 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.squad05.jobdelas.model.Empresas;
 import com.squad05.jobdelas.model.Postagens;
 import com.squad05.jobdelas.repository.PostagemRepository;
-import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.PostagensService;
 
 @Service

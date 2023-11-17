@@ -28,12 +28,7 @@
 // return httpSecurity
 // .csrf(csrf -> csrf.disable())
 // .authorizeHttpRequests()
-// .anyRequest()
-// .authenticated()
-// .and()
-// .formLogin()
-// .loginPage("/login")
-// .permitAll();
+// .
 
 // }
 

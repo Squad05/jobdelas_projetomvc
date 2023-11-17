@@ -1,65 +1,120 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Criar Vagas</title>
-    <link rel="stylesheet" href="/css/jobdelas_empresas.css" />
-</head>
+    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+  </head>
 
-<body>
+  <body>
     <section class="cointaner-principal">
-        <div class="menu">
-            <nav>
-                <a href="/jbcompany/empresas"><i class="fas fa-building"></i> Cadastrar Empresa</a>
-                <a href="/jbcompany/cadastrar/vagas"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
-                <a href="#"><i class="fas fa-search"></i> Buscar Vaga</a>
-                <a href="#"><i class="fas fa-search"></i> Buscar Empresa</a>
-                <a href="#"><i class="fas fa-users"></i> Visualizar Candidatos</a>
-            </nav>
-            <div class="logo">
-                <img src="/img/jb_company.png" alt="Sua Logo" />
-            </div>
+      <div class="menu">
+        <nav>
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-building"></i> Cadastrar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/vagas"
+            ><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a
+          >
+          <a href="/jbcompany/listar/empresas"
+            ><i class="fas fa-list"></i> Listar Empresas
+          </a>
+          <a href="/jbcompany/buscar/empresas"
+            ><i class="fas fa-search"></i> Buscar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-users"></i> Visualizar Candidatos</a
+          >
+        </nav>
+        <div class="logo">
+          <img src="/img/jb_company.png" alt="Sua Logo" />
         </div>
+      </div>
 
-        <form method="POST" th:object="${vagas}" enctype="multipart/form-data" class="form_corpo">
-            <h2>Cadastrar Vaga</h2>
-            <div class="empresa">
+      <form
+        method="POST"
+        th:object="${vagas}"
+        enctype="multipart/form-data"
+        class="form_corpo"
+      >
+        <h2>Cadastrar Vaga</h2>
+        <div class="empresa">
+          <select id="empresa_id" name="empresa_id" required>
+            <option value="Escolha a empresa" disabled selected>
+              Nome da Empresa
+            </option>
+            <option
+              th:each="empresa : ${empresas}"
+              th:value="${empresa.id}"
+              th:text="${empresa.nome}"
+            ></option>
+          </select>
 
-                <select id="empresa_id" name="empresa_id" required>
-                    <option value="Escolha a empresa" disabled selected>Nome da Empresa</option>
-                    <option th:each="empresa : ${empresas}" th:value="${empresa.id}" th:text="${empresa.nome}"></option>
-                </select>
+          <label for="funcao">Função:</label>
+          <input
+            type="text"
+            id="funcao"
+            name="funcao"
+            th:field="*{funcao}"
+            required
+          />
 
-                <label for="funcao">Função:</label>
-                <input type="text" id="funcao" name="funcao" th:field="*{funcao}" required />
+          <label for="salario">Salário:</label>
+          <input
+            type="text"
+            id="salario"
+            name="salario"
+            th:field="*{salario}"
+            required
+          />
 
-                <label for="salario">Salário:</label>
-                <input type="text" id="salario" name="salario" th:field="*{salario}" required />
+          <label for="cep">Cep:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cep"
+            name="cep"
+            th:field="*{cep}"
+            required
+          />
 
-                <label for="cep">Cep:</label>
-                <input type="text" class="form-control" id="cep" name="cep" th:field="*{cep}" required />
+          <label for="localizacao">Localização:</label>
+          <input
+            type="text"
+            id="localizacao"
+            name="localizacao"
+            th:field="*{localizacao}"
+            required
+          />
 
-                <label for="localizacao">Localização:</label>
-                <input type="text" id="localizacao" name="localizacao" th:field="*{localizacao}" required />
+          <label for="descricao">Descrição:</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            th:field="*{descricao}"
+          ></textarea>
 
-                <label for="descricao">Descrição:</label>
-                <textarea id="descricao" name="descricao" th:field="*{descricao}"></textarea>
- 
-                <label for="status_vaga">Status:</label>
-                <select id="status_vaga" name="status_vaga" th:field="*{status_vaga}" required>
-                    <option value="true">Ativo</option>
-                    <option value="false">Não Ativo</option>
-                </select>
+          <label for="status_vaga">Status:</label>
+          <select
+            id="status_vaga"
+            name="status_vaga"
+            th:field="*{status_vaga}"
+            required
+          >
+            <option value="true">Ativo</option>
+            <option value="false">Não Ativo</option>
+          </select>
 
-                <button id="botao-formulario" class="btn" role="button" type="submit">
-                    Cadastrar
-                </button>
-            </div>
-        </form>
+          <button id="botao-formulario" class="btn" role="button" type="submit">
+            Cadastrar
+          </button>
+        </div>
+      </form>
     </section>
-    <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

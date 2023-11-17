@@ -30,7 +30,6 @@ public class VagasController {
     }
 
     @GetMapping("jbcompany/cadastrar/vagas")
-    // Exemplo de verificação de erro de sintaxe
     public ModelAndView cadastroView() {
         ModelAndView modelAndView = new ModelAndView("/jb_company/criar-vagas.html");
 
@@ -44,7 +43,7 @@ public class VagasController {
     public String cadastrarVaga(Vagas vagas) {
         vagasService.cadastrarVagas(vagas);
 
-        return "redirect:/vagas";
+        return "redirect:/jbcompany/cadastrar/vagas";
     }
 
     @GetMapping("jbcompany/deletar/vagas/{id}")

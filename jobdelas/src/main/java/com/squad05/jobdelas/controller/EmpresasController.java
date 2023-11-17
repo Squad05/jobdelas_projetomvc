@@ -2,7 +2,6 @@ package com.squad05.jobdelas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,7 @@ public class EmpresasController {
     @Autowired
     private EmpresasService empresasService;
 
-    @GetMapping("/empresas")
+    @GetMapping("/cadastrar/empresas")
     public ModelAndView cadastrar() {
         ModelAndView modelAndView = new ModelAndView("/jb_company/empresa-cadastro.html");
         modelAndView.addObject("empresas", new Empresas());
@@ -50,7 +49,7 @@ public class EmpresasController {
         return "redirect:/jbcompany/listar/empresas";
     }
 
-    @PostMapping("/deletar/empresa")
+    @PostMapping("/deletar/{id}")
     public String deletarEmpresa(@RequestParam Long id) {
         empresasService.deletarEmpresa(id);
         return "redirect:/listar/empresas";

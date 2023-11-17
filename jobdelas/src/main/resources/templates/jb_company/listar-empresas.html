@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Empresas</title>
+    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+    <style>
+      /* Adicione os estilos CSS fornecidos aqui */
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista Empresas</title>
-  <link rel="stylesheet" href="/css/jobdelas_empresas.css" />
-  <style>
-    /* Adicione os estilos CSS fornecidos aqui */
-  </style>
-</head>
-
-<body>
-  <section class="cointaner-principal">
-    <div class="menu">
-      <nav>
-        <a href="/jbcompany/empresas"><i class="fas fa-building"></i> Cadastrar Empresa</a>
-        <a href="#"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
-        <a href="#"><i class="fas fa-search"></i> Buscar Vaga</a>
-        <a href="#"><i class="fas fa-search"></i> Buscar Empresa</a>
-        <a href="#"><i class="fas fa-users"></i> Visualizar Candidatos</a>
-      </nav>
-      <div class="logo">
-        <img src="/img/jb_company.png" alt="Sua Logo" />
-      </div>
-    </div>
-    <div class="form_corpo_cards">
-      <div class="listar">
-        <h2 >Lista de Empresas</h2>
-      </div>
-
-      <div class="card" th:each="empresa : ${empresas}">
-        <div class="card-content">
-          <h2 class="card-title" th:text="${empresa.nome}"></h2>
-          <p><strong>Área de Atuação:</strong> <span th:text="${empresa.area_de_atuacao}"></span></p>
-          <p><strong>Email:</strong> <span th:text="${empresa.email}"></span></p>
-          <p><strong>CNPJ:</strong> <span th:text="${empresa.cnpj}"></span></p>
-          <p><strong>Telefone:</strong> <span th:text="${empresa.telefone}"></span></p>
-          <p><strong>Descrição:</strong> <span th:text="${empresa.descricao}"></span></p>
-          <form th:action="@{/jbcompany/deletar/empresa}" method="post">
-            <input type="hidden" name="id" th:value="${empresa.id}" />
-            <button class="card-button" type="submit"><i class="fa-solid fa-trash">Deletar</i></button>
-          </form>
+  <body>
+    <section class="cointaner-principal">
+      <div class="menu">
+        <nav>
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-building"></i> Cadastrar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/vagas"
+            ><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a
+          >
+          <a href="/jbcompany/listar/empresas"
+            ><i class="fas fa-list"></i> Listar Empresas
+          </a>
+          <a href="/jbcompany/buscar/empresas"
+            ><i class="fas fa-search"></i> Buscar Empresa</a
+          >
+          <a href="/jbcompany/cadastrar/empresas"
+            ><i class="fas fa-users"></i> Visualizar Candidatos</a
+          >
+        </nav>
+        <div class="logo">
+          <img src="/img/jb_company.png" alt="Sua Logo" />
         </div>
       </div>
-    </div>
-  </section>
+      <div class="form_corpo_cards">
+        <div class="listar">
+          <h2>Lista de Empresas</h2>
+        </div>
 
-  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
-</body>
+        <div class="card" th:each="empresa : ${empresas}">
+          <div class="card-content">
+            <h2 class="card-title" th:text="${empresa.nome}"></h2>
+            <p>
+              <strong>Área de Atuação:</strong>
+              <span th:text="${empresa.area_de_atuacao}"></span>
+            </p>
+            <p>
+              <strong>Email:</strong> <span th:text="${empresa.email}"></span>
+            </p>
+            <p>
+              <strong>CNPJ:</strong> <span th:text="${empresa.cnpj}"></span>
+            </p>
+            <p>
+              <strong>Telefone:</strong>
+              <span th:text="${empresa.telefone}"></span>
+            </p>
+            <p>
+              <strong>Descrição:</strong>
+              <span th:text="${empresa.descricao}"></span>
+            </p>
+            <form th:action="@{/jbcompany/deletar/empresa}" method="post">
+              <input type="hidden" name="id" th:value="${empresa.id}" />
+              <button class="card-button" type="submit">
+                <i class="fa-solid fa-trash"></i>
+                <p>Deletar</p>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

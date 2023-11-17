@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscar Empresa</title>
-    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <section class="cointaner-principal">
       <div class="menu">
         <nav>
-          <a href="/jbcompany/cadastrar/empresas"
+          <a href="/jbcompany/empresas"
             ><i class="fas fa-building"></i> Cadastrar Empresa</a
           >
           <a href="/jbcompany/cadastrar/vagas"
@@ -32,20 +32,7 @@
         </div>
       </div>
       <form class="form_corpo" method="get">
-        <h2>Buscar Empresa</h2>
-        <div class="empresa">
-          <label for="selectEmpresa">Selecione a Empresa:</label>
-          <select id="empresa" name="empresas" required>
-            <option
-              th:each="empresa : ${empresas}"
-              th:value="${empresa.id}"
-              th:text="${empresa.nome}"
-            ></option>
-          </select>
-          <button id="botao-formulario" class="btn" role="button" type="submit">
-            Buscar
-          </button>
-        </div>
+        <h2>Vamos</h2>
       </form>
     </section>
     <script
