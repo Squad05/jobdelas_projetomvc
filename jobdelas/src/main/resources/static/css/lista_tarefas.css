@@ -1,67 +1,69 @@
-
 .lateral_home {
-    width: 20%; 
-    background-color: white;
-    border-radius: 15px;
-  }
-  
-  .lista_tarefas {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center !important;
-    justify-content: center;
-  }
-  
-  .lista_tarefas h3 {
-    color: #B378FF;
-    text-align: center;
-    font-weight: 600;
-    margin-top: 10px;
-    overflow-y: hidden;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
-  }
-  .tarefa {
-    background-color: #fff;
-    border: 1px solid #e3d0ff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px; /
-  }
-  
-  .titulo-tarefa {
-    font-weight: bold;
-    text-align: c;
-    color: #B378FF; 
-  }
-  
-  #btnAdicionarTarefa {
-    background-color: #B378FF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  
-  .botoes-tarefa {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .concluir-tarefa , .atualizar-tarefa{
-    background-color: #B378FF;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .concluir-tarefa:hover, .atualizar-tarefa:hover{
-    background-color: #9254DE;
-  }
-  
-  
+.lista_tarefas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista_tarefas h3 {
+  color: #B378FF;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  overflow-y: hidden;
+}
+
+.tarefa {
+  background-color: #fff;
+  border: 1px solid #e3d0ff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.titulo-tarefa {
+  font-weight: bold;
+  text-align: center;
+  color: #B378FF;
+}
+
+#btnAdicionarTarefa {
+  background-color: #B378FF;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%; /* Ocupa toda a largura */
+  box-sizing: border-box; /* Inclui padding e borda na largura */
+}
+
+.botoes-tarefa {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.concluir-tarefa,
+.atualizar-tarefa {
+  background-color: #B378FF;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.concluir-tarefa:hover,
+.atualizar-tarefa:hover {
+  background-color: #9254DE;
+}
