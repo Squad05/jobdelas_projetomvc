@@ -25,4 +25,11 @@ public class IndexAppController {
         modelAndView.addObject("postagens", postagens);
         return modelAndView;
     }
+
+    @GetMapping("jbcompany")
+    public ModelAndView homejbComapny() {
+        ModelAndView modelAndView = new ModelAndView("jb_company/index.html");
+
+        return modelAndView;
+    }
 }
