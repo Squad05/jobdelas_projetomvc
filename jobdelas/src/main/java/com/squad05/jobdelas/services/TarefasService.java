@@ -1,7 +1,12 @@
-// package com.squad05.jobdelas.services;
+package com.squad05.jobdelas.services;
 
-// public class TarefasService {
+import java.util.List;
 
-// List<Tarefas> getAll
 
-// }
+import com.squad05.jobdelas.model.Tarefas;
+
+
+public interface TarefasService {
+
+    List<Tarefas> listaTarefas();
+}

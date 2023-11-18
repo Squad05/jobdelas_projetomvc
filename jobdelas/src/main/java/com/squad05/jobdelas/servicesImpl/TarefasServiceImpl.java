@@ -1,12 +1,22 @@
-// package com.squad05.jobdelas.servicesImpl;
+package com.squad05.jobdelas.servicesImpl;
 
-// import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
-// import com.squad05.jobdelas.repository.TarefasRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-// public class TarefasServiceImpl {
+import com.squad05.jobdelas.model.Tarefas;
+import com.squad05.jobdelas.repository.TarefasRepository;
+import com.squad05.jobdelas.services.TarefasService;
 
-// @Autowired
-// private TarefasRepository tarefasRepository;
+@Service
+public class TarefasServiceImpl implements TarefasService{
 
-// }
+@Autowired
+private TarefasRepository tarefasRepository;
+
+@Override
+public List<Tarefas> listaTarefas() {
+    return tarefasRepository.findAll();
+}
+}
