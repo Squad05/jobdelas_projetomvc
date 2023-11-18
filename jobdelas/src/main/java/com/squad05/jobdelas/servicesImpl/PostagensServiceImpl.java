@@ -25,20 +25,13 @@ public class PostagensServiceImpl implements PostagensService {
 
     }
 
-    // @Override
-    // @Transactional
-    // public Postagens cadastrarPostagens(Postagens postagens) {
-    // return postagemRepository.save(postagens);
-    // }
-
-    // @Override
-    // @Transactional(readOnly = true)
-    // public Postagens pegarPostagensPorId(Long id) {
-    // return postagemRepository.findById(id).orElse(null);
-    // }
-
     public void deletarPostagens(Long id) {
         postagemRepository.deleteById(id);
+    }
+
+    @Override
+    public Postagens cadastrarpostagens(Postagens postagens) {
+        return postagemRepository.save(postagens);
     }
 
     // @Override

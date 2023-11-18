@@ -2,7 +2,6 @@ export const CardCriarPostagem = () => {
   const cardCriarPostagem = document.querySelector(".cardCriarPostagem");
   const nomeUsuario = cardCriarPostagem.getAttribute("data-nome-usuario");
 
-  // Verifique se o nome do usuário está disponível e exiba-o no componente
   const mensagem = nomeUsuario
     ? `O que você está pensando, ${nomeUsuario}?`
     : "O que você está pensando?";

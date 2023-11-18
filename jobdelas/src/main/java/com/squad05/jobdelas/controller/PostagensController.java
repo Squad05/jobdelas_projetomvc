@@ -1,29 +1,38 @@
-// package com.squad05.jobdelas.controller;
+package com.squad05.jobdelas.controller;
 
-// import java.util.List;
+import java.time.LocalDateTime;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Controller;
-// import org.springframework.ui.Model;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-// import com.squad05.jobdelas.model.Postagens;
-// import com.squad05.jobdelas.services.PostagensService;
+import com.squad05.jobdelas.model.Postagens;
+import com.squad05.jobdelas.model.Usuarios;
+import com.squad05.jobdelas.services.PostagensService;
 
-// @Controller
-// @RequestMapping("/postagens")
-// public class PostagensController {
+@Controller
+@RequestMapping("/postagens")
+public class PostagensController {
 
-// @Autowired
-// private PostagensService postagensService;
+    @Autowired
+    private PostagensService postagensService;
 
-// @GetMapping
-// public String listarPostagens(Model model) {
-// List<Postagens> postagens = postagensService.listarTodasPostagens();
+    @PostMapping("/cadastrar")
+    public String cadastrarPostagen(@RequestParam("usuario_id") Usuarios usuarioId,
+            @RequestParam("conteudo") String conteudo) {
 
-// model.addAttribute("postagens", postagens);
-// return "teste";
-// }
+        Postagens novaPostagem = new Postagens();
 
-// }
+        novaPostagem.setConteudo(conteudo);
+        novaPostagem.setData_postagem(LocalDateTime.now());
+        novaPostagem.setUsuarios(usuarioId);
+
+        postagensService.cadastrarpostagens(novaPostagem);
+
+        return "redirect:/jobdelas";
+
+    }
+
+}

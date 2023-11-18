@@ -22,9 +22,6 @@ public class CursosController {
     @Autowired
     private CursosService cursosService;
 
-    @Autowired
-    private CursosRepository cursosRepository;
-
     @GetMapping("/cursos")
     public ModelAndView cursos() {
         ModelAndView modelAndView = new ModelAndView("jobdelas/aprendizado/cursos.html");

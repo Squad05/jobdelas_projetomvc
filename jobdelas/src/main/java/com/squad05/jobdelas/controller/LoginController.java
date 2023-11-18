@@ -41,7 +41,6 @@ public class LoginController {
         }
 
         if (BCrypt.verifyer().verify(senha.toCharArray(), usuarioEncontrado.getSenha()).verified) {
-
             session.setAttribute("usuarioLogado", usuarioEncontrado);
         } else {
             modelAndView.setViewName("jobdelas/login.html");

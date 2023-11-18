@@ -36,7 +36,7 @@ public class IndexAppController {
     }
 
     @GetMapping("jbcompany")
-    public ModelAndView homejbComapny() {
+    public ModelAndView homejbCompany() {
         ModelAndView modelAndView = new ModelAndView("jb_company/index.html");
 
         return modelAndView;
