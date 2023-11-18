@@ -11,30 +11,20 @@
 
 :root{
     --rosa-primario: #B378FF;
+    --rosa-secundario: #9254DE;
     --branco: #ffffff;
     --cinza-claro: #706273;
+    --cinza-escuro: #333;
     --fundo-dividido: linear-gradient(to bottom, #B378FF 75%, #ffffff 25%);
 }
 
 
 body {
-    background-color: #c192ff;
+    background-color: var(--rosa-primario);
 }
 
 main {
     padding: 40px 30px;
 }
 
-.form-group label {
-    color: #B378FF;
-    font-weight: bold;
-}
-
-.form-control {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
 

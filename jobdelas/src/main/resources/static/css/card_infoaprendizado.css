@@ -6,7 +6,7 @@
 .titulo_aprendizado {
   overflow-y: hidden;
     text-transform: uppercase;
-    color: #B378FF;
+    color: var(--rosa-primario);
 
 }
 
@@ -14,7 +14,7 @@
 .icone-aprendizado {
     font-size: 2rem;
     margin-right: 10px;
-    color: #B378FF;
+    color: var(--branco);
   }
 
 
@@ -43,11 +43,11 @@
 
 .elemento i {
     font-size:42px;
-    color:  #B378FF;
+    color:  var(--rosa-primario);
 }
 
 .elemento .caracteristica {
     overflow-y: hidden;
-    color:  #B378FF;
+    color:  var(--rosa-primario);
     font-weight: 600;
 }

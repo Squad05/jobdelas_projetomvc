@@ -2,7 +2,7 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  margin: 0 20px; /* Margem ajustada para telas menores */
+  margin: 0 20px; 
 }
 
 .container-cursos {
@@ -16,14 +16,14 @@
 
 .container-aprendizado {
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--branco);
   gap: 20px;
   padding: 10px;
 }
 
 .card-curso {
-  background-color: #ffffff;
-  color: #B378FF;
+  background-color: var(--branco);
+  color: var(--rosa-primario);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -39,18 +39,18 @@
 .card-curso h3 {
   overflow: hidden;
   white-space: normal;
-  color: #B378FF;
+  color: var(--rosa-primario);
   display: inline-block;
   overflow-wrap: break-word;
 }
 
 .card-curso p {
-  color: #202020;
+  color: var(--cinza-escuro);
 }
 
 .card-curso button {
-  background-color: #B378FF;
-  color: #fff;
+  background-color: var(--rosa-primario);
+  color: var(--branco);
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -59,14 +59,14 @@
 
 .card-curso button:hover {
   background: var(--fundo-dividido);
-  color: #ffffff;
+  color: var(--branco);
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #B378FF;
+  border: 1px solid var(--rosa-primario);
 }
 
 .card-curso a {
   text-decoration: none;
-  color: #fff;
+  color: var(--branco);
 }
 
 .elementos-adicionais {

@@ -24,7 +24,7 @@ export const Navbar = () => {
         </li>
       </ul>
     </nav>
-    <img src="/img/logoRoxa.png" class="logo_jobdelas" alt="logo do jobdelas" />
+    <a href="/jobdelas"><img src="/img/logoRoxa.png" class="logo_jobdelas" alt="logo do jobdelas" /></a>
     <div class="search_bar">
       <input type="text" placeholder="Pesquisar" class="pesquisar_header"/>
       <i class="fa fa-search"></i>

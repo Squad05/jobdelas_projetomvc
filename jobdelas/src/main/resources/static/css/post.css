@@ -1,5 +1,5 @@
 .post {
-    background-color: #ffffff;
+    background-color: var(--branco);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -21,19 +21,19 @@
 
 .user-info h4 {
     margin: 0;
-    color: #B378FF;
+    color: var(--rosa-primario);
     font-size: 1.2rem;
 }
 
 .post-date {
-    color: #777; 
+    color: var(--cinza-claro); 
     margin-bottom: 10px;
 }
 
 .post-content {
     font-size: 1.2rem;
     line-height: 1.5;
-    color: #333; 
+    color: var(--cinza-escuro); 
     word-wrap: break-word;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .like-button, .read-comments-button, .comment-button {
-    background-color: #B378FF;
-    color: #fff;
+    background-color: var(--rosa-primario);
+    color: var(--branco);
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
@@ -58,5 +58,5 @@
 }
 
 .like-button:hover, .read-comments-button:hover, .comment-button:hover {
-    background-color: #9254DE; /* Cor mais escura no hover */
+    background-color: var(--rosa-secundario);
 }

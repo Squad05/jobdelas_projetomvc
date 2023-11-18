@@ -1,21 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-
-* {
-    font-family: 'Quicksand', sans-serif;
-    outline: none !important;
-    margin: 0 ;
-    padding: 0;
-    list-style: none;
-    overflow-x: hidden;
-}
-
-:root{
-    --rosa-primario: #B378FF;
-    --branco: #ffffff;
-    --cinza-claro: #706273;
-    --fundo-dividido: linear-gradient(to bottom, #B378FF 75%, #ffffff 25%);
-}
 
 body {
     background-image: url(../img/Backimg.svg);

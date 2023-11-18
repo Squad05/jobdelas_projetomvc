@@ -2,7 +2,7 @@
   
   .container-principal {
     padding: 50px;
-    background-color: #fff;
+    background-color: var(--branco);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -13,7 +13,7 @@
   
   .icone-aprendizado {
     font-size: 40px;
-    color: #B378FF;
+    color: var(--rosa-primario);
   }
   
  .titulo_curso {
@@ -33,7 +33,7 @@
   .aula {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--branco);
   }
   
   .titulo {
@@ -42,21 +42,21 @@
     gap:20px;
     justify-content: space-between;
     font-size: 18px;
-    color: #333;
+    color: var(--cinza-escuro);
   }
   
   .btn-assistir {
-    background-color: #B378FF;
-    color: #fff;
+    background-color: var(--rosa-primario);
+    color: var(--branco);
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
-    border: 1px solid #B378FF ;
+    border: 1px solid var(--rosa-primario) ;
   }
   
   .btn-assistir:hover {
     background: var(--fundo-dividido);
-    color:#ffffff;
+    color:var(--branco);
   }
   
 .modal-content {
@@ -65,7 +65,7 @@
   
   .modal-header {
     background: linear-gradient(45deg, #B378FF, #b57dff);
-    color: #fff;
+    color: var(--branco);
     border-radius: 8px 8px 0 0;
     padding: 15px;
   }

@@ -1,6 +1,6 @@
 .lateral_home {
   width: 100%;
-  background-color: white;
+  background-color:var(--branco);
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 20px;
@@ -14,7 +14,7 @@
 }
 
 .lista_tarefas h3 {
-  color: #B378FF;
+  color: var(--rosa-primario);
   text-align: center;
   font-weight: 600;
   margin-top: 10px;
@@ -22,8 +22,8 @@
 }
 
 .tarefa {
-  background-color: #fff;
-  border: 1px solid #e3d0ff;
+  background-color: var(--branco);
+  border: 1px solid var(--branco);
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -32,19 +32,19 @@
 .titulo-tarefa {
   font-weight: bold;
   text-align: center;
-  color: #B378FF;
+  color: var(--rosa-primario);
 }
 
 #btnAdicionarTarefa {
-  background-color: #B378FF;
-  color: #fff;
+  background-color: var(--rosa-primario);
+  color: var(--branco);
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  width: 100%; /* Ocupa toda a largura */
-  box-sizing: border-box; /* Inclui padding e borda na largura */
+  width: 100%; 
+  box-sizing: border-box;
 }
 
 .botoes-tarefa {
@@ -55,8 +55,8 @@
 
 .concluir-tarefa,
 .atualizar-tarefa {
-  background-color: #B378FF;
-  color: #fff;
+  background-color: var(--rosa-primario);
+  color: var(--branco);
   border: none;
   padding: 5px;
   border-radius: 5px;
@@ -65,5 +65,5 @@
 
 .concluir-tarefa:hover,
 .atualizar-tarefa:hover {
-  background-color: #9254DE;
+  background-color: var(--rosa-secundario);
 }

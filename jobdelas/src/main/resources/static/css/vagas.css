@@ -1,15 +1,4 @@
 
-* {
-    outline: none !important;
-    margin: 0 ;
-    padding: 0; 
-}
-
-
-body {
-    background-color: #B378FF;
-}
-
 .input-pesquisa {
     margin:60px 40px;
 
@@ -21,15 +10,15 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  background-color: #fff;
+  background-color: var(--branco);
   padding: 30px;
   border-radius: 15px;
-  border:1px solid #B378FF;
+  border:1px solid var(--rosa-primario);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .input-group-text {
-  color: #B378FF;
+  color: var(--rosa-primario);
   background-color: transparent;
   border: none;
 }
@@ -37,18 +26,18 @@ body {
 
 
 .form-control {
-  border: 1px solid #B378FF;
+  border: 1px solid var(--rosa-primario);
   border-radius: 5px;
   padding: 20px;
   width: 45%; 
   box-sizing: border-box;
-  border:1px solid #B378FF !important;
+  border:1px solid var(--rosa-primario) !important;
 
 }
 
 .form-control:hover, .form-control:focus {
     outline: none;
-    border:1px solid #B378FF !important;
+    border:1px solid var(--rosa-primario) !important;
     box-shadow: none;
 
 }
@@ -65,7 +54,7 @@ body {
 
 .buscar-vagas i {
     font-size: 30px;
-    color: #B378FF !important
+    color: var(--rosa-primario) !important
     ;
 }
 
@@ -81,8 +70,8 @@ body {
 }
 
 .buscar-vagas {
-    background-color: #B378FF;
-    color: #fff;
+    background-color: var(--rosa-primario);
+    color: var(--branco);
     border: none;
 }
 
@@ -100,9 +89,9 @@ body {
     width: 550px;
     padding: 15px;
     flex-basis: 290px;
-    border: 1px solid #B378FF;
+    border: 1px solid var(--rosa-primario);
     border-radius: 20px;
-    background-color: #fff;
+    background-color: var(--branco);
 }
 
 .funcao {
@@ -120,10 +109,10 @@ body {
 
 .sobre {
     padding: 5px;
-    background-color: #B378FF;
+    background-color: var(--rosa-primario);
     width: 63px;
     border-radius: 10px;
-    color: #fff;
+    color: var(--branco);
     text-transform: uppercase;
 }
 
@@ -132,8 +121,8 @@ body {
     width: 80px;
     border-radius: 10px;
     border: none;
-    background-color: #B378FF;
-    color: #fff;
+    background-color: var(--rosa-primario);
+    color: var(--branco);
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -143,5 +132,25 @@ body {
 }
 
 .status {
-    color: #706273;
+    color: var(--cinza-claro);
 }
+
+@media (max-width: 768px) {
+    .input-pesquisa {
+      flex-direction: column;
+    }
+  
+    .input-group-text {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    #inputCargo,
+    #inputLocalizacao {
+      margin-bottom: 10px;
+    }
+  
+    .buscar-vagas {
+      width: 100%;
+    }
+  }

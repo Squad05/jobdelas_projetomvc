@@ -1,5 +1,5 @@
 .profile_header {
-    background-color: white;
+    background-color: var(--branco);
     padding: 30px 0 ;
     display: flex;
     flex-direction: column;
@@ -21,12 +21,12 @@
   
 .profile_foto h1 {
     overflow-y: hidden;
-    color: #343a40;
+    color: var(--cinza-escuro);
     margin: 10px 0;
 }
   
 .profile_foto p {
-    color: #868e96;
+    color: var(--cinza-claro);
 }
   
   .profile_redesociais {
@@ -36,6 +36,6 @@
   
 .profile_redesociais i {
     font-size: 30px;
-    color: #B378FF;
+    color: var(--rosa-primario);
   }
   

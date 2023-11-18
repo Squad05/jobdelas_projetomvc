@@ -24,10 +24,10 @@ button:focus,
 .botao_criarpostagem {
     padding: 10px 15px;
     border-radius: 10px;
-    color: white;
+    color: var(--branco);
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #B378FF;
+    background-color: var(--rosa-primario);
 }
 
 /* Estilos para formulários */
@@ -43,7 +43,7 @@ button:focus,
 /* Estilos para a lateral home */
 .lateral_home {
     width: 20%;
-    background-color: white;
+    background-color: var(--branco);
     border-radius: 15px;
     padding: 10px;
 }

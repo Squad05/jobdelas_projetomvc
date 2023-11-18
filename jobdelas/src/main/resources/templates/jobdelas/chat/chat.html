@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
 
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/chat.css" />
@@ -37,15 +37,15 @@
         <div class="enviar">
           <form action="" method="post" th:action="@{/enviar}">
             <div class="container-separador">
-              <label for="">Nome:</label>
-              <input type="text" name="nome" id="nome" />
+    
+              <input type="text" placeholder="Nome" name="nome" id="nome" />
             </div>
 
             <div class="container-separador">
-              <label for="">Mensagem: </label>
+
               <input
                 type="text"
-                placeholder="Escreva"
+                placeholder="Mensagem"
                 name="mensagem"
                 id="mensagem"
                 class="escrever-mensagem"

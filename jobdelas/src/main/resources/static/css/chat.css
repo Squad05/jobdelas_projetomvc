@@ -85,3 +85,44 @@ justify-content: center;
   ::-webkit-scrollbar-thumb:hover {
     background: #B378FF;
   }
+
+  .container-separador {
+    margin-bottom: 10px;
+    display: flex;
+    
+  }
+  
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+ 
+  @media (max-width: 768px) {
+    
+  
+    .container-mensagens {
+      flex-direction: column;
+    }
+  
+    .chat {
+      margin-bottom: 10px;
+    }
+  
+    .enviar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f4f4f8;
+      padding: 10px;
+    }
+  
+    input[type="text"] {
+      margin-top: 0;
+    }
+  }

@@ -5,7 +5,7 @@
     flex-direction: column;
     gap:20px;
     padding: 30px 40px ;
-    background-color: #fff;
+    background-color: var(--branco);
 }
 
 .profile_sobre {
@@ -17,8 +17,8 @@
 .botao_profile {
     width: 130px;
     padding: 5px 9px !important;
-    border: 1px solid #B378FF ;
-    color:#B378FF;
+    border: 1px solid var(--rosa-primario) ;
+    color: var(--rosa-primario);
     border-radius: 4px;
     cursor: pointer;
     background-color: transparent;
@@ -27,9 +27,9 @@
 
 .botao_profile:hover {
     background: var(--fundo-dividido);
-    color:#ffffff;
+    color: var(--branco);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #B378FF ;
+    border: 1px solid  var(--rosa-primario);
 
 }
 

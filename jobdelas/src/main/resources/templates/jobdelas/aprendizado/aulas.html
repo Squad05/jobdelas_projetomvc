@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
     <link rel="stylesheet" href="/css/curso.css" />
   </head>
   <body>
@@ -30,7 +30,6 @@
         <div class="container-aprendizado">
           <i class="fas fa-graduation-cap icone-aprendizado"></i>
           <h1 class="titulo_curso" th:text="${curso.materia}"></h1>
-          <!-- <p th:text="${curso.descricao}"></p> -->
         </div>
         <ul class="lista-aulas">
           <li class="aula" th:each="aula : ${aulas}">
@@ -67,7 +66,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <!-- Embed do vídeo do YouTube -->
+
                     <iframe
                     th:src="${#strings.isEmpty(aula.link) ? '' : aula.link}"
                       title="Título do Vídeo"

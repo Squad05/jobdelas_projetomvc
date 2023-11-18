@@ -3,7 +3,7 @@
     display: flex;
     padding: 25px 30px;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: var(--branco);
     align-items: center;
 }
 
@@ -24,14 +24,14 @@
 .header .caixa-item-navbar {
     width: 70px;
     padding-top: 5px;
-    border: 1px solid white;
-    background-color: #fff;
+    border: 1px solid var(--branco);
+    background-color: var(--branco);
 
 }
 
 .header .icone_nav,
 .caixa-item-navbar a {
-    color: #B378FF;
+    color: var(--rosa-primario);
     text-decoration: none;
     padding: 0;
     font-weight: 600;
@@ -40,7 +40,7 @@
 
 .header .nav ul li:hover {
     border-radius: 10px;
-    border: 1px solid #B378FF;
+    border: 1px solid var(--rosa-primario);
     box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,12 +54,12 @@
 
 .header .pesquisar_header {
     border-radius: 10px;
-    border: 2px solid #B378FF;
+    border: 2px solid var(--rosa-primario);
 }
 
 .header .search_bar i {
     font-size: 26px;
-    color: #B378FF;
+    color: var(--rosa-primario);
 }
 
 .header .botao-perfil {
@@ -73,7 +73,7 @@
 }
 
 .header .img_perfil {
-    background-color: #fff;
+    background-color: var(--branco);
     border: none;
     border-radius: 50%;
     height: 50px;
@@ -128,8 +128,8 @@ height: 25px !important;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #fff;
-      color: white;
+      background-color: var(--branco);
+      color: var(--branco);
       padding: 10px;
     }
   
