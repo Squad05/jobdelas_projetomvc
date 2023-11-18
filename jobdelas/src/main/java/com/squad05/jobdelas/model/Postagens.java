@@ -24,7 +24,6 @@ public class Postagens {
     @JoinColumn(name = "usuario_id")
     private Usuarios usuarios;
 
-    private String categoria;
     private String conteudo;
     private LocalDateTime data_postagem;
 

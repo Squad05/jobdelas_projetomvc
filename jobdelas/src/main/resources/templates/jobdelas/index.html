@@ -34,8 +34,28 @@
         <div class="container_postagem">
           <div
             class="cardCriarPostagem"
-            th:attr="data-nome-usuario=${usuarioLogado != null ? usuarioLogado.nome : ''}"
-          ></div>
+            th:attr="data-nome-usuario=${usuarioLogado != null ? usuarioLogado.nome : ''}, data-usuario-id=${usuarioLogado != null ? usuarioLogado.id : ''}"
+          >
+            <!-- Seu conteúdo aqui -->
+            <form action="postagens/cadastrar" method="post">
+              <div class="card-body">
+                <img src="/img/iconfoto.png" alt="User" class="user-photo" />
+                <h3>
+                  O que você está pensando?
+                  <span
+                    th:text="${usuarioLogado != null ? usuarioLogado.nome : 'Usuário não identificado'}"
+                  ></span>
+                </h3>
+                <textarea name="conteudo" rows="4" cols="50"></textarea>
+                <input
+                  type="hidden"
+                  name="usuario_id"
+                  th:value="${usuarioLogado != null ? usuarioLogado.id : ''}"
+                />
+                <button type="submit" class="btn btn-primary">Postar</button>
+              </div>
+            </form>
+          </div>
 
           <div class="feed">
             <div th:each="postagem : ${postagens}" class="post">
