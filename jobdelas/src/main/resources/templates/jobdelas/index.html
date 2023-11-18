@@ -32,7 +32,10 @@
         <div class="lateral_home"></div>
 
         <div class="container_postagem">
-          <div class="cardCriarPostagem"></div>
+          <div
+            class="cardCriarPostagem"
+            th:attr="data-nome-usuario=${usuarioLogado != null ? usuarioLogado.nome : ''}"
+          ></div>
 
           <div class="feed">
             <div th:each="postagem : ${postagens}" class="post">

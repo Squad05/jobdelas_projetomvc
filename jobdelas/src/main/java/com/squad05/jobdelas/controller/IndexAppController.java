@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Postagens;
+import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.services.PostagensService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/")
@@ -18,12 +21,18 @@ public class IndexAppController {
     private PostagensService postagensService;
 
     @GetMapping("jobdelas")
-    public ModelAndView home() {
+    public ModelAndView home(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("jobdelas/index.html");
-        List<Postagens> postagens = postagensService.listarTodasPostagens();
 
-        modelAndView.addObject("postagens", postagens);
+        Usuarios usuarioLogado = ((Usuarios) session.getAttribute("usuarioLogado"));
+
+        if (usuarioLogado != null) {
+            List<Postagens> postagens = postagensService.listarTodasPostagens();
+            modelAndView.addObject("postagens", postagens);
+            modelAndView.addObject("usuarioLogado", usuarioLogado);
+        }
         return modelAndView;
+
     }
 
     @GetMapping("jbcompany")
