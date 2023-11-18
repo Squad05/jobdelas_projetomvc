@@ -10,13 +10,13 @@ import com.squad05.jobdelas.repository.TarefasRepository;
 import com.squad05.jobdelas.services.TarefasService;
 
 @Service
-public class TarefasServiceImpl implements TarefasService{
+public class TarefasServiceImpl implements TarefasService {
 
-@Autowired
-private TarefasRepository tarefasRepository;
+    @Autowired
+    private TarefasRepository tarefasRepository;
 
-@Override
-public List<Tarefas> listaTarefas() {
-    return tarefasRepository.findAll();
-}
+    @Override
+    public List<Tarefas> listaTarefas(Long usuarioId) {
+        return tarefasRepository.findAllByUsuarioId(usuarioId);
+    }
 }

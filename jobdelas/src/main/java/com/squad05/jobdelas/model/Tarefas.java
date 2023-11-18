@@ -14,23 +14,19 @@ import lombok.Data;
 @Entity
 public class Tarefas {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuarios usuario;
 
-@ManyToOne
-@JoinColumn(name = "usuario_id")
-private Usuarios usuario;
+    private String titulo;
+    private String descricao;
+    private boolean concluida;
 
-private Long userId;
-private String titulo;
-private String descricao;
-private boolean concluida;
+    public Tarefas() {
 
-
-
-public Tarefas() {
-
-}
+    }
 }

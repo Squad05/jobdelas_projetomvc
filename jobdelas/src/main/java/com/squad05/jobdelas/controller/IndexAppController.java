@@ -27,19 +27,24 @@ public class IndexAppController {
 
     @GetMapping("jobdelas")
     public ModelAndView home(HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("jobdelas/index.html");
+        ModelAndView modelAndView = new ModelAndView();
 
-        Usuarios usuarioLogado = ((Usuarios) session.getAttribute("usuarioLogado"));
-        List<Tarefas> tarefas = tarefasService.listaTarefas();
-            modelAndView.addObject("tarefas", tarefas);
+        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
 
-        if (usuarioLogado != null) {
-            List<Postagens> postagens = postagensService.listarTodasPostagens();
-            modelAndView.addObject("postagens", postagens);
-            modelAndView.addObject("usuarioLogado", usuarioLogado);
+        if (usuarioLogado == null) {
+            modelAndView.setViewName("redirect:/login");
+            return modelAndView;
         }
-        return modelAndView;
 
+        List<Tarefas> tarefas = tarefasService.listaTarefas(usuarioLogado.getId());
+        modelAndView.addObject("tarefas", tarefas);
+
+        List<Postagens> postagens = postagensService.listarTodasPostagens();
+        modelAndView.addObject("postagens", postagens);
+        modelAndView.addObject("usuarioLogado", usuarioLogado);
+
+        modelAndView.setViewName("jobdelas/index.html");
+        return modelAndView;
     }
 
     @GetMapping("jbcompany")

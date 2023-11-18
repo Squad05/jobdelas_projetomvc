@@ -1,10 +1,10 @@
-import { ListaTarefas } from "/js/ListaTarefas.js";
+// import { ListaTarefas } from "/js/ListaTarefas.js";
 // import { CardCriarPostagem } from "/js/CardCriarPostagem.js";
 import { Navbar } from "/js/Navbar.js";
 // import { Post } from "/js/Post.js";
 
-const listaTarefas = document.querySelector(".lateral_home");
-listaTarefas.innerHTML = ListaTarefas();
+// const listaTarefas = document.querySelector(".lateral_home");
+// listaTarefas.innerHTML = ListaTarefas();
 
 // const cardCriarPostagem = document.querySelector(".cardCriarPostagem");
 // cardCriarPostagem.innerHTML = CardCriarPostagem();

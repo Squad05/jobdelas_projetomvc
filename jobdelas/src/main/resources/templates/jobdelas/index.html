@@ -29,7 +29,39 @@
     <header class="header"></header>
     <main>
       <section class="container_principal">
-        <div class="lateral_home"></div>
+        <div class="lateral_home">
+          <div class="lista_tarefas">
+            <h3>Lista de Tarefas</h3>
+            <div
+              th:each="tarefa, status : ${tarefas}"
+              class="tarefa"
+              th:if="${status.index < 8}"
+            >
+              <div class="titulo-tarefa" th:text="${tarefa.titulo}">
+                Título da Tarefa
+              </div>
+              <div class="descricao-tarefa" th:text="${tarefa.descricao}">
+                Descrição da Tarefa
+              </div>
+              <div class="botoes-tarefa">
+                <button class="concluir-tarefa">
+                  <i class="fa fa-check"></i> Concluir
+                </button>
+                <button class="atualizar-tarefa">
+                  <i class="fa fa-edit"></i> Atualizar
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            id="btnAdicionarTarefa"
+            class="botao_criarpostagem"
+            data-toggle="modal"
+            data-target="#tarefaModal"
+          >
+            Adicionar Tarefa
+          </button>
+        </div>
 
         <div class="container_postagem">
           <div
@@ -41,12 +73,18 @@
               <div class="card-body">
                 <img src="/img/iconfoto.png" alt="User" class="user-photo" />
                 <h3>
-                  O que você está pensando?
+                  O que você está pensando
                   <span
-                    th:text="${usuarioLogado != null ? usuarioLogado.nome : 'Usuário não identificado'}"
+                    th:text="${#strings.substringBefore(usuarioLogado.nome, ' ')}"
                   ></span>
+                  ?
                 </h3>
-                <textarea name="conteudo" rows="4" cols="50"></textarea>
+                <textarea
+                  name="conteudo"
+                  rows="4"
+                  cols="50"
+                  class="caixa-criarpostagem"
+                ></textarea>
                 <input
                   type="hidden"
                   name="usuario_id"
