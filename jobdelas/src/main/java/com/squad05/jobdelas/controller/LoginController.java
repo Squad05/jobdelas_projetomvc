@@ -5,21 +5,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.UsuariosService;
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/")
+@SessionAttributes("usuarioLogado")
 public class LoginController {
 
     @Autowired
     private UsuariosService usuariosService;
-
-    @Autowired
-    private UsuarioRepository usuarioRepository;
 
     @GetMapping("login")
     public ModelAndView login() {
@@ -29,7 +29,7 @@ public class LoginController {
     }
 
     @PostMapping("login")
-    public ModelAndView login(String email, String senha, String cargo) {
+    public ModelAndView login(String email, String senha, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("redirect:/jobdelas");
 
         var usuarioEncontrado = usuariosService.encontrarPorEmail(email);
@@ -41,7 +41,8 @@ public class LoginController {
         }
 
         if (BCrypt.verifyer().verify(senha.toCharArray(), usuarioEncontrado.getSenha()).verified) {
-            modelAndView.addObject("usuarioLogado", usuarioEncontrado);
+
+            session.setAttribute("usuarioLogado", usuarioEncontrado);
         } else {
             modelAndView.setViewName("jobdelas/login.html");
             modelAndView.addObject("erro", "Email ou senha incorretos");

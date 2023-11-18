@@ -8,7 +8,7 @@ senha VARCHAR(255) NOT NULL,
 foto VARCHAR(255),
 resumo TEXT,
 telefone VARCHAR(20),
-linkDoPortfolio VARCHAR(255)
+link_do_portfolio VARCHAR(255)
 );
     
     
@@ -66,16 +66,7 @@ CREATE TABLE comentario (
     data_comentario DATETIME,
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
-
-CREATE TABLE comentarios (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    postagem_id INTEGER,
-    comentario_id INTEGER,
-    FOREIGN KEY(postagem_id) REFERENCES postagens (id),
-    FOREIGN KEY(comentario_id) REFERENCES comentario (id)
-);
-
-        
+      
 
 CREATE TABLE tarefas (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -83,8 +74,7 @@ CREATE TABLE tarefas (
     titulo VARCHAR(255) NOT NULL,
     descricao VARCHAR(255) NOT NULL,
     concluida BOOLEAN,
-    FOREIGN KEY(userID) REFERENCES usuarios (id),
-
+    FOREIGN KEY(userID) REFERENCES usuarios (id)
 );
      
 
