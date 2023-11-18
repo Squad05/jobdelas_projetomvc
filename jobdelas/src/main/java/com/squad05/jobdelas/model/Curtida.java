@@ -1,34 +1,36 @@
 package com.squad05.jobdelas.model;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
 @Entity
-public class Usuarios {
-
+public class Curtida {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String email;
-    private String senha;
-    private String foto;
-    private String resumo;
-    private String telefone;
-    private String link_do_portfolio;
 
-    public Usuarios(Long usuarioId) {
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuarios usuarios;
 
-    }
+    @ManyToOne
+    @JoinColumn(name = "postagem_id")
+    private Postagens postagens;
 
-
-    public Usuarios() {
+    public Curtida() {
         
     }
+
+  
 }

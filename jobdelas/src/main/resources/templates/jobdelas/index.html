@@ -112,7 +112,7 @@
 
               <p class="post-content" th:text="${postagem.conteudo}"></p>
               <div class="post-actions">
-                <button class="like-button">
+                <button class="like-button" th:onclick="'curtirPostagem(' + ${usuarioLogado.id} + ',' + ${postagem.id} + ')';">
                   <i class="fas fa-heart"></i> Curtir
                 </button>
                 <button class="comment-button">
