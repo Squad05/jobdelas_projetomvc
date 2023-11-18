@@ -38,6 +38,11 @@
       <div class="form_corpo_cards">
         <div class="listar">
           <h2>Lista de Empresas</h2>
+          <div th:if="${param.erro}">
+            <div class="alert alert-danger" role="alert">
+              <p th:text="${param.erro}" class="mensagem-erro"></p>
+            </div>
+          </div>
         </div>
 
         <div class="card" th:each="empresa : ${empresas}">
@@ -61,8 +66,10 @@
               <strong>Descrição:</strong>
               <span th:text="${empresa.descricao}"></span>
             </p>
-            <form th:action="@{/jbcompany/deletar/empresa}" method="post">
-              <input type="hidden" name="id" th:value="${empresa.id}" />
+            <form
+              th:action="@{/jbcompany/deletar/empresa/__${empresa.id}__}"
+              method="post"
+            >
               <button class="card-button" type="submit">
                 <i class="fa-solid fa-trash"></i>
                 <p>Deletar</p>
