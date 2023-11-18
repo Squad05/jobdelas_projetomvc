@@ -19,7 +19,7 @@ public class ChatController {
     @GetMapping("/chat")
     public ModelAndView chat() {
 
-        ModelAndView modelAndView = new ModelAndView("jobdelas/usuario/chat.html");
+        ModelAndView modelAndView = new ModelAndView("jobdelas/chat/index.html");
         modelAndView.addObject("chat", chatRepository.findAll());
 
         return modelAndView;

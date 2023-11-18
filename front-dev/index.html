@@ -1,74 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jb Company</title>
+    <!-- <link rel="stylesheet" href="/css/header.css" /> -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- <link rel="stylesheet" href="/css/chat/index.css" /> -->
+    <title>Mensagens</title>
   </head>
+
   <body>
-    <section class="cointaner-principal">
-      <div class="menu">
-        <nav>
-          <a href="/jbcompany"><i class="fas fa-home"></i> Home </a>
-          <a href="/jbcompany/cadastrar/empresas"
-            ><i class="fas fa-building"></i> Cadastrar Empresa</a
-          >
-          <a href="/jbcompany/cadastrar/vagas"
-            ><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a
-          >
-          <a href="/jbcompany/listar/empresas"
-            ><i class="fas fa-list"></i> Listar Empresas
-          </a>
-          <a href="/jbcompany/buscar/empresas"
-            ><i class="fas fa-search"></i> Buscar Empresa</a
-          >
-          <a href="/jbcompany/cadastrar/empresas"
-            ><i class="fas fa-users"></i> Visualizar Candidatos</a
-          >
-        </nav>
-        <div class="logo">
-          <img src="/img/jb_company.png" alt="Sua Logo" />
+    <div class="container-mensagens">
+      <div class="chat">
+        <div class="mensagem-recebida" th:each="mensagem : ${chat}">
+          <span th:text="${mensagem.nome}"></span>
+          <span th:text="${mensagem.mensagem}"></span>
         </div>
       </div>
-      <div class="container_aula">
-        <form action="/aulas/adicionar" method="post">
-          <h2>Cadastrar Aula</h2>
 
-          <label for="curso">Curso:</label>
-          <select id="curso" name="cursoId" required>
-            <option
-              th:each="curso : ${cursos}"
-              th:value="${curso.id}"
-              th:text="${curso.materia}"
-            ></option></select
-          ><br />
+      <div class="enviar">
+        <form action="" method="post" th:action="@{/enviar}">
+          <div class="container-separador">
+            <label for="">Nome:</label>
+            <input type="text" name="nome" id="nome" />
+          </div>
 
-          <label for="titulo">Título:</label>
-          <input type="text" id="titulo" name="titulo" required /><br />
+          <div class="container-separador">
+            <label for="">Mensagem: </label>
+            <input
+              type="text"
+              placeholder="Escreva"
+              name="mensagem"
+              id="mensagem"
+              class="escrever-mensagem"
+            />
+          </div>
 
-          <label for="link">Link:</label>
-          <input type="text" id="link" name="link" required /><br />
-
-          <label for="descricao">Descrição:</label>
-          <textarea id="descricao" name="descricao" required></textarea><br />
-
-          <button type="submit">Adicionar</button>
+          <div>
+            <button type="submit">Enviar</button>
+          </div>
         </form>
       </div>
-    </section>
+    </div>
 
-    <!-- Lista de Aulas
-    <h2>Lista de Aulas</h2>
-    <ul th:each="aula : ${aulas}">
-        <li th:text="${aula.titulo + ' - ' + aula.curso.materia + ' - ' + aula.curso.descricao}"></li>
-        <a th:href="@{/aulas/editar/{id}(id=${aula.id})}">Editar</a>
-        <a th:href="@{/aulas/deletar/{id}(id=${aula.id})}" onclick="return confirm('Tem certeza que deseja deletar esta aula?')">Deletar</a>
-    </ul> -->
-
-    <script
-      src="https://kit.fontawesome.com/cda1aa7b4f.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="/js/chat.js" type="module"></script>
   </body>
 </html>

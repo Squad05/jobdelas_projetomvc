@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Usuarios;
+import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.UsuariosService;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
@@ -17,6 +18,9 @@ public class LoginController {
     @Autowired
     private UsuariosService usuariosService;
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @GetMapping("login")
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView("jobdelas/login.html");
@@ -25,7 +29,7 @@ public class LoginController {
     }
 
     @PostMapping("login")
-    public ModelAndView login(String email, String senha) {
+    public ModelAndView login(String email, String senha, String cargo) {
         ModelAndView modelAndView = new ModelAndView("redirect:/jobdelas");
 
         var usuarioEncontrado = usuariosService.encontrarPorEmail(email);
