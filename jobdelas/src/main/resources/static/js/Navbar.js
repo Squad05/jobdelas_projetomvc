@@ -28,7 +28,7 @@ export const Navbar = () => {
     <div class="search_bar">
       <input type="text" placeholder="Pesquisar" class="pesquisar_header"/>
       <i class="fa fa-search"></i>
-      <button class="botao-perfil" data-toggle="modal" data-target="#editarModal">
+      <a  href="/perfil" class="botao-perfil">
         <img src="/img/iconfoto.png" class="img_perfil" alt="Imagem no Botão" />
       </button>
     </div>

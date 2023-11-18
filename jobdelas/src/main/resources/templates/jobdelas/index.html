@@ -109,10 +109,19 @@
                 th:text="${#temporals.format(postagem.data_postagem, 'dd/MM/yyyy HH:mm:ss')}"
                 class="post-date"
               ></p>
-
               <p class="post-content" th:text="${postagem.conteudo}"></p>
+              <p
+                th:if="${postagem.curtidas_total > 0}"
+                style="font-style: italic"
+              >
+                <span th:text="${postagem.curtidas_total}"></span> curtidas
+              </p>
+
               <div class="post-actions">
-                <button class="like-button" th:onclick="'curtirPostagem(' + ${usuarioLogado.id} + ',' + ${postagem.id} + ')';">
+                <button
+                  class="like-button"
+                  th:onclick="'curtirPostagem(' + ${usuarioLogado.id} + ',' + ${postagem.id} + ')';"
+                >
                   <i class="fas fa-heart"></i> Curtir
                 </button>
                 <button class="comment-button">

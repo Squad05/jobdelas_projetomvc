@@ -1,7 +1,5 @@
 package com.squad05.jobdelas.model;
 
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +13,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Entity
 public class Curtida {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,8 +27,7 @@ public class Curtida {
     private Postagens postagens;
 
     public Curtida() {
-        
+
     }
 
-  
 }

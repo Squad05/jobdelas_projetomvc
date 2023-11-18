@@ -17,6 +17,8 @@ import com.squad05.jobdelas.services.EmailService;
 import com.squad05.jobdelas.services.UsuariosService;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.ui.Model;
 
 @Controller
@@ -86,8 +88,17 @@ public class UsuarioController {
     }
 
     @GetMapping("perfil")
-    public ModelAndView perfil() {
-        ModelAndView modelAndView = new ModelAndView("/usuario/perfil.html");
+    public ModelAndView perfil(HttpSession session) {
+        ModelAndView modelAndView = new ModelAndView();
+        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
+
+        if (usuarioLogado == null) {
+            modelAndView.setViewName("redirect:/login");
+            return modelAndView;
+        }
+
+        modelAndView.addObject("usuarioLogado", usuarioLogado);
+        modelAndView.setViewName("jobdelas/usuario/perfil.html");
         return modelAndView;
     }
 }

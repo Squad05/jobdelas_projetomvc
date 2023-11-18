@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Postagens;
 import com.squad05.jobdelas.model.Tarefas;
 import com.squad05.jobdelas.model.Usuarios;
+import com.squad05.jobdelas.services.CurtidaService;
 import com.squad05.jobdelas.services.PostagensService;
 import com.squad05.jobdelas.services.TarefasService;
 
@@ -24,6 +25,9 @@ public class IndexAppController {
 
     @Autowired
     private TarefasService tarefasService;
+
+    @Autowired
+    private CurtidaService curtidaService;
 
     @GetMapping("jobdelas")
     public ModelAndView home(HttpSession session) {
@@ -40,6 +44,12 @@ public class IndexAppController {
         modelAndView.addObject("tarefas", tarefas);
 
         List<Postagens> postagens = postagensService.listarTodasPostagens();
+
+        for (Postagens postagem : postagens) {
+            int curtidasTotal = curtidaService.contarCurtidasDaPostagem(postagem.getId());
+            postagem.setCurtidas_total(curtidasTotal);
+        }
+
         modelAndView.addObject("postagens", postagens);
         modelAndView.addObject("usuarioLogado", usuarioLogado);
 

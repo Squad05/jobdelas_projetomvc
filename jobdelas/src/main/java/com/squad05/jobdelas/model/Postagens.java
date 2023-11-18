@@ -26,6 +26,7 @@ public class Postagens {
 
     private String conteudo;
     private LocalDateTime data_postagem;
+    private Integer curtidas_total;
 
     public Postagens() {
 

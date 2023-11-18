@@ -9,29 +9,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class CurtidaServiceImpl implements CurtidaService {
 
-    private final CurtidaRepository curtidaRepository;
-
     @Autowired
-    public CurtidaServiceImpl(CurtidaRepository curtidaRepository) {
-        this.curtidaRepository = curtidaRepository;
-    }
+    private CurtidaRepository curtidaRepository;
 
-    @Override
-    public void curtirPostagem(Long usuarioId, Long postagemId) {
-        if (curtidaRepository.existeByUsuarioEAndPostagemId(usuarioId, postagemId)) {
-            throw new IllegalStateException("Usuário já curtiu esta postagem.");
-        }
+    // @Override
+    // public void curtirPostagem(Long usuarioId, Long postagemId) {
+    // if (curtidaRepository.existeByUsuarioEAndPostagemId(usuarioId, postagemId)) {
+    // throw new IllegalStateException("Usuário já curtiu esta postagem.");
+    // }
 
-        Curtida curtida = new Curtida();
-        curtida.setUsuario(new Usuario(usuarioId));
-        curtida.setPostagem(new Postagem(postagemId));
-        curtidaRepository.save(curtida);
-    }
+    // Curtida curtida = new Curtida();
+    // curtida.setUsuario(new Usuario(usuarioId));
+    // curtida.setPostagem(new Postagem(postagemId));
+    // curtidaRepository.save(curtida);
+    // }
 
     @Override
     public int contarCurtidasDaPostagem(Long postagemId) {
-        return curtidaRepository.countByPostagemId(postagemId);
+        return curtidaRepository.countByPostagensId(postagemId);
     }
 
- 
 }
