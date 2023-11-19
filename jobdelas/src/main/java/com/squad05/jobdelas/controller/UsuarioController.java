@@ -69,16 +69,33 @@ public class UsuarioController {
     }
 
     @PostMapping("perfil/editar")
-    public String atualizarUsuario(@RequestParam("descricao_curta") String novaDescricaoCurta, HttpSession session) {
+public String atualizarUsuario(@ModelAttribute Usuarios usuarioAtualizado, HttpSession session) {
 
-        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
-        usuarioLogado.setDescricao_curta(novaDescricaoCurta);
-        Usuarios usuarioAtualizado = usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
-        session.setAttribute("usuarioLogado", usuarioAtualizado);
+    Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
+    
 
-        return "redirect:/perfil";
+    usuarioLogado.setNome(usuarioAtualizado.getNome());
+    usuarioLogado.setEmail(usuarioAtualizado.getEmail());
+    usuarioLogado.setSenha(usuarioAtualizado.getSenha());
+    usuarioLogado.setFoto(usuarioAtualizado.getFoto());
+    usuarioLogado.setResumo(usuarioAtualizado.getResumo());
+    usuarioLogado.setTelefone(usuarioAtualizado.getTelefone());
+    usuarioLogado.setLink_do_portfolio(usuarioAtualizado.getLink_do_portfolio());
+    usuarioLogado.setDescricao_curta(usuarioAtualizado.getDescricao_curta());
 
+    
+    if (!usuarioAtualizado.getSenha().isEmpty()) {
+        var senhaCriptografada = BCrypt.withDefaults().hashToString(12, usuarioAtualizado.getSenha().toCharArray());
+        usuarioLogado.setSenha(senhaCriptografada);
     }
+
+    usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
+
+  
+    session.setAttribute("usuarioLogado", usuarioLogado);
+
+    return "redirect:/perfil";
+}
     // @GetMapping("/deletar/{id}")
     // public String deletarUsuario(@PathVariable Long id) {
     // usuariosService.deletarUsuario(id);
