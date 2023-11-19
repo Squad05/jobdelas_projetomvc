@@ -43,10 +43,18 @@
               <div class="descricao-tarefa" th:text="${tarefa.descricao}">
                 Descrição da Tarefa
               </div>
+
               <div class="botoes-tarefa">
-                <button class="concluir-tarefa">
-                  <i class="fa fa-check"></i> Concluir
-                </button>
+                <form
+                  th:action="@{tarefas/deletar/__${tarefa.id}__}"
+                  method="post"
+                >
+                  <button type="submit" class="atualizar-tarefa">
+                    <i class="fa-solid fa-check"></i>
+                    Concluir
+                  </button>
+                </form>
+
                 <button class="atualizar-tarefa">
                   <i class="fa fa-edit"></i> Atualizar
                 </button>
@@ -127,7 +135,6 @@
             class="cardCriarPostagem"
             th:attr="data-nome-usuario=${usuarioLogado != null ? usuarioLogado.nome : ''}, data-usuario-id=${usuarioLogado != null ? usuarioLogado.id : ''}"
           >
-            <!-- Seu conteúdo aqui -->
             <form action="postagens/cadastrar" method="post">
               <div class="card-body">
                 <img src="/img/iconfoto.png" alt="User" class="user-photo" />

@@ -9,4 +9,6 @@ public interface TarefasService {
     List<Tarefas> listaTarefas(Long usuarioId);
 
     Tarefas criarTarefa(Tarefas tarefas);
+
+    void deletarTarefa(Long id);
 }

@@ -25,4 +25,9 @@ public class TarefasServiceImpl implements TarefasService {
     public Tarefas criarTarefa(Tarefas tarefas) {
         return tarefasRepository.save(tarefas);
     }
+
+    @Override
+    public void deletarTarefa(Long id) {
+        tarefasRepository.deleteById(id);
+    }
 }
