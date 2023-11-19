@@ -36,21 +36,13 @@
 
         <div class="enviar">
           <form action="" method="post" th:action="@{/enviar}">
-            <div class="container-separador">
-    
-              <input type="text" placeholder="Nome" name="nome" id="nome" />
-            </div>
-
-            <div class="container-separador">
-
-              <input
-                type="text"
-                placeholder="Mensagem"
-                name="mensagem"
-                id="mensagem"
-                class="escrever-mensagem"
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="Mensagem"
+              name="mensagem"
+              id="mensagem"
+              class="escrever-mensagem"
+            />
 
             <div>
               <button type="submit">Enviar</button>
