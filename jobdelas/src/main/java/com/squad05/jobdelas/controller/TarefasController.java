@@ -12,18 +12,27 @@ import com.squad05.jobdelas.model.Tarefas;
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.services.TarefasService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/tarefas")
 public class TarefasController {
 
-@Autowired
-private TarefasService tarefasService;
+    @Autowired
+    private TarefasService tarefasService;
 
+    @PostMapping("/cadastrar")
+    public String cadastrarTarefa(HttpSession session, @RequestParam("titulo") String titulo,
+            @RequestParam("descricao") String descricao) {
+        Tarefas novaTarefa = new Tarefas();
+        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
 
-// @PostMapping("/cadastrar")
-// public String cadastrarTarefa(@RequestParam("usuario_id")
-// Usuarios usuarioId, @RequestParam("titulo") String titulo, @RequestParam("descricao" String descricao)) {
-//     Tarefas novaTarefa = new Tarefas();
-    
-// }
+        novaTarefa.setUsuario(usuarioLogado);
+        novaTarefa.setTitulo(titulo);
+        novaTarefa.setDescricao(descricao);
+        tarefasService.criarTarefa(novaTarefa);
+
+        return "redirect:/jobdelas";
+
+    }
 }

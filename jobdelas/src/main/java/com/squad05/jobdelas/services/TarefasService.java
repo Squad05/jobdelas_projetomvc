@@ -7,4 +7,6 @@ import com.squad05.jobdelas.model.Tarefas;
 public interface TarefasService {
 
     List<Tarefas> listaTarefas(Long usuarioId);
+
+    Tarefas criarTarefa(Tarefas tarefas);
 }
