@@ -81,6 +81,7 @@ a:hover {
 
 #botao-formulario:hover {
     background-color: var(--rosa-primario);
+    border: 1px solid var(--rosa-primario);
     color: var(--branco);
 }
 .col-12 {

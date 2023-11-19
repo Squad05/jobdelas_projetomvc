@@ -46,8 +46,7 @@ button:hover {
  
   .btn-primary:hover {
     background: var(--rosa-primario) !important;
-    border: 1px solid var(--rosa-primario);
-    outline: 1px solid var(--rosa-primario);
+    outline: 1px solid var(--rosa-primario) !important;
 
 }
 

@@ -33,7 +33,7 @@
     color: #fff;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #B378FF;
+    background-color: #20093e;
     cursor: pointer;
     margin-top: 10px;
     font-size: 1.2rem;
@@ -43,5 +43,6 @@
 .botao_addTarefa:hover {
     background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%) !important;
     outline: 1px solid #B378FF;
+    border: 1px solid red;
 }
 
