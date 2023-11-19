@@ -11,4 +11,6 @@ public interface TarefasService {
     Tarefas criarTarefa(Tarefas tarefas);
 
     void deletarTarefa(Long id);
+
+    Tarefas atualizarTarefas(Long id, Tarefas tarefaAtualizada);
 }

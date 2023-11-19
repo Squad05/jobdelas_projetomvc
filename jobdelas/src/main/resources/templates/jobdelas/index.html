@@ -54,10 +54,14 @@
                     Concluir
                   </button>
                 </form>
-
-                <button class="atualizar-tarefa">
-                  <i class="fa fa-edit"></i> Atualizar
-                </button>
+                <form
+                  th:action="@{tarefas/editar/__${tarefa.id}__}"
+                  method="post"
+                >
+                  <button type="submit" class="atualizar-tarefa">
+                    <i class="fa fa-edit"></i> Atualizar
+                  </button>
+                </form>
               </div>
             </div>
           </div>

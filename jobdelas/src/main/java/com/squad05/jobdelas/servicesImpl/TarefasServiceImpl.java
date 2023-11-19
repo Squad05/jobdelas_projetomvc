@@ -30,4 +30,15 @@ public class TarefasServiceImpl implements TarefasService {
     public void deletarTarefa(Long id) {
         tarefasRepository.deleteById(id);
     }
+
+    @Override
+    public Tarefas atualizarTarefas(Long id, Tarefas tarefaAtualizada) {
+        Tarefas tarefa = tarefasRepository.findById(id).orElse(null);
+
+        tarefa.setTitulo(tarefaAtualizada.getTitulo());
+        tarefa.setDescricao(tarefaAtualizada.getDescricao());
+
+        return tarefasRepository.save(tarefaAtualizada);
+    }
+
 }
