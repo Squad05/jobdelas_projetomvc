@@ -66,4 +66,9 @@
 .concluir-tarefa:hover,
 .atualizar-tarefa:hover {
   background-color: var(--rosa-secundario);
+  border: 1px solid var(--rosa-primario) !important;
+}
+
+#btnAdicionarTarefa:hover{
+  border: 1px solid var(--rosa-primario) !important;
 }

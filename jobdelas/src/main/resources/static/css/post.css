@@ -58,5 +58,5 @@
 }
 
 .like-button:hover, .read-comments-button:hover, .comment-button:hover {
-    background-color: var(--rosa-secundario);
+    border: 1px solid var(--rosa-primario) !important;
 }

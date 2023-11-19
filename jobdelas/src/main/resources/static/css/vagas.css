@@ -128,6 +128,7 @@
 
 .aplicar:hover {
     background: linear-gradient(to bottom, #B378FF 75%, #ffffff00 25%);
+    border: 1px solid var(--rosa-primario);
 }
 
 .status {
