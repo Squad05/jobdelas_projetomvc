@@ -42,4 +42,16 @@ public class TarefasController {
         return "redirect:/jobdelas";
 
     }
+
+    @PostMapping("/editar/{id}")
+    public String editarTarefa(@PathVariable Long id, @RequestParam("titulo") String titulo,
+            @RequestParam("descricao") String descricao) {
+
+        Tarefas tarefaAtualizada = new Tarefas();
+        tarefaAtualizada.setTitulo(titulo);
+        tarefaAtualizada.setDescricao(descricao);
+        tarefasService.atualizarTarefas(id, tarefaAtualizada);
+        return "redirect:/jobdelas";
+
+    }
 }
