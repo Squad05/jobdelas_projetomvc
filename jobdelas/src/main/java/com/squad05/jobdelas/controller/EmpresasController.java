@@ -38,8 +38,15 @@ public class EmpresasController {
     }
 
     @GetMapping("/buscar/empresas")
-    public ModelAndView buscarEmpresas() {
+    public ModelAndView buscarEmpresas(@RequestParam(name = "id", required = false) Long id) {
         ModelAndView modelAndView = new ModelAndView("/jb_company/buscar-empresas.html");
+
+        if (id != null) {
+            Empresas empresa = empresasService.pegarEmpresaPorId(id);
+            modelAndView.addObject("empresaDetalhes", empresa);
+        }
+
+        modelAndView.addObject("empresas", empresasService.listarEmpresas());
 
         return modelAndView;
     }

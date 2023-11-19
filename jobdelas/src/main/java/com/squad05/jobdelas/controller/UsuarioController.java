@@ -47,7 +47,7 @@ public class UsuarioController {
         boolean emailExistente = usuariosService.verificarEmailExistente(usuario.getEmail());
 
         if (emailExistente) {
-            modelAndView.setViewName("/login/cadastro.html");
+            modelAndView.setViewName("jobdelas/cadastro.html");
             modelAndView.addObject("usuario", usuario);
             modelAndView.addObject("erro", "Email já existente");
             return modelAndView;

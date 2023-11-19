@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "JobdelasApplication",
+            "request": "launch",
+            "mainClass": "com.squad05.jobdelas.JobdelasApplication",
+            "projectName": "JobDelas"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

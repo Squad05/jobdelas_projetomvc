@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscar Empresa</title>
-    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
-  </head>
 
-  <body>
-    <section class="cointaner-principal">
-      <div class="menu">
-        <nav>
-          <a href="/jbcompany"><i class="fas fa-home"></i> Home </a>
-          <a href="/jbcompany/cadastrar/empresas"
-            ><i class="fas fa-building"></i> Cadastrar Empresa</a
-          >
-          <a href="/jbcompany/cadastrar/vagas"
-            ><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a
-          >
-          <a href="/jbcompany/listar/empresas"
-            ><i class="fas fa-list"></i> Listar Empresas
-          </a>
-          <a href="/jbcompany/buscar/empresas"
-            ><i class="fas fa-search"></i> Buscar Empresa</a
-          >
-          <a href="/jbcompany/cadastrar/empresas"
-            ><i class="fas fa-users"></i> Visualizar Candidatos</a
-          >
-        </nav>
-        <div class="logo">
-          <img src="/img/jb_company.png" alt="Sua Logo" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscar Empresa</title>
+  <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+</head>
+
+<body>
+  <section class="cointaner-principal">
+    <div class="menu">
+      <nav>
+        <a href="/jbcompany"><i class="fas fa-home"></i> Home </a>
+        <a href="/jbcompany/cadastrar/empresas"><i class="fas fa-building"></i> Cadastrar Empresa</a>
+        <a href="/jbcompany/cadastrar/vagas"><i class="fas fa-plus-circle"></i> Cadastrar Vagas</a>
+        <a href="/jbcompany/listar/empresas"><i class="fas fa-list"></i> Listar Empresas
+        </a>
+        <a href="/jbcompany/buscar/empresas"><i class="fas fa-search"></i> Buscar Empresa</a>
+        <a href="/jbcompany/cadastrar/empresas"><i class="fas fa-users"></i> Visualizar Candidatos</a>
+      </nav>
+      <div class="logo">
+        <img src="/img/jb_company.png" alt="Sua Logo" />
       </div>
-      <form class="form_corpo" method="get">
+    </div>
+    <div class="container_empresas">
+      <form class="form_corpo" method="get" th:action="@{/jbcompany/listar/empresas}">
         <h2>Buscar Empresa</h2>
         <div class="empresa">
           <label for="selectEmpresa">Selecione a Empresa:</label>
-          <select id="empresa" name="empresas" required>
-            <option
-              th:each="empresa : ${empresas}"
-              th:value="${empresa.id}"
-              th:text="${empresa.nome}"
-            ></option>
+          <select id="empresa" name="id" required>
+            <option th:each="empresa : ${empresas}" th:value="${empresa.id}" th:text="${empresa.nome}"></option>
           </select>
           <button id="botao-formulario" class="btn" role="button" type="submit">
             Buscar
           </button>
         </div>
       </form>
-    </section>
-    <script
-      src="https://kit.fontawesome.com/cda1aa7b4f.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </div>
+  </section>
+  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

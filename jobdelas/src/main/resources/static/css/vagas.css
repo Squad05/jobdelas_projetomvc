@@ -88,7 +88,6 @@
 .vagas {
     width: 550px;
     padding: 15px;
-    flex-basis: 290px;
     border: 1px solid var(--rosa-primario);
     border-radius: 20px;
     background-color: var(--branco);

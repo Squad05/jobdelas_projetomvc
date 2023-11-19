@@ -30,7 +30,6 @@ export const Navbar = () => {
       <i class="fa fa-search"></i>
       <a  href="/perfil" class="botao-perfil">
         <img src="/img/iconfoto.png" class="img_perfil" alt="Imagem no Botão" />
-      </button>
     </div>
   `;
 };
