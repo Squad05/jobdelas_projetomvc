@@ -39,7 +39,22 @@
             class="img-fluid rounded-circle"
           />
           <h1 th:text="${usuarioLogado.nome}"></h1>
-          <p>Descrição do Usuário</p>
+
+          <div th:if="${not #strings.isEmpty(usuarioLogado.descricao_curta)}">
+            <p th:text="${usuarioLogado.descricao_curta}"></p>
+          </div>
+
+          <div
+            th:unless="${not #strings.isEmpty(usuarioLogado.descricao_curta)}"
+          >
+            <form th:action="@{/perfil/editar}" method="POST">
+              <label for="descricao_curta"></label>
+              <input type="text" id="descricao_curta" name="descricao_curta" />
+              <button type="submit" class="btn btn-primary botao_profile">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </form>
+          </div>
         </div>
         <div class="profile_redesociais">
           <i class="fab fa-facebook"></i>

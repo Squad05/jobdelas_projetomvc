@@ -68,24 +68,22 @@ public class UsuarioController {
 
     }
 
-    @GetMapping("/editar/{id}")
-    public String editarUsuario(@PathVariable Long id, Model model) {
-        Usuarios usuario = usuariosService.pegarUsuarioPorId(id);
-        model.addAttribute("usuario", usuario);
-        return "editarUsuario";
-    }
+    @PostMapping("perfil/editar")
+    public String atualizarUsuario(@RequestParam("descricao_curta") String novaDescricaoCurta, HttpSession session) {
 
-    @PostMapping("editar/{id}")
-    public String atualizarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuarios usuario) {
-        usuariosService.deletarUsuario(id);
-        return "redirect:/jobdelas/index";
-    }
+        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
+        usuarioLogado.setDescricao_curta(novaDescricaoCurta);
+        Usuarios usuarioAtualizado = usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
+        session.setAttribute("usuarioLogado", usuarioAtualizado);
 
-    @GetMapping("/deletar/{id}")
-    public String deletarUsuario(@PathVariable Long id) {
-        usuariosService.deletarUsuario(id);
-        return "redirect:/cadastro";
+        return "redirect:/perfil";
+
     }
+    // @GetMapping("/deletar/{id}")
+    // public String deletarUsuario(@PathVariable Long id) {
+    // usuariosService.deletarUsuario(id);
+    // return "redirect:/cadastro";
+    // }
 
     @GetMapping("perfil")
     public ModelAndView perfil(HttpSession session) {

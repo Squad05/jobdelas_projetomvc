@@ -22,13 +22,13 @@ public class Usuarios {
     private String resumo;
     private String telefone;
     private String link_do_portfolio;
+    private String descricao_curta;
 
     public Usuarios(Long usuarioId) {
 
     }
 
-
     public Usuarios() {
-        
+
     }
 }
