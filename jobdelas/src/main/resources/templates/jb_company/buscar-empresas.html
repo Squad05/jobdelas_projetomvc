@@ -24,8 +24,8 @@
         <img src="/img/jb_company.png" alt="Sua Logo" />
       </div>
     </div>
-    <div class="container_empresas">
-      <form class="form_corpo" method="get" th:action="@{/jbcompany/listar/empresas}">
+    <div class="container_empresa">
+      <form class="form_corpo" method="get" th:action="@{/jbcompany/buscar/empresas}">
         <h2>Buscar Empresa</h2>
         <div class="empresa">
           <label for="selectEmpresa">Selecione a Empresa:</label>
@@ -35,6 +35,16 @@
           <button id="botao-formulario" class="btn" role="button" type="submit">
             Buscar
           </button>
+          <div class="form_corpo_cards">
+            <div class="card" th:if="${empresaDetalhes != null}">
+              <p class="titulo"><strong>Nome:</strong> <span th:text="${empresaDetalhes.nome}"></span></p>
+              <p><strong>CNPJ:</strong> <span th:text="${empresaDetalhes.cnpj}"></span></p>
+              <p><strong>Email:</strong> <span th:text="${empresaDetalhes.email}"></span></p>
+              <p><strong>Telefone:</strong> <span th:text="${empresaDetalhes.telefone}"></span></p>
+              <p><strong>Área de atuação:</strong> <span th:text="${empresaDetalhes.area_de_atuacao}"></span></p>
+              <p><strong>Descrição:</strong> <span th:text="${empresaDetalhes.descricao}"></span></p>
+            </div>
+          </div>
         </div>
       </form>
     </div>

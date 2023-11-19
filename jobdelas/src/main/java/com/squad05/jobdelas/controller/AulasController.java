@@ -64,52 +64,61 @@ public class AulasController {
         return "redirect:/jbcompany/listar/aula";
     }
 
-    @GetMapping("jbcompany/listar/aula")
-    public ModelAndView listarAulaView() {
+    @GetMapping("/jbcompany/listar/aula")
+    public ModelAndView listarAulaView(@RequestParam(name = "cursoId", required = false) Long cursoId, Model model) {
         ModelAndView modelAndView = new ModelAndView("/jb_company/listar-aulas.html");
-        modelAndView.addObject("aulas", new Aulas());
-        modelAndView.addObject("cursos", cursosService.listarCursos());
+
+        if (cursoId != null) {
+
+            Cursos curso = cursosService.pegarCursoPorId(cursoId);
+            List<Aulas> aulasDoCurso = aulasService.listarAulasPorCursoId(cursoId);
+
+            model.addAttribute("curso", curso);
+            model.addAttribute("aulas", aulasDoCurso);
+        }
+
+        model.addAttribute("cursos", cursosService.listarCursos());
+
         return modelAndView;
     }
-
-    // @GetMapping("/editar/{id}")
-    // public ModelAndView editarAula(@PathVariable Long id) {
-    // ModelAndView modelAndView = new ModelAndView("");
-
-    // Aulas aula = aulasService.pegarAulaPorId(id);
-    // modelAndView.addObject("aula", aula);
-    // modelAndView.addObject("cursos", cursosService.listarCursos());
-
-    // return modelAndView;
-    // }
-
-    // @PostMapping("/atualizar")
-    // public String atualizarAula(@RequestParam Long id, @RequestParam Long
-    // cursoId, @RequestParam String titulo,
-    // @RequestParam String link, @RequestParam String descricao) {
-
-    // Aulas aula = aulasService.pegarAulaPorId(id);
-
-    // if (aula != null) {
-    // Cursos curso = cursosService.pegarCursoPorId(cursoId);
-
-    // if (curso != null) {
-    // aula.setCurso(curso);
-    // aula.setTitulo(titulo);
-    // aula.setLink(link);
-    // aula.setDescricao(descricao);
-
-    // aulasService.cadastrarAula(aula);
-    // }
-    // }
-
-    // return "redirect:/aulas";
-    // }
-
-    // @GetMapping("/deletar/{id}")
-    // public String deletarAula(@PathVariable Long id) {
-    // aulasService.deletarAula(id);
-    // return "redirect:/aulas";
-    // }
-
 }
+
+// @GetMapping("/editar/{id}")
+// public ModelAndView editarAula(@PathVariable Long id) {
+// ModelAndView modelAndView = new ModelAndView("");
+
+// Aulas aula = aulasService.pegarAulaPorId(id);
+// modelAndView.addObject("aula", aula);
+// modelAndView.addObject("cursos", cursosService.listarCursos());
+
+// return modelAndView;
+// }
+
+// @PostMapping("/atualizar")
+// public String atualizarAula(@RequestParam Long id, @RequestParam Long
+// cursoId, @RequestParam String titulo,
+// @RequestParam String link, @RequestParam String descricao) {
+
+// Aulas aula = aulasService.pegarAulaPorId(id);
+
+// if (aula != null) {
+// Cursos curso = cursosService.pegarCursoPorId(cursoId);
+
+// if (curso != null) {
+// aula.setCurso(curso);
+// aula.setTitulo(titulo);
+// aula.setLink(link);
+// aula.setDescricao(descricao);
+
+// aulasService.cadastrarAula(aula);
+// }
+// }
+
+// return "redirect:/aulas";
+// }
+
+// @GetMapping("/deletar/{id}")
+// public String deletarAula(@PathVariable Long id) {
+// aulasService.deletarAula(id);
+// return "redirect:/aulas";
+// }

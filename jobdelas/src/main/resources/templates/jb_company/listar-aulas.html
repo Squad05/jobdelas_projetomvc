@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jb Company</title>
-    <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
-  </head>
-  <body>
-    <section class="cointaner-principal">
-      <div class="menu">
-        <nav>
-          <a href="/jbcompany"><i class="fas fa-home"></i> Home </a>
-          <a href="/jbcompany/cadastrar/curso"
-            ><i class="fas fa-building"></i> Cadastrar Cursos</a
-          >
-          <a href="/jbcompany/cadastrar/aula"
-            ><i class="fas fa-plus-circle"></i> Cadastrar Aulas</a
-          >
-          <a href="/jbcompany/listar/aula"
-            ><i class="fas fa-search"></i> Buscar Aulas
-          </a>
-          <a href="/jbcompany/listar/curso"
-            ><i class="fas fa-list"></i> Listar Cursos</a
-          >
-        </nav>
-        <div class="logo">
-          <img src="/img/jb_company.png" alt="Sua Logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jb Company</title>
+  <link rel="stylesheet" href="/css/jbcompany-empresas.css" />
+</head>
+
+<body>
+  <section class="cointaner-principal">
+    <div class="menu">
+      <nav>
+        <a href="/jbcompany"><i class="fas fa-home"></i> Home </a>
+        <a href="/jbcompany/cadastrar/curso"><i class="fas fa-building"></i> Cadastrar Cursos</a>
+        <a href="/jbcompany/cadastrar/aula"><i class="fas fa-plus-circle"></i> Cadastrar Aulas</a>
+        <a href="/jbcompany/listar/aula"><i class="fas fa-search"></i> Buscar Aulas
+        </a>
+        <a href="/jbcompany/listar/curso"><i class="fas fa-list"></i> Listar Cursos</a>
+      </nav>
+      <div class="logo">
+        <img src="/img/jb_company.png" alt="Sua Logo" />
+      </div>
+    </div>
+    <div class="container_aula">
+      <form method="get" action="/jbcompany/listar/aula">
+        <h2>Buscar Aulas por Curso</h2>
+
+        <label for="curso">Selecione o Curso:</label>
+        <select id="curso" name="cursoId" required>
+          <option th:each="curso : ${cursos}" th:value="${curso.id}" th:text="${curso.materia}"></option>
+        </select><br />
+
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="form_corpo_cards">
+        <div class="card" th:each="aula : ${aulas}">
+          <p class="titulo" th:text="${aula.titulo}"></p>
+          <p>
+            <strong>Link:</strong>
+            <span th:text="${aula.link}"></span>
+          </p>
+          <p>
+            <strong>Descrição:</strong> <span th:text="${aula.descricao}"></span>
+          </p>
+
+          <form th:action="@{/jbcompany/deletar/aula/__${aula.id}__}" method="post">
+            <button type="submit" class="card-button">
+              <i class="fa-solid fa-trash"></i>
+              <p>Deletar</p>
+            </button>
+          </form>
         </div>
       </div>
-      <div class="container_aula">
-        <form method="get" action="/jbcompany/listar/aula">
-          <h2>Buscar Aulas por Curso</h2>
+    </div>
+  </section>
 
-          <label for="curso">Selecione o Curso:</label>
-          <select id="curso" name="cursoId" required>
-            <option
-              th:each="curso : ${cursos}"
-              th:value="${curso.id}"
-              th:text="${curso.materia}"
-            ></option></select
-          ><br />
+  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
+</body>
 
-          <button type="submit">Buscar</button>
-        </form>
-      </div>
-
-      <!-- Lista de Aulas -->
-    </section>
-
-    <script
-      src="https://kit.fontawesome.com/cda1aa7b4f.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>
