@@ -39,7 +39,7 @@
         </div>
 
         <div class="card" th:each="curso : ${cursos}">
-          <p class="titulo-curso" th:text="${curso.materia}"></p>
+          <p class="titulo" th:text="${curso.materia}"></p>
           <p>
             <strong>Descricao:</strong>
             <span th:text="${curso.descricao}"></span>

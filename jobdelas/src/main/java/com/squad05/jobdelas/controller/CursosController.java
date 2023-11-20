@@ -4,16 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.squad05.jobdelas.model.Cursos;
-import com.squad05.jobdelas.repository.CursosRepository;
 import com.squad05.jobdelas.services.CursosService;
 
 @Controller
@@ -28,7 +25,6 @@ public class CursosController {
 
         modelAndView.addObject("cursos", cursosService.listarCursos());
 
-        // modelAndView.addObject("cursos", cursosService.listarCursos());
 
         return modelAndView;
     }

@@ -5,9 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.squad05.jobdelas.model.Aulas;
 import com.squad05.jobdelas.model.Candidaturas;
-import com.squad05.jobdelas.model.Cursos;
 import com.squad05.jobdelas.model.Usuarios;
 import com.squad05.jobdelas.model.Vagas;
 import com.squad05.jobdelas.services.CandidaturasService;

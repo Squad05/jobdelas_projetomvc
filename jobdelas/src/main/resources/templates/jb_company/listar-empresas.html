@@ -47,7 +47,7 @@
 
         <div class="card" th:each="empresa : ${empresas}">
           <div class="card-content">
-            <h2 class="card-title" th:text="${empresa.nome}"></h2>
+            <p class="titulo" th:text="${empresa.nome}"></p>
             <p>
               <strong>Área de Atuação:</strong>
               <span th:text="${empresa.area_de_atuacao}"></span>

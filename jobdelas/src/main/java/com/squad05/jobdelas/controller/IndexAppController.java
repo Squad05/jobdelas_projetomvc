@@ -63,4 +63,17 @@ public class IndexAppController {
 
         return modelAndView;
     }
+
+    @GetMapping("sobre")
+    public ModelAndView sobre() {
+        ModelAndView modelAndView = new ModelAndView("jobdelas/sobre.html");
+
+        return modelAndView;
+    }
+
+    @GetMapping("/")
+    public ModelAndView redirectToSobre() {
+        ModelAndView modelAndView = new ModelAndView("redirect:/sobre");
+        return modelAndView;
+    }
 }

@@ -114,7 +114,7 @@ body {
     text-align: center;
     font-size: 25px;
     font-weight: 600;
-    color: #303030;
+    color: #B378FF;
   }
   
   form.form_corpo .user_info {
@@ -220,15 +220,6 @@ body {
     gap: 15px;
 }
 
-.card-title {
-    font-size: 1.3em;
-    background-color: #B378FF;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 10px;
-    color: #fff;
-    width: 100%;
-}
 
 .card-button {
   background-color: #fff;
@@ -252,13 +243,17 @@ body {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  overflow-y: scroll;
+  overflow-y: auto;
   justify-content: center;
   padding: 20px;
 }
 
+.form_corpo_cards div h2 {
+  color: #B378FF;
+}
+
 .listar h2 {
-  color: #303030;
+  color: #B378FF;
 }
 
 
@@ -374,9 +369,13 @@ select#status_vaga {
 }
 
 .container_aula form h2 {
-  font-size: 35px;
   color: #B378FF;
   text-align: center;
+}
+
+.container_empresa form h2 {
+  color: #B378FF;
+  width: 100%;
 }
 
 .container_aula form input , .container_aula form textarea, .container_aula form select {
@@ -387,6 +386,13 @@ select#status_vaga {
   font-weight: 400;
 }
 
+.container_empresa form input, .container_empresa form textarea, .container_empresa form select {
+  padding: 8px 5px 5px;
+  border: 1px solid #B378FF;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 400;
+}
 
 .container_aula form textarea {
   resize: none;
@@ -418,7 +424,9 @@ select#status_vaga {
   color: #fff;
   background-color: #B378FF;
   font-size: 1.3em;
-  padding-bottom: 3px;
+  padding: 5px 0;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .mensagem-erro {

@@ -41,7 +41,7 @@
       </div>
     </section>
     <section class="profile_body">
-      <button type="button" class="btn btn-danger botao_logout" onclick="logout()">
+      <button type="button" class="btn btn-danger botao_profile" onclick="logout()">
         Logout
       </button>
       <ul>
@@ -57,11 +57,11 @@
 
       </ul>
       <div class="profile_sobre"></div>
+
+      <!-- Edição do Usuário -->
       <button type="button" class="btn btn-primary botao_profile" data-toggle="modal" data-target="#editarUsuarioModal">
         Editar Perfil
       </button>
-
-      <!-- Modal de Edição do Usuário -->
 
       <div class="modal fade" id="editarUsuarioModal" tabindex="-1" role="dialog"
         aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
@@ -109,7 +109,7 @@
                   <input type="text" class="form-control" id="editLink_do_portfolio" name="link_do_portfolio"
                     th:value="${usuarioLogado.link_do_portfolio}" />
                 </div>
-                <!-- Adicione os outros campos conforme necessário -->
+
                 <div class="form-group">
                   <label for="editDescricaoCurta">Status:</label>
                   <input type="text" class="form-control" id="editDescricaoCurta" name="descricao_curta"

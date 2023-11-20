@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import com.squad05.jobdelas.model.Usuarios;
-import com.squad05.jobdelas.repository.UsuarioRepository;
 import com.squad05.jobdelas.services.UsuariosService;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.servlet.http.HttpSession;
