@@ -3,9 +3,9 @@ package com.squad05.jobdelas.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.squad05.jobdelas.model.Educacao;
+import com.squad05.jobdelas.model.Candidaturas;
 
 @Repository
-public interface EducacaoRepository extends JpaRepository<Educacao, Long> {
+public interface CandidaturasRepository extends JpaRepository<Candidaturas, Long> {
 
 }

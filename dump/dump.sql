@@ -44,10 +44,12 @@ CREATE TABLE vagas (
 );
        
 CREATE TABLE candidaturas (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    candidatoID INTEGER,
-    FOREIGN KEY(candidatoID) REFERENCES usuarios (id)
-    );
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INTEGER,
+  vaga_id BIGINT, 
+  FOREIGN KEY(usuario_id) REFERENCES usuarios (id),
+  FOREIGN KEY(vaga_id) REFERENCES vagas (id)
+);
          
       
 CREATE TABLE postagens (

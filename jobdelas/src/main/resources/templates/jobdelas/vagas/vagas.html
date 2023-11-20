@@ -52,7 +52,9 @@
       <section class="container-vagas">
         <div th:each="vaga : ${vagas}" class="vagas">
           <h2 th:text="${vaga.funcao}" class="funcao"></h2>
-          <td th:text="${vaga.empresas != null ? vaga.empresas.nome : ''}">Nome da Empresa</td>
+          <td th:text="${vaga.empresas != null ? vaga.empresas.nome : ''}">
+            Nome da Empresa
+          </td>
           <p th:text="'R$ ' + ${vaga.salario}" class="salario"></p>
           <p class="sobre">Sobre</p>
           <p th:text="${vaga.descricao}" class="sobre-vaga"></p>
@@ -60,7 +62,11 @@
             <p th:text="${vaga.localizacao}" class="localizacao">
               Localização: <span>Algum lugar</span>
             </p>
-            <button type="submit" class="aplicar">Aplicar</button>
+            <form method="POST" th:action="@{/jobdelas/aplicar/vaga}">
+              <input type="hidden" th:name="vagaId" th:value="${vaga.id}" />
+
+              <button type="submit" class="aplicar">Aplicar</button>
+            </form>
           </div>
           <span
             th:text="${vaga.status_vaga ? 'ativa' : 'desativada'}"
