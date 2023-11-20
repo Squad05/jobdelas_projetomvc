@@ -4,6 +4,11 @@ button:focus,
     box-shadow: none !important;
 }
 
+* {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 /* Estilos para containers principais */
 .container_principal {
     display: flex;
