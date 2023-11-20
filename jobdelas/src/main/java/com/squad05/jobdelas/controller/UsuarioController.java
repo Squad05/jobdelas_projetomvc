@@ -18,7 +18,6 @@ import com.squad05.jobdelas.services.UsuariosService;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.servlet.http.HttpSession;
 
-
 @Controller
 @RequestMapping("/")
 public class UsuarioController {
@@ -73,21 +72,21 @@ public class UsuarioController {
 
         usuarioLogado.setNome(usuarioAtualizado.getNome());
         usuarioLogado.setEmail(usuarioAtualizado.getEmail());
-        usuarioLogado.setSenha(usuarioAtualizado.getSenha());
         usuarioLogado.setFoto(usuarioAtualizado.getFoto());
         usuarioLogado.setResumo(usuarioAtualizado.getResumo());
         usuarioLogado.setTelefone(usuarioAtualizado.getTelefone());
         usuarioLogado.setLink_do_portfolio(usuarioAtualizado.getLink_do_portfolio());
         usuarioLogado.setDescricao_curta(usuarioAtualizado.getDescricao_curta());
 
-        if (!usuarioAtualizado.getSenha().isEmpty()) {
-            var senhaCriptografada = BCrypt.withDefaults().hashToString(12, usuarioAtualizado.getSenha().toCharArray());
+        String senhaNova = usuarioAtualizado.getSenha();
+
+        System.out.println(senhaNova);
+
+        if (senhaNova != null && !senhaNova.isEmpty()) {
+            String senhaCriptografada = BCrypt.withDefaults().hashToString(12, senhaNova.toCharArray());
             usuarioLogado.setSenha(senhaCriptografada);
         }
 
-        usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
-
-        session.setAttribute("usuarioLogado", usuarioLogado);
         usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
 
         session.setAttribute("usuarioLogado", usuarioLogado);

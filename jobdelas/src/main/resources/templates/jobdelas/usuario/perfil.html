@@ -1,220 +1,341 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-DBXW1ggB4Q1E5fymTqFgIc5w9TkoqZZTL4O/ztINQgl3rh5aHDsVhaqPjNblIuZDHW+EsKnNNrOsK5cc/eHLW/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/utils.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/profile_header.css" />
+    <link rel="stylesheet" href="/css/profile_body_sobre.css" />
+    <link rel="stylesheet" href="/css/profile_body_educacao.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Perfil</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-DBXW1ggB4Q1E5fymTqFgIc5w9TkoqZZTL4O/ztINQgl3rh5aHDsVhaqPjNblIuZDHW+EsKnNNrOsK5cc/eHLW/Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/css/utils.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/profile_header.css" />
-  <link rel="stylesheet" href="/css/profile_body_sobre.css" />
-  <link rel="stylesheet" href="/css/profile_body_educacao.css" />
-  <link rel="stylesheet" href="/css/index.css" />
-  <title>Perfil</title>
-</head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <section class="profile_header">
+        <div class="profile_foto">
+          <img
+            src="/img/iconfoto.png"
+            alt="Imagem do Usuário"
+            class="img-fluid rounded-circle"
+          />
+          <h1 th:text="${usuarioLogado.nome}"></h1>
 
-<body>
-  <header class="header"></header>
-  <main>
-    <section class="profile_header">
-      <div class="profile_foto">
-        <img src="/img/iconfoto.png" alt="Imagem do Usuário" class="img-fluid rounded-circle" />
-        <h1 th:text="${usuarioLogado.nome}"></h1>
-
-        <div th:if="${not #strings.isEmpty(usuarioLogado.descricao_curta)}">
-          <p th:text="${usuarioLogado.descricao_curta}"></p>
+          <div th:if="${not #strings.isEmpty(usuarioLogado.descricao_curta)}">
+            <p th:text="${usuarioLogado.descricao_curta}"></p>
+          </div>
         </div>
+        <div class="profile_redesociais">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </section>
+      <section class="profile_body">
+        <button
+          type="button"
+          class="btn btn-danger botao_profile"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+        <ul>
+          <li>
+            <strong>Nome:</strong> <span th:text="${usuarioLogado.nome}"></span>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <span th:text="${usuarioLogado.email}"></span>
+          </li>
+          <li>
+            <strong>Telefone:</strong>
+            <span th:text="${usuarioLogado.telefone}"></span>
+          </li>
+          <li>
+            <strong>Portfólio:</strong>
+            <a
+              href="#"
+              th:if="${not #strings.isEmpty(usuarioLogado.link_do_portfolio)}"
+              th:href="${usuarioLogado.link_do_portfolio}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span th:text="${usuarioLogado.link_do_portfolio}"></span>
+            </a>
+          </li>
+          <li>
+            <strong>Resumo:</strong>
+            <span th:text="${usuarioLogado.resumo}"></span>
+          </li>
+          <li>
+            <strong>Status:</strong>
+            <span th:text="${usuarioLogado.descricao_curta}"></span>
+          </li>
+        </ul>
+        <div class="profile_sobre"></div>
 
+        <!-- Edição do Usuário -->
+        <button
+          type="button"
+          class="btn btn-primary botao_profile"
+          data-toggle="modal"
+          data-target="#editarUsuarioModal"
+        >
+          Editar Perfil
+        </button>
 
-      </div>
-      <div class="profile_redesociais">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-      </div>
-    </section>
-    <section class="profile_body">
-      <button type="button" class="btn btn-danger botao_profile" onclick="logout()">
-        Logout
-      </button>
-      <ul>
-        <li><strong>Nome:</strong> <span th:text="${usuarioLogado.nome}"></span></li>
-        <li><strong>Email:</strong> <span th:text="${usuarioLogado.email}"></span></li>
-        <li><strong>Telefone:</strong> <span th:text="${usuarioLogado.telefone}"></span></li>
-        <li><strong>Portfólio:</strong> <a href="#" th:if="${not #strings.isEmpty(usuarioLogado.link_do_portfolio)}"
-            th:href="${usuarioLogado.link_do_portfolio}" target="_blank" rel="noopener noreferrer">
-            <span th:text="${usuarioLogado.link_do_portfolio}"></span>
-          </a></li>
-        <li><strong>Resumo:</strong> <span th:text="${usuarioLogado.resumo}"></span></li>
-        <li><strong>Status:</strong> <span th:text="${usuarioLogado.descricao_curta}"></span></li>
+        <div
+          class="modal fade"
+          id="editarUsuarioModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="editarUsuarioModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editarUsuarioModalLabel">
+                  Editar Usuário
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/perfil/editar" method="POST">
+                  <div class="form-group">
+                    <label for="editNome">Nome:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editNome"
+                      name="nome"
+                      th:value="${usuarioLogado.nome}"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="editEmail">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="editEmail"
+                      name="email"
+                      th:value="${usuarioLogado.email}"
+                    />
+                  </div>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="editSenha"
+                    name="senha"
+                  />
+                  <div class="form-group">
+                    <label for="editFoto">Foto:</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="editFoto"
+                      name="foto"
+                      th:value="${usuarioLogado.foto}"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="editResumo">Resumo:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editResumo"
+                      name="resumo"
+                      th:value="${usuarioLogado.resumo}"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="editTelefone">Telefone:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editTelefone"
+                      name="telefone"
+                      th:value="${usuarioLogado.telefone}"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="editLink_do_portfolio">Portfólio:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editLink_do_portfolio"
+                      name="link_do_portfolio"
+                      th:value="${usuarioLogado.link_do_portfolio}"
+                    />
+                  </div>
 
-      </ul>
-      <div class="profile_sobre"></div>
-
-      <!-- Edição do Usuário -->
-      <button type="button" class="btn btn-primary botao_profile" data-toggle="modal" data-target="#editarUsuarioModal">
-        Editar Perfil
-      </button>
-
-      <div class="modal fade" id="editarUsuarioModal" tabindex="-1" role="dialog"
-        aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="editarUsuarioModalLabel">Editar Usuário</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-              <form action="/perfil/editar" method="POST">
-                <div class="form-group">
-                  <label for="editNome">Nome:</label>
-                  <input type="text" class="form-control" id="editNome" name="nome" th:value="${usuarioLogado.nome}" />
-                </div>
-                <div class="form-group">
-                  <label for="editEmail">Email:</label>
-                  <input type="email" class="form-control" id="editEmail" name="email"
-                    th:value="${usuarioLogado.email}" />
-                </div>
-                <div class="form-group">
-                  <label for="editSenha">Senha:</label>
-                  <input type="password" class="form-control" id="editSenha" name="senha"
-                    th:value="${usuarioLogado.senha}" />
-                </div>
-                <div class="form-group">
-                  <label for="editFoto">Foto:</label>
-                  <input type="file" class="form-control" id="editFoto" name="foto" th:value="${usuarioLogado.foto}" />
-                </div>
-                <div class="form-group">
-                  <label for="editResumo">Resumo:</label>
-                  <input type="text" class="form-control" id="editResumo" name="resumo"
-                    th:value="${usuarioLogado.resumo}" />
-                </div>
-                <div class="form-group">
-                  <label for="editTelefone">Telefone:</label>
-                  <input type="text" class="form-control" id="editTelefone" name="telefone"
-                    th:value="${usuarioLogado.telefone}" />
-                </div>
-                <div class="form-group">
-                  <label for="editLink_do_portfolio">Portfólio:</label>
-                  <input type="text" class="form-control" id="editLink_do_portfolio" name="link_do_portfolio"
-                    th:value="${usuarioLogado.link_do_portfolio}" />
-                </div>
-
-                <div class="form-group">
-                  <label for="editDescricaoCurta">Status:</label>
-                  <input type="text" class="form-control" id="editDescricaoCurta" name="descricao_curta"
-                    th:value="${usuarioLogado.descricao_curta}" />
-                </div>
-                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-              </form>
+                  <div class="form-group">
+                    <label for="editDescricaoCurta">Status:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editDescricaoCurta"
+                      name="descricao_curta"
+                      th:value="${usuarioLogado.descricao_curta}"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Salvar Alterações
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="profile_educacao"></div>
-    </section>
-  </main>
+        <div class="profile_educacao"></div>
+      </section>
+    </main>
 
-  <!-- Modals -->
+    <!-- Modals -->
 
-  <div class="modal fade" id="sobreModal" tabindex="-1" role="dialog" aria-labelledby="sobreModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="sobreModalLabel">Adicionar Bio</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="bio">Bio:</label>
-              <textarea class="form-control" id="bio" rows="3"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Fechar
-          </button>
-          <button type="button" class="btn btn-primary">
-            Salvar Mudanças
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="modal fade" id="educacaoModal" tabindex="-1" role="dialog" aria-labelledby="educacaoModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="educacaoModalLabel">
-            Adicionar Educação
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="instituicao">Instituição:</label>
-              <input type="text" class="form-control" id="instituicao" />
-            </div>
-            <div class="form-group">
-              <label for="curso">Curso:</label>
-              <input type="text" class="form-control" id="curso" />
-            </div>
-            <div class="form-group">
-              <label for="ano">Ano de Conclusão:</label>
-              <input type="text" class="form-control" id="ano" />
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Fechar
-          </button>
-          <button type="button" class="btn btn-primary">
-            Salvar Mudanças
-          </button>
+    <div
+      class="modal fade"
+      id="sobreModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="sobreModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sobreModalLabel">Adicionar Bio</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea class="form-control" id="bio" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Salvar Mudanças
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <div
+      class="modal fade"
+      id="educacaoModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="educacaoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="educacaoModalLabel">
+              Adicionar Educação
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="instituicao">Instituição:</label>
+                <input type="text" class="form-control" id="instituicao" />
+              </div>
+              <div class="form-group">
+                <label for="curso">Curso:</label>
+                <input type="text" class="form-control" id="curso" />
+              </div>
+              <div class="form-group">
+                <label for="ano">Ano de Conclusão:</label>
+                <input type="text" class="form-control" id="ano" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Salvar Mudanças
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <script src="/js/perfil.js" type="module"></script>
 
-  <script src="/js/perfil.js" type="module"></script>
+    <script>
+      function logout() {
+        window.location.href = "/logout";
+      }
+    </script>
 
-  <script>
-    function logout() {
-
-      window.location.href = "/logout";
-    }
-  </script>
-
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/cda1aa7b4f.js" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/cda1aa7b4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
