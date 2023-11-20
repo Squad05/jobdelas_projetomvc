@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/curtida")
@@ -26,9 +27,11 @@ public class CurtidaController {
     }
 
     @PostMapping("/curtir")
-    public String curtir(@RequestParam("postagemId") Postagens postagemId, HttpSession session) {
+    public ModelAndView curtir(@RequestParam("postagemId") Postagens postagemId, HttpSession session) {
         Curtida curtida = new Curtida();
         Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
+        ModelAndView modelAndView = new ModelAndView("redirect:/jobdelas");
+        
 
         if (usuarioLogado != null) {
             curtida.setUsuarios(usuarioLogado);
@@ -37,7 +40,7 @@ public class CurtidaController {
             curtidaService.curtirPostagem(curtida);
         }
 
-        return "redirect:/jobdelas";
+        return modelAndView;
 
     }
 
