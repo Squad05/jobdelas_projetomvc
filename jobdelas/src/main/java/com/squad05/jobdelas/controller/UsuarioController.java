@@ -88,6 +88,9 @@ public class UsuarioController {
         usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
 
         session.setAttribute("usuarioLogado", usuarioLogado);
+        usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
+
+        session.setAttribute("usuarioLogado", usuarioLogado);
 
         return "redirect:/perfil";
     }
