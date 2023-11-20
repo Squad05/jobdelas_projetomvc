@@ -32,15 +32,7 @@
           <p th:text="${usuarioLogado.descricao_curta}"></p>
         </div>
 
-        <div th:unless="${not #strings.isEmpty(usuarioLogado.descricao_curta)}">
-          <form th:action="@{/perfil/editar}" method="POST">
-            <label for="descricao_curta"></label>
-            <input type="text" id="descricao_curta" name="descricao_curta" />
-            <button type="submit" class="btn btn-primary botao_profile">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-          </form>
-        </div>
+
       </div>
       <div class="profile_redesociais">
         <i class="fab fa-facebook"></i>
@@ -49,63 +41,86 @@
       </div>
     </section>
     <section class="profile_body">
-      <div class="profile_sobre"></div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarUsuarioModal">
-        Editar Perfil
-    </button>
+      <button type="button" class="btn btn-danger botao_logout" onclick="logout()">
+        Logout
+      </button>
+      <ul>
+        <li><strong>Nome:</strong> <span th:text="${usuarioLogado.nome}"></span></li>
+        <li><strong>Email:</strong> <span th:text="${usuarioLogado.email}"></span></li>
+        <li><strong>Telefone:</strong> <span th:text="${usuarioLogado.telefone}"></span></li>
+        <li><strong>Portfólio:</strong> <a href="#" th:if="${not #strings.isEmpty(usuarioLogado.link_do_portfolio)}"
+            th:href="${usuarioLogado.link_do_portfolio}" target="_blank" rel="noopener noreferrer">
+            <span th:text="${usuarioLogado.link_do_portfolio}"></span>
+          </a></li>
+        <li><strong>Resumo:</strong> <span th:text="${usuarioLogado.resumo}"></span></li>
+        <li><strong>Status:</strong> <span th:text="${usuarioLogado.descricao_curta}"></span></li>
 
-    <!-- Modal de Edição do Usuário -->
-    <div class="modal fade" id="editarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
+      </ul>
+      <div class="profile_sobre"></div>
+      <button type="button" class="btn btn-primary botao_profile" data-toggle="modal" data-target="#editarUsuarioModal">
+        Editar Perfil
+      </button>
+
+      <!-- Modal de Edição do Usuário -->
+
+      <div class="modal fade" id="editarUsuarioModal" tabindex="-1" role="dialog"
+        aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editarUsuarioModalLabel">Editar Usuário</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Formulário de Edição do Usuário -->
-                    <form action="/perfil/editar" method="POST">
-                        <div class="form-group">
-                            <label for="editNome">Nome:</label>
-                            <input type="text" class="form-control" id="editNome" name="nome" th:value="${usuarioLogado.nome}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editEmail">Email:</label>
-                            <input type="email" class="form-control" id="editEmail" name="email" th:value="${usuarioLogado.email}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editSenha">Senha:</label>
-                            <input type="password" class="form-control" id="editSenha" name="senha" th:value="${usuarioLogado.senha}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editFoto">Foto:</label>
-                            <input type="file" class="form-control" id="editFoto" name="foto" th:value="${usuarioLogado.foto}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editResumo">Resumo:</label>
-                            <input type="text" class="form-control" id="editResumo" name="resumo" th:value="${usuarioLogado.resumo}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editTelefone">Telefone:</label>
-                            <input type="text" class="form-control" id="editTelefone" name="telefone" th:value="${usuarioLogado.telefone}" />
-                        </div>
-                        <div class="form-group">
-                            <label for="editLink_do_portfolio">Portfólio:</label>
-                            <input type="text" class="form-control" id="editLink_do_portfolio" name="link_do_portfolio" th:value="${usuarioLogado.link_do_portfolio}" />
-                        </div>
-                        <!-- Adicione os outros campos conforme necessário -->
-                        <div class="form-group">
-                            <label for="editDescricaoCurta">Descrição Curta:</label>
-                            <input type="text" class="form-control" id="editDescricaoCurta" name="descricao_curta" th:value="${usuarioLogado.descricao_curta}" />
-                        </div>
-                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                    </form>
-                </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editarUsuarioModalLabel">Editar Usuário</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body">
+
+              <form action="/perfil/editar" method="POST">
+                <div class="form-group">
+                  <label for="editNome">Nome:</label>
+                  <input type="text" class="form-control" id="editNome" name="nome" th:value="${usuarioLogado.nome}" />
+                </div>
+                <div class="form-group">
+                  <label for="editEmail">Email:</label>
+                  <input type="email" class="form-control" id="editEmail" name="email"
+                    th:value="${usuarioLogado.email}" />
+                </div>
+                <div class="form-group">
+                  <label for="editSenha">Senha:</label>
+                  <input type="password" class="form-control" id="editSenha" name="senha"
+                    th:value="${usuarioLogado.senha}" />
+                </div>
+                <div class="form-group">
+                  <label for="editFoto">Foto:</label>
+                  <input type="file" class="form-control" id="editFoto" name="foto" th:value="${usuarioLogado.foto}" />
+                </div>
+                <div class="form-group">
+                  <label for="editResumo">Resumo:</label>
+                  <input type="text" class="form-control" id="editResumo" name="resumo"
+                    th:value="${usuarioLogado.resumo}" />
+                </div>
+                <div class="form-group">
+                  <label for="editTelefone">Telefone:</label>
+                  <input type="text" class="form-control" id="editTelefone" name="telefone"
+                    th:value="${usuarioLogado.telefone}" />
+                </div>
+                <div class="form-group">
+                  <label for="editLink_do_portfolio">Portfólio:</label>
+                  <input type="text" class="form-control" id="editLink_do_portfolio" name="link_do_portfolio"
+                    th:value="${usuarioLogado.link_do_portfolio}" />
+                </div>
+                <!-- Adicione os outros campos conforme necessário -->
+                <div class="form-group">
+                  <label for="editDescricaoCurta">Status:</label>
+                  <input type="text" class="form-control" id="editDescricaoCurta" name="descricao_curta"
+                    th:value="${usuarioLogado.descricao_curta}" />
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
       <div class="profile_educacao"></div>
     </section>
   </main>
@@ -187,6 +202,14 @@
 
 
   <script src="/js/perfil.js" type="module"></script>
+
+  <script>
+    function logout() {
+
+      window.location.href = "/logout";
+    }
+  </script>
+
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

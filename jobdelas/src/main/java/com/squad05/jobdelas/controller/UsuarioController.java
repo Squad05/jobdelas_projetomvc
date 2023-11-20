@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +18,6 @@ import com.squad05.jobdelas.services.UsuariosService;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.servlet.http.HttpSession;
 
-import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/")
@@ -69,33 +67,39 @@ public class UsuarioController {
     }
 
     @PostMapping("perfil/editar")
-public String atualizarUsuario(@ModelAttribute Usuarios usuarioAtualizado, HttpSession session) {
+    public String atualizarUsuario(@ModelAttribute Usuarios usuarioAtualizado, HttpSession session) {
 
-    Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
-    
+        Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
 
-    usuarioLogado.setNome(usuarioAtualizado.getNome());
-    usuarioLogado.setEmail(usuarioAtualizado.getEmail());
-    usuarioLogado.setSenha(usuarioAtualizado.getSenha());
-    usuarioLogado.setFoto(usuarioAtualizado.getFoto());
-    usuarioLogado.setResumo(usuarioAtualizado.getResumo());
-    usuarioLogado.setTelefone(usuarioAtualizado.getTelefone());
-    usuarioLogado.setLink_do_portfolio(usuarioAtualizado.getLink_do_portfolio());
-    usuarioLogado.setDescricao_curta(usuarioAtualizado.getDescricao_curta());
+        usuarioLogado.setNome(usuarioAtualizado.getNome());
+        usuarioLogado.setEmail(usuarioAtualizado.getEmail());
+        usuarioLogado.setSenha(usuarioAtualizado.getSenha());
+        usuarioLogado.setFoto(usuarioAtualizado.getFoto());
+        usuarioLogado.setResumo(usuarioAtualizado.getResumo());
+        usuarioLogado.setTelefone(usuarioAtualizado.getTelefone());
+        usuarioLogado.setLink_do_portfolio(usuarioAtualizado.getLink_do_portfolio());
+        usuarioLogado.setDescricao_curta(usuarioAtualizado.getDescricao_curta());
 
-    
-    if (!usuarioAtualizado.getSenha().isEmpty()) {
-        var senhaCriptografada = BCrypt.withDefaults().hashToString(12, usuarioAtualizado.getSenha().toCharArray());
-        usuarioLogado.setSenha(senhaCriptografada);
+        if (!usuarioAtualizado.getSenha().isEmpty()) {
+            var senhaCriptografada = BCrypt.withDefaults().hashToString(12, usuarioAtualizado.getSenha().toCharArray());
+            usuarioLogado.setSenha(senhaCriptografada);
+        }
+
+        usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
+
+        session.setAttribute("usuarioLogado", usuarioLogado);
+
+        return "redirect:/perfil";
     }
 
-    usuariosService.atualizarUsuario(usuarioLogado.getId(), usuarioLogado);
+    @GetMapping("logout")
+    public String logout(HttpSession session) {
 
-  
-    session.setAttribute("usuarioLogado", usuarioLogado);
+        session.invalidate();
 
-    return "redirect:/perfil";
-}
+        return "redirect:/login";
+    }
+
     // @GetMapping("/deletar/{id}")
     // public String deletarUsuario(@PathVariable Long id) {
     // usuariosService.deletarUsuario(id);
