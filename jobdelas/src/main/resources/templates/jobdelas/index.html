@@ -250,12 +250,17 @@
               </p>
 
               <div class="post-actions">
-                <button
-                  class="like-button"
-                  th:onclick="'curtirPostagem(' + ${usuarioLogado.id} + ',' + ${postagem.id} + ')';"
-                >
-                  <i class="fas fa-heart"></i> Curtir
-                </button>
+                <form th:action="@{/curtida/curtir}" method="post">
+                  <input
+                    type="hidden"
+                    th:name="postagemId"
+                    th:value="${postagem.id}"
+                  />
+                  <button class="like-button" type="submit">
+                    <i class="fas fa-heart"></i> Curtir
+                  </button>
+                </form>
+
                 <button class="comment-button">
                   <i class="fas fa-comment"></i> Comentar
                 </button>

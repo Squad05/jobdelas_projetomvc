@@ -25,17 +25,20 @@ public class CurtidaController {
         return curtidaService.contarCurtidasDaPostagem(postagemId);
     }
 
-    @PostMapping("/")
-    public String curtir(@RequestParam("postagem_id") Postagens postagemId, HttpSession session) {
+    @PostMapping("/curtir")
+    public String curtir(@RequestParam("postagemId") Postagens postagemId, HttpSession session) {
         Curtida curtida = new Curtida();
         Usuarios usuarioLogado = (Usuarios) session.getAttribute("usuarioLogado");
 
-        curtida.setUsuarios(usuarioLogado);
-        curtida.setPostagens(postagemId);
+        if (usuarioLogado != null) {
+            curtida.setUsuarios(usuarioLogado);
+            curtida.setPostagens(postagemId);
 
-        curtidaService.curtirPostagem(curtida);
+            curtidaService.curtirPostagem(curtida);
+        }
 
         return "redirect:/jobdelas";
+
     }
 
 }
