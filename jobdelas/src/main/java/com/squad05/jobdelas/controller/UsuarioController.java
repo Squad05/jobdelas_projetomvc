@@ -80,8 +80,6 @@ public class UsuarioController {
 
         String senhaNova = usuarioAtualizado.getSenha();
 
-        System.out.println(senhaNova);
-
         if (senhaNova != null && !senhaNova.isEmpty()) {
             String senhaCriptografada = BCrypt.withDefaults().hashToString(12, senhaNova.toCharArray());
             usuarioLogado.setSenha(senhaCriptografada);
@@ -101,12 +99,6 @@ public class UsuarioController {
 
         return "redirect:/login";
     }
-
-    // @GetMapping("/deletar/{id}")
-    // public String deletarUsuario(@PathVariable Long id) {
-    // usuariosService.deletarUsuario(id);
-    // return "redirect:/cadastro";
-    // }
 
     @GetMapping("perfil")
     public ModelAndView perfil(HttpSession session) {

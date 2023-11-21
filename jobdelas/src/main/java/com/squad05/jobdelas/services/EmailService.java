@@ -56,9 +56,35 @@ public class EmailService {
             e.printStackTrace();
         }
 
-        System.out.println(content);
-
         return content.toString();
     }
 
+    public void enviarEmailCandididatura(String destinatario, String titulo, Map<String, Object> propriedades) {
+        try {
+            String conteudoEmail = FreeMarkerTemplateUtils.processTemplateIntoString(
+                    freemarkercConfiguration.getTemplate("candidatura.ftl"), propriedades);
+
+            enviarEmailHtml(destinatario, titulo, conteudoEmail);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void enviarEmailHtml(String destinatario, String titulo, String conteudoEmail) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+
+        try {
+            MimeMessageHelper mineMessageHelper = new MimeMessageHelper(mimeMessage, true);
+
+            mineMessageHelper.setSubject(titulo);
+            mineMessageHelper.setFrom(remetente);
+            mineMessageHelper.setTo(destinatario);
+            mineMessageHelper.setText(conteudoEmail, true);
+            javaMailSender.send(mineMessageHelper.getMimeMessage());
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
 }
