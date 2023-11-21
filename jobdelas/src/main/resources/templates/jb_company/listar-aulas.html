@@ -46,11 +46,6 @@
             <strong>Descrição:</strong> <span th:text="${aula.descricao}"></span>
           </p>
 
-          <form th:action="@{/jbcompany/deletar/aula/__${aula.id}__}" method="post">
-            <button type="submit" class="card-button">
-              <i class="fa-solid fa-trash"></i>
-              <p>Deletar</p>
-            </button>
           </form>
         </div>
       </div>

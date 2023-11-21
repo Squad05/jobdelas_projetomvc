@@ -59,23 +59,7 @@ public class CursosController {
         return modelAndView;
     }
 
-    // @GetMapping("/editar/{id}")
-    // public ModelAndView editarCurso(@PathVariable Long id) {
-    // ModelAndView modelAndView = new ModelAndView("");
-
-    // Cursos cursos = cursosService.atualizarCurso(id, null);
-    // modelAndView.addObject("curso", cursos);
-
-    // return modelAndView;
-    // }
-
-    // @PostMapping("/atualizar")
-    // public String atualizarCurso(@ModelAttribute Cursos cursos) {
-
-    // cursosService.cadastrarCurso(cursos);
-
-    // return "redirect:/cursos";
-    // }
+   
     @PostMapping("jbcompany/deletar/curso/{id}")
     public String deletarCurso(@PathVariable Long id, RedirectAttributes attributes) {
         try {
