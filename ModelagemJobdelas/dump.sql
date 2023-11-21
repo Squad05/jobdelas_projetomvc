@@ -11,15 +11,7 @@ telefone VARCHAR(20),
 link_do_portfolio VARCHAR(255)
 );
     
-    
-CREATE TABLE educacao (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    userID INTEGER,
-    instituicao VARCHAR(255),
-    areaDeEstudo VARCHAR(255) NOT NULL,
-    dataDeConclusao TIMESTAMP,
-    FOREIGN KEY(userID) REFERENCES usuarios (id)
-);
+
      
 CREATE TABLE empresas (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -61,14 +53,7 @@ CREATE TABLE postagens (
     FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
 );
 
-CREATE TABLE comentario (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INTEGER,
-    conteudo TEXT NOT NULL,
-    data_comentario DATETIME,
-    FOREIGN KEY(usuario_id) REFERENCES usuarios (id)
-);
-      
+     
 
 CREATE TABLE tarefas (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
