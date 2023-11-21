@@ -52,13 +52,7 @@
         </div>
       </section>
       <section class="profile_body">
-        <button
-          type="button"
-          class="btn btn-danger botao_profile"
-          onclick="logout()"
-        >
-          Logout
-        </button>
+    
         <ul>
           <li>
             <strong>Nome:</strong> <span th:text="${usuarioLogado.nome}"></span>
@@ -92,7 +86,6 @@
             <span th:text="${usuarioLogado.descricao_curta}"></span>
           </li>
         </ul>
-        <div class="profile_sobre"></div>
 
         <!-- Edição do Usuário -->
         <button
@@ -103,6 +96,13 @@
         >
           Editar Perfil
         </button>
+        <button
+        type="button"
+        class="btn btn-danger botao_profile"
+        onclick="logout()"
+      >
+        Logout
+      </button>
 
         <div
           class="modal fade"

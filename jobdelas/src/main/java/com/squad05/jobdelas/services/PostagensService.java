@@ -12,10 +12,5 @@ public interface PostagensService {
 
     Postagens cadastrarpostagens(Postagens postagens);
 
-    // Postagens atualizarPostagens(Long id, Postagens postagensAtualizado);
-
-    // void deletarPostagens(Long id);
-
-    // Postagens pegarPostagensPorId(Long id);
 
 }
